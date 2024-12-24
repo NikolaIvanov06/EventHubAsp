@@ -1,0 +1,15 @@
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\bin\Debug\net8.0\EventHubASP.Models.deps.json
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\bin\Debug\net8.0\EventHubASP.Models.runtimeconfig.json
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\bin\Debug\net8.0\EventHubASP.Models.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\bin\Debug\net8.0\EventHubASP.Models.pdb
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\obj\Debug\net8.0\EventHubASP.Models.csproj.AssemblyReference.cache
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\obj\Debug\net8.0\EventHubASP.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\obj\Debug\net8.0\EventHubASP.Models.AssemblyInfoInputs.cache
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\obj\Debug\net8.0\EventHubASP.Models.AssemblyInfo.cs
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\obj\Debug\net8.0\EventHubASP.Models.csproj.CoreCompileInputs.cache
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\obj\Debug\net8.0\EventHubASP.Models.sourcelink.json
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\obj\Debug\net8.0\EventHubASP.Models.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\obj\Debug\net8.0\refint\EventHubASP.Models.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\obj\Debug\net8.0\EventHubASP.Models.pdb
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\obj\Debug\net8.0\EventHubASP.Models.genruntimeconfig.cache
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Models\obj\Debug\net8.0\ref\EventHubASP.Models.dll

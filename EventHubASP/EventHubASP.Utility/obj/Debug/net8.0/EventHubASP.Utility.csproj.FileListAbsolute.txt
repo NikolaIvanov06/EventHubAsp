@@ -1,0 +1,15 @@
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\bin\Debug\net8.0\EventHubASP.Utility.deps.json
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\bin\Debug\net8.0\EventHubASP.Utility.runtimeconfig.json
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\bin\Debug\net8.0\EventHubASP.Utility.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\bin\Debug\net8.0\EventHubASP.Utility.pdb
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\obj\Debug\net8.0\EventHubASP.Utility.csproj.AssemblyReference.cache
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\obj\Debug\net8.0\EventHubASP.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\obj\Debug\net8.0\EventHubASP.Utility.AssemblyInfoInputs.cache
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\obj\Debug\net8.0\EventHubASP.Utility.AssemblyInfo.cs
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\obj\Debug\net8.0\EventHubASP.Utility.csproj.CoreCompileInputs.cache
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\obj\Debug\net8.0\EventHubASP.Utility.sourcelink.json
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\obj\Debug\net8.0\EventHubASP.Utility.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\obj\Debug\net8.0\refint\EventHubASP.Utility.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\obj\Debug\net8.0\EventHubASP.Utility.pdb
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\obj\Debug\net8.0\EventHubASP.Utility.genruntimeconfig.cache
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Utility\obj\Debug\net8.0\ref\EventHubASP.Utility.dll
