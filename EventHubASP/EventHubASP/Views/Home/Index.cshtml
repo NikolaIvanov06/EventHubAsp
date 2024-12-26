@@ -1,8 +1,47 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+<link rel="icon" href="~/logo.png" />
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+<!-- Hero Section -->
+<div class="hero">
+    <div class="text-center">
+        <h1>Welcome to EventHub</h1>
+        <p class="lead">Discover and manage events with ease.</p>
+        <a href="#features" class="btn btn-primary custom-btn">Explore Features</a>
+    </div>
 </div>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>Easy Management</h3>
+                <p>Organize events effortlessly using our powerful tools.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Wide Reach</h3>
+                <p>Promote your events to a larger audience.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Secure Platform</h3>
+                <p>Reliable and secure event management solutions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call-to-Action Section -->
+<section id="cta" class="cta text-center">
+    <div class="container">
+        <h2>Get Started Today!</h2>
+        <p>Join EventHub and take your events to the next level.</p>
+        <a class="btn btn-primary custom-btn"  asp-area="" asp-controller="Account" asp-action="Register">Sign Up</a>
+    </div>
+</section>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/index.js"></script>
