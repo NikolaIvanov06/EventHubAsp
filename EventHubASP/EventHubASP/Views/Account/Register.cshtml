@@ -1,0 +1,49 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="~/css/authUI.css">
+    <link rel="icon" type="image/png" href="~/logo.png" />
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Register</h2>
+        <form asp-action="Register" asp-controller="Account" method="post">
+            <div>
+                <label asp-for="Username">Username:</label>
+                <input asp-for="Username" placeholder="Choose a username" class="form-control" required />
+                <span asp-validation-for="Username" class="error"></span>
+            </div>
+            <div>
+                <label asp-for="Email">Email:</label>
+                <input asp-for="Email" type="email" placeholder="Enter your email" class="form-control" required />
+                <span asp-validation-for="Email" class="error"></span>
+            </div>
+            <div>
+                <label asp-for="Password">Password:</label>
+                <input asp-for="Password" type="password" placeholder="Create a password" class="form-control" required />
+                <span asp-validation-for="Password" class="error"></span>
+            </div>
+            <div>
+                <label asp-for="RoleId">Role:</label>
+                <select asp-for="RoleId" asp-items="@(new SelectList(new[] { new { ID = 1, Name = "User" }, new { ID = 2, Name = "Admin" }, }, "ID", "Name"))" class="form-control"></select>
+                <span asp-validation-for="RoleId" class="error"></span>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <div class="text-center">
+            <p>Already have an account? <a asp-action="Login" asp-controller="Account">Login</a></p>
+        </div>
+    </div>
+    <script src="~/js/authUI.js"></script>
+</body>
+</html>

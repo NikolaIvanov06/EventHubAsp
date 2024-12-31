@@ -13,3 +13,8 @@ C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Core\o
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Core\obj\Debug\net8.0\EventHubASP.Core.pdb
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Core\obj\Debug\net8.0\EventHubASP.Core.genruntimeconfig.cache
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Core\obj\Debug\net8.0\ref\EventHubASP.Core.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Core\bin\Debug\net8.0\EventHubASP.DataAccess.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Core\bin\Debug\net8.0\EventHubASP.Models.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Core\bin\Debug\net8.0\EventHubASP.DataAccess.pdb
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Core\bin\Debug\net8.0\EventHubASP.Models.pdb
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP.Core\obj\Debug\net8.0\EventHub.C4030B10.Up2Date

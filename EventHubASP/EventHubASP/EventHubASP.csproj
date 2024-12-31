@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -20,7 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EventHubASP.Core\EventHubASP.Core.csproj" />
     <ProjectReference Include="..\EventHubASP.DataAccess\EventHubASP.DataAccess.csproj" />
+    <ProjectReference Include="..\EventHubASP.Models\EventHubASP.Models.csproj" />
   </ItemGroup>
 
 </Project>

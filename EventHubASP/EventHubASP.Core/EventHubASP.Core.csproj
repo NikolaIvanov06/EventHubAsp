@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EventHubASP.DataAccess\EventHubASP.DataAccess.csproj" />
+    <ProjectReference Include="..\EventHubASP.Models\EventHubASP.Models.csproj" />
+  </ItemGroup>
+
 </Project>
