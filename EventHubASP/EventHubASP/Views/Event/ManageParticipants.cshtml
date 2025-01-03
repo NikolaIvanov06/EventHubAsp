@@ -1,0 +1,32 @@
+﻿@model IEnumerable<EventHubASP.Models.User>
+
+@{
+    <link rel="stylesheet" href="~/css/manageParticipants.css" />
+
+
+    ViewData["Title"] = "Manage Participants";
+}
+
+<h2>Manage Participants</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Participant Name</th>
+            <th>Email</th>
+            <th>Registered On</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var participant in Model)
+        {
+            <tr>
+                <td>@participant.Username</td>
+                <td>@participant.Email</td>
+                <td>@participant.Registrations.FirstOrDefault()?.RegistrationDate.ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="MyEvents" class="btn btn-secondary">Back to My Events</a>

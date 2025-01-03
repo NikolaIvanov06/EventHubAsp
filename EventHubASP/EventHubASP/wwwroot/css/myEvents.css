@@ -1,0 +1,63 @@
+﻿/* MyEvents View Specific Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #333333;
+    color: #e0e0e0;
+}
+
+th {
+    background-color: #262626;
+}
+
+tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+    .actions a,
+    .actions button {
+        padding: 5px 10px;
+        border-radius: 4px;
+        color: #ffffff;
+        background-color: #3a3a3a;
+        border: none;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .actions a:hover,
+        .actions button:hover {
+            background-color: #ffffff;
+            color: #121212;
+        }
+
+.btn-danger {
+    background-color: #ff4d4d;
+}
+
+    .btn-danger:hover {
+        background-color: #ff3333;
+    }

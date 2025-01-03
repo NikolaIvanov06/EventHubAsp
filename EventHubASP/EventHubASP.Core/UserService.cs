@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
+using System.Threading.Tasks;
 using EventHubASP.DataAccess;
 using EventHubASP.Models;
+using Microsoft.EntityFrameworkCore;
+using BCrypt.Net;
 
 namespace EventHubASP.Core
 {
@@ -16,46 +16,42 @@ namespace EventHubASP.Core
             _context = context;
         }
 
-        private string HashPassword(string password)
+        public async Task<bool> RegisterUserAsync(string username, string email, string password)
         {
-            if (password == null)
-            {
-                throw new ArgumentNullException(nameof(password));
-            }
-
-            using (var sha256 = SHA256.Create())
-            {
-                var bytes = Encoding.UTF8.GetBytes(password);
-                var hash = sha256.ComputeHash(bytes);
-                return Convert.ToBase64String(hash);
-            }
-        }
-
-        public bool RegisterUser(string username, string email, string password, int roleId)
-        {
-            if (_context.Users.Any(u => u.Username == username || u.Email == email))
+            if (await _context.Users.AnyAsync(u => u.Username == username || u.Email == email))
             {
                 return false;
             }
+
+            var passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
 
             var user = new User
             {
                 Username = username,
                 Email = email,
-                PasswordHash = HashPassword(password),
-                RoleID = roleId
+                PasswordHash = passwordHash,
+                RoleID = 1
             };
 
-            _context.Users.Add(user);
-            _context.SaveChanges();
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
             return true;
         }
 
-        // Validate user login
-        public User ValidateUser(string username, string password)
+        public async Task<User> ValidateUserAsync(string username, string password)
         {
-            var hashedPassword = HashPassword(password);
-            return _context.Users.FirstOrDefault(u => u.Username == username && u.PasswordHash == hashedPassword);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
+            {
+                return user;
+            }
+            return null;
+        }
+
+        public async Task<string> GetUserRoleAsync(User user)
+        {
+            var role = await _context.Roles.FirstOrDefaultAsync(r => r.RoleID == user.RoleID);
+            return role?.RoleName;
         }
     }
 }

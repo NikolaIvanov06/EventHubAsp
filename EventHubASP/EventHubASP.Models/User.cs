@@ -25,4 +25,5 @@ public class User
     public Role Role { get; set; }
     public ICollection<Event> Events { get; set; }
     public ICollection<Registration> Registrations { get; set; }
+    public ICollection<Notification> Notifications { get; set; } = new List<Notification>();
 }

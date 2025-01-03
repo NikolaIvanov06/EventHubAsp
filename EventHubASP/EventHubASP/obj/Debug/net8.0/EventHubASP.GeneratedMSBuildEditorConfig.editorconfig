@@ -26,12 +26,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Fenix/Desktop/GitHub/SoftUni/EventHubAsp/EventHubASP/EventHubASP/Views/Admin/ManageRoleRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlUm9sZVJlcXVlc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fenix/Desktop/GitHub/SoftUni/EventHubAsp/EventHubASP/EventHubASP/Views/Event/BrowseEvents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQnJvd3NlRXZlbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fenix/Desktop/GitHub/SoftUni/EventHubAsp/EventHubASP/EventHubASP/Views/Event/CreateEvent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQ3JlYXRlRXZlbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fenix/Desktop/GitHub/SoftUni/EventHubAsp/EventHubASP/EventHubASP/Views/Event/ManageParticipants.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcTWFuYWdlUGFydGljaXBhbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fenix/Desktop/GitHub/SoftUni/EventHubAsp/EventHubASP/EventHubASP/Views/Event/MyEvents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcTXlFdmVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Fenix/Desktop/GitHub/SoftUni/EventHubAsp/EventHubASP/EventHubASP/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Fenix/Desktop/GitHub/SoftUni/EventHubAsp/EventHubASP/EventHubASP/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fenix/Desktop/GitHub/SoftUni/EventHubAsp/EventHubASP/EventHubASP/Views/RoleRequest/ViewRoleRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVJlcXVlc3RcVmlld1JvbGVSZXF1ZXN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Fenix/Desktop/GitHub/SoftUni/EventHubAsp/EventHubASP/EventHubASP/Views/Shared/Error.cshtml]

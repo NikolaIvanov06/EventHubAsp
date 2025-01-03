@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventHubASP.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241224071322_InitialMig")]
+    [Migration("20250103102612_InitialMig")]
     partial class InitialMig
     {
         /// <inheritdoc />
@@ -41,6 +41,10 @@ namespace EventHubASP.DataAccess.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -59,6 +63,61 @@ namespace EventHubASP.DataAccess.Migrations
                     b.HasIndex("OrganizerID");
 
                     b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("EventHubASP.Models.News", b =>
+                {
+                    b.Property<int>("NewsID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NewsID"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EventID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("PublishedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("NewsID");
+
+                    b.HasIndex("EventID");
+
+                    b.ToTable("News");
+                });
+
+            modelBuilder.Entity("EventHubASP.Models.Notification", b =>
+                {
+                    b.Property<int>("NotificationID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NotificationID"));
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("NewsID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
+
+                    b.HasKey("NotificationID");
+
+                    b.HasIndex("NewsID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("EventHubASP.Models.Registration", b =>
@@ -103,6 +162,55 @@ namespace EventHubASP.DataAccess.Migrations
                     b.HasKey("RoleID");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleID = 1,
+                            RoleName = "User"
+                        },
+                        new
+                        {
+                            RoleID = 2,
+                            RoleName = "Organizer"
+                        },
+                        new
+                        {
+                            RoleID = 3,
+                            RoleName = "Admin"
+                        });
+                });
+
+            modelBuilder.Entity("EventHubASP.Models.RoleChangeRequest", b =>
+                {
+                    b.Property<int>("RequestID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RequestID"));
+
+                    b.Property<string>("CurrentRole")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsApproved")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("RequestDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RequestedRole")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
+
+                    b.HasKey("RequestID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("RoleChangeRequests");
                 });
 
             modelBuilder.Entity("EventHubASP.Models.User", b =>
@@ -141,10 +249,40 @@ namespace EventHubASP.DataAccess.Migrations
                     b.HasOne("EventHubASP.Models.User", "Organizer")
                         .WithMany("Events")
                         .HasForeignKey("OrganizerID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Organizer");
+                });
+
+            modelBuilder.Entity("EventHubASP.Models.News", b =>
+                {
+                    b.HasOne("EventHubASP.Models.Event", "Event")
+                        .WithMany("News")
+                        .HasForeignKey("EventID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
+                });
+
+            modelBuilder.Entity("EventHubASP.Models.Notification", b =>
+                {
+                    b.HasOne("EventHubASP.Models.News", "News")
+                        .WithMany()
+                        .HasForeignKey("NewsID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("EventHubASP.Models.User", "User")
+                        .WithMany("Notifications")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("News");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("EventHubASP.Models.Registration", b =>
@@ -166,12 +304,23 @@ namespace EventHubASP.DataAccess.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("EventHubASP.Models.RoleChangeRequest", b =>
+                {
+                    b.HasOne("EventHubASP.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("EventHubASP.Models.User", b =>
                 {
                     b.HasOne("EventHubASP.Models.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Role");
@@ -179,6 +328,8 @@ namespace EventHubASP.DataAccess.Migrations
 
             modelBuilder.Entity("EventHubASP.Models.Event", b =>
                 {
+                    b.Navigation("News");
+
                     b.Navigation("Registrations");
                 });
 
@@ -190,6 +341,8 @@ namespace EventHubASP.DataAccess.Migrations
             modelBuilder.Entity("EventHubASP.Models.User", b =>
                 {
                     b.Navigation("Events");
+
+                    b.Navigation("Notifications");
 
                     b.Navigation("Registrations");
                 });

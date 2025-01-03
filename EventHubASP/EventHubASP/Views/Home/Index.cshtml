@@ -1,4 +1,8 @@
-﻿<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
 <link rel="icon" href="~/logo.png" />
 
@@ -32,15 +36,32 @@
         </div>
     </div>
 </section>
+@if (HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated && HttpContextAccessor.HttpContext.User.IsInRole("User"))
 
-<!-- Call-to-Action Section -->
-<section id="cta" class="cta text-center">
-    <div class="container">
-        <h2>Get Started Today!</h2>
-        <p>Join EventHub and take your events to the next level.</p>
-        <a class="btn btn-primary custom-btn"  asp-area="" asp-controller="Account" asp-action="Register">Sign Up</a>
-    </div>
-</section>
+{
+    <section id="become-organizer" class="text-center">
+        <div class="container">
+            <h2>Want to become an organizer?</h2>
+            <p>Join our team of organizers and start creating amazing events. Submit a request to become an organizer and we'll review it promptly.</p>
+            <a class="btn btn-primary custom-btn" asp-controller="RoleRequest" asp-action="RequestOrganizerRole">Request Organizer Role</a>
+        </div>
+    </section>
+}
+
+
+@if (!HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+
+{
+
+    <section id="cta" class="cta text-center">
+        <div class="container">
+            <h2>Get Started Today!</h2>
+            <p>Join EventHub and take your events to the next level.</p>
+            <a class="btn btn-primary custom-btn"  asp-area="" asp-controller="Account" asp-action="Register">Sign Up</a>
+        </div>
+    </section>
+
+}
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

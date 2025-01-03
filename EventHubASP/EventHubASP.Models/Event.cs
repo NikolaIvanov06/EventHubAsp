@@ -25,7 +25,9 @@ public class Event
     [ForeignKey("Organizer")]
     public int OrganizerID { get; set; }
 
+    public string ImageUrl { get; set; } = "/images/default-event.jpg";
     // Navigation Properties
     public User Organizer { get; set; }
     public ICollection<Registration> Registrations { get; set; }
+    public ICollection<News> News { get; set; } = new List<News>();
 }

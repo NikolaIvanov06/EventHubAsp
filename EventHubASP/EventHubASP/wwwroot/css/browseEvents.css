@@ -1,0 +1,44 @@
+﻿/* BrowseEvents View Specific Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.event-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+    .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    }
+
+    .event-card img {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .event-card h5 {
+        margin-top: 0;
+        color: #ffffff;
+    }
+
+    .event-card p {
+        color: #cccccc;
+        margin: 5px 0;
+    }
+
+    .event-card .btn {
+        margin-top: 10px;
+    }

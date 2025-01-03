@@ -1,0 +1,36 @@
+﻿@model IEnumerable<EventHubASP.Models.RoleChangeRequest>
+
+<h2>Role Change Requests</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Current Role</th>
+            <th>Requested Role</th>
+            <th>Request Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.User.Username</td>
+                <td>@request.CurrentRole</td>
+                <td>@request.RequestedRole</td>
+                <td>@request.RequestDate.ToString("g")</td>
+                <td>
+                    <form asp-action="ApproveRequest" method="post" style="display:inline;">
+                        <input type="hidden" name="requestId" value="@request.RequestID" />
+                        <button type="submit" class="btn btn-success">Approve</button>
+                    </form>
+                    <form asp-action="DeclineRequest" method="post" style="display:inline;">
+                        <input type="hidden" name="requestId" value="@request.RequestID" />
+                        <button type="submit" class="btn btn-danger">Decline</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

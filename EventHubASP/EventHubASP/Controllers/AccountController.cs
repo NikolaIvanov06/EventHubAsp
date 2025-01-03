@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace EventHubASP.Controllers
 {
@@ -17,19 +20,21 @@ namespace EventHubASP.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                if (_userService.RegisterUser(model.Username, model.Email, model.Password, model.RoleId))
+                var result = await _userService.RegisterUserAsync(model.Username, model.Email, model.Password);
+                if (result)
                 {
-                    return RedirectToAction("Login");
+                    return RedirectToAction("Login", "Account");
                 }
                 else
                 {
                     ModelState.AddModelError("", "Username or email already exists.");
                 }
             }
+
             return View(model);
         }
 
@@ -37,21 +42,26 @@ namespace EventHubASP.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = _userService.ValidateUser(model.Username, model.Password);
+                var user = await _userService.ValidateUserAsync(model.Username, model.Password);
                 if (user != null)
                 {
+                    var role = await _userService.GetUserRoleAsync(user);
                     var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.Username),
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim("UserID", user.UserID.ToString())
             };
+
+                    if (role != null)
+                    {
+                        claims.Add(new Claim(ClaimTypes.Role, role));
+                    }
 
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
