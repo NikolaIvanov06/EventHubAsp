@@ -27,11 +27,11 @@ namespace EventHubASP.Controllers
 
             if (success)
             {
-                TempData["Message"] = "Your request has been submitted successfully!";
+                TempData["SuccessMessage"] = "Your request has been submitted successfully!";
             }
             else
             {
-                TempData["Error"] = "You have already submitted a request!";
+                TempData["ErrorMessage"] = "You have already submitted a request!";
             }
 
             return RedirectToAction("Index", "Home");

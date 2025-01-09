@@ -1,56 +1,33 @@
 ﻿@model RegisterViewModel
 
-@{
-    ViewData["Title"] = "Register";
-    Layout = null;
-}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="~/css/authUI.css">
-    <link rel="icon" type="image/png" href="~/logo.png" />
-    <style>
-        .error-message {
-            color: red;
-            border: 1px solid red;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #ffe6e6;
-            margin-bottom: 15px;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <h2 class="text-center">Register</h2>
-    <form asp-action="Register" method="post">
-            @if (!ViewData.ModelState.IsValid)
-            {
-                <div asp-validation-summary="All" class="error-message"></div>
-            }
-        <div>
-            <label asp-for="Username"></label>
-            <input asp-for="Username" class="form-control" placeholder="Enter your username" />
-            <span asp-validation-for="Username" class="text-danger"></span>
-        </div>
-        <div>
-            <label asp-for="Email"></label>
-            <input asp-for="Email" type="email" class="form-control" placeholder="Enter your email" />
-            <span asp-validation-for="Email" class="text-danger"></span>
-        </div>
-        <div>
-            <label asp-for="Password"></label>
-            <input asp-for="Password" type="password" class="form-control" placeholder="Enter your password" />
-            <span asp-validation-for="Password" class="text-danger"></span>
-        </div>
-        <button type="submit" class="btn btn-primary mt-3">Register</button>
-    </form>
-    <div class="text-center mt-3">
-        <p>Already have an account? <a asp-action="Login" asp-controller="Account">Log In</a></p>
+<link rel="stylesheet" href="~/css/authUI.css" asp-append-version="true" />
+<div class="form-page">
+    <div class="form-container">
+        <h2>Register</h2>
+        <form asp-action="Register" method="post">
+            <div class="form-group">
+                <label asp-for="Username" class="form-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" type="email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register</button>
+
+            <div class="link">
+                <a asp-area="" asp-controller="Account" asp-action="Login">Already have an account? Log in</a>
+            </div>
+        </form>
     </div>
 </div>
-</body>
-</html>

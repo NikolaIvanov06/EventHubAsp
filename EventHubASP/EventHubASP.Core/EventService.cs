@@ -45,7 +45,7 @@ public class EventService : IEventService
     {
         if (string.IsNullOrWhiteSpace(model.ImageUrl))
         {
-            model.ImageUrl = "~/logo.jpg"; // Ensure the file exists at this path
+            model.ImageUrl = "~/logo.jpg";
         }
 
         _context.Events.Add(model);
@@ -70,20 +70,46 @@ public class EventService : IEventService
     public async Task<bool> UpdateEventAsync(Event updatedEvent, int organizerId)
     {
         var existingEvent = await _context.Events.FindAsync(updatedEvent.EventID);
+
         if (existingEvent != null && existingEvent.OrganizerID == organizerId)
         {
+            // Update the existing event with new values
             existingEvent.Title = updatedEvent.Title;
+            existingEvent.Description = updatedEvent.Description;
             existingEvent.Date = updatedEvent.Date;
             existingEvent.Location = updatedEvent.Location;
             existingEvent.ImageUrl = updatedEvent.ImageUrl;
-            existingEvent.Description = updatedEvent.Description;
 
+            // Save changes
             _context.Events.Update(existingEvent);
             await _context.SaveChangesAsync();
             return true;
         }
         return false;
     }
+
+    public async Task<IEnumerable<Event>> GetUserSubscriptionsAsync(int userId)
+    {
+        return await _context.Events
+            .Where(e => e.Registrations.Any(r => r.UserID == userId))
+            .ToListAsync();
+    }
+
+    public async Task<bool> UnsubscribeFromEventAsync(int userId, int eventId)
+    {
+        var registration = await _context.Registrations
+            .FirstOrDefaultAsync(r => r.UserID == userId && r.EventID == eventId);
+
+        if (registration != null)
+        {
+            _context.Registrations.Remove(registration);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        return false;
+    }
+
 
 
 
@@ -98,6 +124,7 @@ public class EventService : IEventService
         }
         return false;
     }
+
 
     public async Task<bool> IsOrganizerOfEventAsync(int organizerId, int eventId)
     {

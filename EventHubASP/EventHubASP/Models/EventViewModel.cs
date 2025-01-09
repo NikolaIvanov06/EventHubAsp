@@ -5,6 +5,9 @@ namespace EventHubASP.Models
     public class EventViewModel
     {
         [Required]
+        public int EventID { get; set; }
+
+        [Required]
         [StringLength(100, ErrorMessage = "The title must be between 1 and 100 characters.")]
         public string Title { get; set; }
 

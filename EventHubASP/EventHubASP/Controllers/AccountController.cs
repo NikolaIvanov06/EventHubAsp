@@ -22,21 +22,36 @@ namespace EventHubASP.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var result = await _userService.RegisterUserAsync(model.Username, model.Email, model.Password);
-                if (result)
+                return View(model);
+            }
+
+            try
+            {
+                var success = await _userService.RegisterUserAsync(model.Username, model.Email, model.Password);
+                if (success)
                 {
-                    return RedirectToAction("Login", "Account");
+                    TempData["SuccessMessage"] = "Registration successful! Please log in.";
+                    return RedirectToAction("Login");
                 }
                 else
                 {
                     ModelState.AddModelError("", "Username or email already exists.");
                 }
             }
+            catch (ArgumentException ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+            }
+            catch (Exception)
+            {
+                ModelState.AddModelError("", "An error occurred while registering. Please try again.");
+            }
 
             return View(model);
         }
+
 
         public IActionResult Register()
         {
@@ -65,13 +80,14 @@ namespace EventHubASP.Controllers
 
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-
+                    TempData["SuccessMessage"] = "Successfully logged in!";
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
                     ModelState.AddModelError("", "Invalid username or password.");
                 }
+                
             }
 
             return View(model);

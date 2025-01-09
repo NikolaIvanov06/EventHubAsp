@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\browseEvents.css"
     },
     {
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\contactUs.css",
+      "PackagePath": "staticwebassets\\css\\contactUs.css"
+    },
+    {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\createEvent.css",
       "PackagePath": "staticwebassets\\css\\createEvent.css"
     },
@@ -39,6 +43,10 @@
     {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\imageofschool.png",
+      "PackagePath": "staticwebassets\\imageofschool.png"
     },
     {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\authUI.js",

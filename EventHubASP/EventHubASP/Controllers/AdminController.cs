@@ -26,6 +26,7 @@ namespace EventHubASP.Controllers
         public async Task<IActionResult> ApproveRequest(int requestId)
         {
             await _roleService.ApproveRequestAsync(requestId);
+            TempData["SuccessMessage"] = "Successfully approved User's request.";
             return RedirectToAction("ManageRoleRequests");
         }
 
@@ -34,6 +35,7 @@ namespace EventHubASP.Controllers
         public async Task<IActionResult> DeclineRequest(int requestId)
         {
             await _roleService.DeclineRequestAsync(requestId);
+            TempData["SuccessMessage"] = "Successfully denied User's request.";
             return RedirectToAction("ManageRoleRequests");
         }
     }
