@@ -1,4 +1,29 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(function () {
+    function fetchNotifications() {
+        $.get('/Notifications/GetUserNotifications', function (data) {
+            if (data.length > 0) {
+                $('#notificationDot').show();
+                let notificationHtml = '';
+                data.forEach(notification => {
+                    notificationHtml += `<li class="dropdown-item">${notification.message}</li>`;
+                });
+                $('#notificationList').html(notificationHtml);
+            } else {
+                $('#notificationDot').hide();
+                $('#notificationList').html('<li class="dropdown-item text-center">No new notifications</li>');
+            }
+        });
+    }
 
-// Write your JavaScript code.
+    fetchNotifications();
+
+    $('#inboxDropdown').on('shown.bs.dropdown', function () {
+        fetchNotifications();
+    });
+    function loadNews() {
+        $.get('/News/NewsFeed', function (data) {
+            $('#news-container').html(data); // Assuming the server returns an HTML partial
+        });
+    }
+
+});

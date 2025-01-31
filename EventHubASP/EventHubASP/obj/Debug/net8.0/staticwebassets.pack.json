@@ -33,8 +33,16 @@
       "PackagePath": "staticwebassets\\css\\manageParticipants.css"
     },
     {
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\manageUsers.css",
+      "PackagePath": "staticwebassets\\css\\manageUsers.css"
+    },
+    {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\myEvents.css",
       "PackagePath": "staticwebassets\\css\\myEvents.css"
+    },
+    {
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\mySubscriptions.css",
+      "PackagePath": "staticwebassets\\css\\mySubscriptions.css"
     },
     {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\site.css",
@@ -43,6 +51,10 @@
     {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\filter.png",
+      "PackagePath": "staticwebassets\\filter.png"
     },
     {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\imageofschool.png",

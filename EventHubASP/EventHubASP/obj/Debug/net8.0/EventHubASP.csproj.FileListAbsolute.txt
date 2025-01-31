@@ -142,3 +142,14 @@ C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\obj\De
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\EventHubASP.Core.dll
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\EventHubASP.Core.pdb
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

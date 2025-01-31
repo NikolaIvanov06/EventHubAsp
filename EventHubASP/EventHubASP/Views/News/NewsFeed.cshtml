@@ -1,0 +1,19 @@
+﻿@model IEnumerable<News>
+
+@if (!Model.Any())
+{
+    <p>No news available for the events you're subscribed to.</p>
+}
+else
+{
+    <ul>
+        @foreach (var news in Model)
+        {
+            <li>
+                <h4>@news.Title</h4>
+                <p>@news.Content</p>
+                <small>Published on: @news.PublishedDate.ToString("g")</small>
+            </li>
+        }
+    </ul>
+}

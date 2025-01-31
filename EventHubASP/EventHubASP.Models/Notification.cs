@@ -1,23 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EventHubASP.Models
+namespace EventHubASP.Models;
+public class Notification
 {
-    public class Notification
-    {
-        [Key]
-        public int NotificationID { get; set; }
-        public int UserID { get; set; }
-        public int NewsID { get; set; }
-        public bool IsRead { get; set; }
+    [Key]
+    public int NotificationID { get; set; }
 
-        // Navigation Properties
-        public User User { get; set; }
-        public News News { get; set; }
-    }
+    [ForeignKey("User")]
+    public Guid UserID { get; set; }
 
+    [ForeignKey("News")]
+    public int NewsID { get; set; }
+
+    [Required]
+    public string Message { get; set; }
+
+    public bool IsRead { get; set; }
+
+    public DateTime Date { get; set; }
+
+    // Navigation Properties
+    public User User { get; set; }
+    public News News { get; set; }
 }

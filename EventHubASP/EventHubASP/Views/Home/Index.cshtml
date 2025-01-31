@@ -1,12 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Http
-@inject IHttpContextAccessor HttpContextAccessor
 
-
-<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
 <link rel="icon" href="~/logo.png" />
-
-
 
 <!-- Hero Section -->
 <div class="hero">
@@ -21,25 +16,32 @@
 <section id="features" class="features">
     <div class="container">
         <div class="row text-center">
-            <div class="col-md-4">
+            <!-- Feature 1 -->
+            <div class="col-md-4 feature-card">
+                <div class="feature-icon">📅</div>
                 <h3>Easy Management</h3>
                 <p>Organize events effortlessly using our powerful tools.</p>
             </div>
-            <div class="col-md-4">
+            <!-- Feature 2 -->
+            <div class="col-md-4 feature-card">
+                <div class="feature-icon">🌍</div>
                 <h3>Wide Reach</h3>
                 <p>Promote your events to a larger audience.</p>
             </div>
-            <div class="col-md-4">
+            <!-- Feature 3 -->
+            <div class="col-md-4 feature-card">
+                <div class="feature-icon">🔒</div>
                 <h3>Secure Platform</h3>
                 <p>Reliable and secure event management solutions.</p>
             </div>
         </div>
     </div>
 </section>
-@if (HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated && HttpContextAccessor.HttpContext.User.IsInRole("User"))
+
+@if (User.IsInRole("User"))
 
 {
-    <section id="become-organizer" class="text-center">
+    <section id="cta" class="cta text-center">
         <div class="container">
             <h2>Want to become an organizer?</h2>
             <p>Join our team of organizers and start creating amazing events. Submit a request to become an organizer and we'll review it promptly.</p>
@@ -48,21 +50,18 @@
     </section>
 }
 
-
-@if (!HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+@if (!User.Identity.IsAuthenticated)
 
 {
-
     <section id="cta" class="cta text-center">
         <div class="container">
             <h2>Get Started Today!</h2>
             <p>Join EventHub and take your events to the next level.</p>
-            <a class="btn btn-primary custom-btn"  asp-area="" asp-controller="Account" asp-action="Register">Sign Up</a>
+            <a class="btn btn-primary custom-btn" asp-area="" asp-controller="Account" asp-action="Register">Sign Up</a>
         </div>
     </section>
-
 }
-
+<script src="~/js/index.js"></script>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/index.js"></script>

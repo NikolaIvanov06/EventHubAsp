@@ -1,6 +1,8 @@
 ﻿using EventHubASP.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace EventHubASP.Controllers
 {
@@ -13,11 +15,10 @@ namespace EventHubASP.Controllers
             _roleChangeRequestService = roleChangeRequestService;
         }
 
-
         [Authorize(Roles = "User")]
         public async Task<IActionResult> RequestOrganizerRole()
         {
-            var userId = int.Parse(User.FindFirst("UserID").Value);
+            var userId = Guid.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value);
 
             var success = await _roleChangeRequestService.CreateRequestAsync(
                 userId,
@@ -37,31 +38,29 @@ namespace EventHubASP.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        // Admin: View all pending role requests
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ViewRoleRequests()
         {
             var requests = await _roleChangeRequestService.GetPendingRequestsAsync();
             return View(requests);
         }
+
         public IActionResult Index()
         {
             return View();
         }
 
-        // Admin: Approve a role change request
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> ApproveRequest(int requestId)
+        public async Task<IActionResult> ApproveRequest(Guid requestId)
         {
             await _roleChangeRequestService.ApproveRequestAsync(requestId);
             return RedirectToAction("ViewRoleRequests");
         }
 
-        // Admin: Deny a role change request
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> DenyRequest(int requestId)
+        public async Task<IActionResult> DenyRequest(Guid requestId)
         {
             await _roleChangeRequestService.DenyRequestAsync(requestId);
             return RedirectToAction("ViewRoleRequests");

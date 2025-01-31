@@ -2,6 +2,10 @@
 using EventHubASP.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace EventHubASP.Controllers
 {
@@ -15,19 +19,40 @@ namespace EventHubASP.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> BrowseEvents()
+        public async Task<IActionResult> BrowseEvents(EventFilterViewModel filter)
         {
             var events = await _eventService.GetAllEventsAsync();
+
+            if (filter.FilterByDate.HasValue)
+            {
+                events = events.Where(e => e.Date.Date == filter.FilterByDate.Value.Date);
+            }
+
+            if (!string.IsNullOrWhiteSpace(filter.SearchQuery))
+            {
+                events = events.Where(e => e.Title.Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase));
+            }
+
+            if (filter.SortByDate)
+            {
+                events = events.OrderByDescending(e => e.Date);
+            }
+
+            if (filter.SortByTitleLength)
+            {
+                events = events.OrderBy(e => e.Title);
+            }
+
+            ViewBag.Filter = filter;
+
             return View(events);
         }
-
-
 
         [Authorize(Roles = "User")]
         [HttpPost]
         public async Task<IActionResult> Subscribe(int eventId)
         {
-            var userId = int.Parse(User.FindFirst("UserID").Value);
+            var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
             if (await _eventService.SubscribeToEventAsync(userId, eventId))
             {
                 TempData["SuccessMessage"] = "Successfully subscribed to the event.";
@@ -43,30 +68,30 @@ namespace EventHubASP.Controllers
         [Authorize(Roles = "Organizer")]
         public async Task<IActionResult> MyEvents()
         {
-            var organizerId = int.Parse(User.FindFirst("UserID").Value);
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return Unauthorized();
+            }
+
+            var organizerId = Guid.Parse(userIdClaim.Value);
             var events = await _eventService.GetEventsByOrganizerAsync(organizerId);
             return View(events);
         }
 
-
         [Authorize(Roles = "User")]
         public async Task<IActionResult> MySubscriptions()
         {
-            var user = User;
-            if (user != null)
-            {
-                var events = await _eventService.GetUserSubscriptionsAsync(int.Parse(User.FindFirst("UserID").Value));
-                return View(events);
-            }
-
-            return View(new List<Event>());
+            var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var events = await _eventService.GetUserSubscriptionsAsync(userId);
+            return View(events);
         }
 
         [Authorize(Roles = "User")]
         [HttpPost]
         public async Task<IActionResult> Unsubscribe(int eventId)
         {
-            var userId = int.Parse(User.FindFirst("UserID").Value);
+            var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
             if (await _eventService.UnsubscribeFromEventAsync(userId, eventId))
             {
                 TempData["SuccessMessage"] = "Successfully unsubscribed from the event.";
@@ -78,8 +103,6 @@ namespace EventHubASP.Controllers
 
             return RedirectToAction("BrowseEvents");
         }
-
-
 
         [HttpPost]
         [Authorize(Roles = "Organizer")]
@@ -101,7 +124,7 @@ namespace EventHubASP.Controllers
                 Date = viewModel.Date,
                 Location = viewModel.Location,
                 ImageUrl = string.IsNullOrWhiteSpace(viewModel.ImageUrl) ? "/images/default-event.jpg" : viewModel.ImageUrl,
-                OrganizerID = int.Parse(User.FindFirst("UserID").Value)
+                OrganizerID = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)
             };
 
             await _eventService.CreateEventAsync(newEvent);
@@ -116,12 +139,10 @@ namespace EventHubASP.Controllers
             return View();
         }
 
-
-
         [Authorize(Roles = "Organizer")]
         public async Task<IActionResult> ManageParticipants(int eventId)
         {
-            var organizerId = int.Parse(User.FindFirst("UserID").Value);
+            var organizerId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
             if (await _eventService.IsOrganizerOfEventAsync(organizerId, eventId))
             {
@@ -131,9 +152,6 @@ namespace EventHubASP.Controllers
 
             return Forbid();
         }
-
-
-
 
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ManageEvents()
@@ -145,7 +163,7 @@ namespace EventHubASP.Controllers
         [Authorize(Roles = "Organizer")]
         public async Task<IActionResult> EditEvent(int eventId)
         {
-            var organizerId = int.Parse(User.FindFirst("UserID").Value);
+            var organizerId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
             var eventToEdit = await _eventService.GetEventByIdAsync(eventId);
             if (eventToEdit == null || eventToEdit.OrganizerID != organizerId)
@@ -164,6 +182,7 @@ namespace EventHubASP.Controllers
 
             return View(viewModel);
         }
+
         [HttpPost]
         [Authorize(Roles = "Organizer")]
         public async Task<IActionResult> EditEvent(int eventId, EventViewModel viewModel)
@@ -180,7 +199,7 @@ namespace EventHubASP.Controllers
             }
 
             Console.WriteLine($"Attempting to update event with ID: {eventId}");
-            var organizerId = int.Parse(User.FindFirst("UserID").Value);
+            var organizerId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
             var updatedEvent = new Event
             {
@@ -205,35 +224,28 @@ namespace EventHubASP.Controllers
             TempData["ErrorMessage"] = "Failed to update event.";
             Console.WriteLine("Failed to update event.");
             return View(viewModel);
-
         }
 
-
-
-
         [HttpPost]
-        [Authorize(Roles = "Organizer")]
+        [Authorize(Roles = "Organizer, Admin")]
         public async Task<IActionResult> DeleteEvent(int eventId)
         {
-            var organizerId = int.Parse(User.FindFirst("UserID").Value);
-
-            if (!await _eventService.IsOrganizerOfEventAsync(organizerId, eventId))
-            {
-                return Forbid();
-            }
-
             if (await _eventService.DeleteEventAsync(eventId))
             {
-                TempData["SuccessMessage"] = "Event deleted successfully.";
+                TempData["SuccessMessage"] = "Successfully deleted the event!";
             }
             else
             {
                 TempData["ErrorMessage"] = "Failed to delete the event.";
             }
-
-            return RedirectToAction("MyEvents");
+            if (User.IsInRole("Admin"))
+            {
+                return RedirectToAction("BrowseEvents");
+            }
+            else
+            {
+                return RedirectToAction("MyEvents");
+            }
         }
-
-
     }
 }

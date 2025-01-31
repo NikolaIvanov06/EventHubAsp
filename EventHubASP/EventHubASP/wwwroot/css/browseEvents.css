@@ -1,47 +1,203 @@
-﻿/* browse-events.css */
+﻿/* General container styling */
 .browse-events-container {
     margin-top: 30px;
 }
 
-.event-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
+/* Filter Section Styling */
+.filter-wrapper {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Filter Toggle Button */
+.filter-toggle-button {
+    background-color: #4e73df; /* Primary color */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded top edges to match the section */
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    outline: none; /* Removes the focus outline */
+}
+
+    /* On hover, set bottom border radiuses to 0 */
+    .filter-toggle-button:hover {
+        border-radius: 25px 25px 0 0; /* Top corners remain rounded */
+    }
+/* Filter Section */
+.filter-section {
+    margin-top: -1px; /* Seamlessly join the button and section */
+    padding: 20px;
+    background-color: #4e73df; /* Match button color */
+    border-radius: 0 0 25px 25px; /* Rounded bottom edges */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
     overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    top: 100%; /* Align below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 300px;
+}
+
+/* Hover Behavior for Button and Section */
+.filter-wrapper:hover .filter-section {
+    max-height: 200px; /* Adjust based on content height */
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+.filter-wrapper:hover .filter-toggle-button {
+    max-height: 200px; /* Adjust based on content height */
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    border-radius: 25px 25px 0 0;
+}
+
+/* Form Styling */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    color: white; /* Ensure text is readable */
+}
+
+    .filter-form .form-group {
+        flex: 1;
+        min-width: 200px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+.apply-filter-button {
+    background-color: #ffffff; /* Contrasts with filter section */
+    color: #4e73df; /* Matches the section/button */
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+    .apply-filter-button:hover {
+        background-color: #375a7f; /* Darker blue */
+        color: white; /* Ensures readability */
+        transform: translateY(-3px);
+    }
+/* Event Card Styling */
+.event-card {
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     .event-card:hover {
         transform: scale(1.05);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
 .event-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.event-card:hover .event-image {
+    opacity: 0.9;
 }
 
 .event-details {
-    padding: 15px;
+    padding: 20px;
+    text-align: left;
 }
 
 .event-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
+    color: #2c3e50;
     margin-bottom: 10px;
 }
 
 .event-description {
-    font-size: 0.9rem;
-    color: #666;
+    font-size: 0.95rem;
+    color: #6c757d;
     margin-bottom: 15px;
     max-height: 60px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.event-buttons .btn {
-    margin-right: 10px;
+.event-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
 }
+
+    .event-buttons .btn {
+        flex: 1;
+        border-radius: 10px;
+        transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    .event-buttons .btn-primary {
+        background-color: #4e73df;
+        color: #fff;
+        border: none;
+    }
+
+        .event-buttons .btn-primary:hover {
+            background-color: #375a7f;
+            transform: translateY(-3px);
+        }
+
+    .event-buttons .btn-danger {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+    }
+
+        .event-buttons .btn-danger:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+        }
+
+/* Search Bar Styling */
+.search-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+    .search-bar input[type="text"] {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        font-size: 1rem;
+        transition: box-shadow 0.3s ease;
+    }
+
+        .search-bar input[type="text"]:focus {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }

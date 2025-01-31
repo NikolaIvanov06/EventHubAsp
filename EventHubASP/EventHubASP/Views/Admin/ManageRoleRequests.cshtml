@@ -16,7 +16,7 @@
         @foreach (var request in Model)
         {
             <tr>
-                <td>@request.User.Username</td>
+                <td>@request.User</td>
                 <td>@request.CurrentRole</td>
                 <td>@request.RequestedRole</td>
                 <td>@request.RequestDate.ToString("g")</td>

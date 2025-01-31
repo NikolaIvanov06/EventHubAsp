@@ -9,9 +9,9 @@ namespace EventHubASP.Core
 {
     public interface IRoleChangeRequestService
     {
-        Task<bool> CreateRequestAsync(int userId, string currentRole, string requestedRole);
-        Task<IEnumerable<RoleChangeRequest>> GetPendingRequestsAsync();
-        Task ApproveRequestAsync(int requestId);
-        Task DenyRequestAsync(int requestId);
+       Task<bool> CreateRequestAsync(Guid userId, string currentRole, string requestedRole);
+       Task<IEnumerable<RoleChangeRequest>> GetPendingRequestsAsync();
+       Task ApproveRequestAsync(Guid requestId);
+       Task DenyRequestAsync(Guid requestId);
     }
 }

@@ -1,29 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace EventHubASP.Models;
-public class User
+namespace EventHubASP.Models
 {
-    [Key]
-    public int UserID { get; set; }
+    public class User : IdentityUser<Guid>
+    {
+        public User()
+        {
+            Registrations = new List<Registration>();
+            Notifications = new List<Notification>();
+        }
 
-    [Required]
-    [StringLength(50)]
-    public string Username { get; set; }
+       
+        public override string UserName { get; set; }
+        public override string Email { get; set; }
 
-    [Required]
-    [EmailAddress]
-    public string Email { get; set; }
-
-    [Required]
-    public string PasswordHash { get; set; }
-
-    [ForeignKey("Role")]
-    public int RoleID { get; set; }
-
-
-    public Role Role { get; set; }
-    public ICollection<Event> Events { get; set; }
-    public ICollection<Registration> Registrations { get; set; }
-    public ICollection<Notification> Notifications { get; set; } = new List<Notification>();
+        public ICollection<Registration> Registrations { get; set; }
+        public ICollection<Notification> Notifications { get; set; }
+    }
 }

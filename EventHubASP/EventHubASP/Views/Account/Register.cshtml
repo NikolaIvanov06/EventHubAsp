@@ -1,33 +1,225 @@
 ﻿@model RegisterViewModel
 
 <link rel="stylesheet" href="~/css/authUI.css" asp-append-version="true" />
+<style>
+    .input-validation-error {
+        border: 2px solid rgba(255, 0, 0, 0.8) !important;
+        background-color: rgba(255, 0, 0, 0.1);
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.4);
+        transition: all 0.2s ease-in-out;
+        border-radius: 5px;
+    }
+
+    .validation-input-valid {
+        border: 2px solid rgba(0, 200, 0, 0.8) !important;
+        background-color: rgba(0, 255, 0, 0.1);
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+        border-radius: 5px;
+    }
+
+    .validation-message {
+        display: none;
+        margin-top: 5px;
+        padding: 10px 15px;
+        color: white;
+        background-color: rgba(255, 0, 0, 0.5);
+        border-radius: 8px;
+        border: 2px solid rgba(255, 0, 0, 0.8);
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        transition: all 0.3s ease-in-out;
+    }
+
+        .validation-message.visible {
+            display: block;
+        }
+
+    .login-link {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+        .login-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            .login-link a:hover {
+                text-decoration: underline;
+            }
+</style>
 <div class="form-page">
     <div class="form-container">
         <h2>Register</h2>
-        <form asp-action="Register" method="post">
-            <div class="form-group">
-                <label asp-for="Username" class="form-label"></label>
+        <form asp-action="Register" method="post" class="mt-3" id="registerForm">
+            <div class="mb-3">
+                <label asp-for="Username" class="form-label">Username</label>
                 <input asp-for="Username" class="form-control" />
-                <span asp-validation-for="Username" class="text-danger"></span>
+                <span asp-validation-for="Username" class="text-danger validation-message"></span>
             </div>
 
-            <div class="form-group">
-                <label asp-for="Email" class="form-label"></label>
-                <input asp-for="Email" class="form-control" type="email" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger validation-message"></span>
             </div>
 
-            <div class="form-group">
-                <label asp-for="Password" class="form-label"></label>
-                <input asp-for="Password" class="form-control" type="password" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger validation-message"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword" class="form-label">Confirm Password</label>
+                <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger validation-message"></span>
             </div>
 
             <button type="submit" class="btn btn-primary">Register</button>
-
-            <div class="link">
-                <a asp-area="" asp-controller="Account" asp-action="Login">Already have an account? Log in</a>
+            <div class="login-link">
+                Already have an account? <a href="/Account/Login">Log in here</a>.
             </div>
         </form>
+        <partial name="_ValidationScriptsPartial"></partial>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('registerForm');
+            const inputs = form.querySelectorAll('.form-control');
+            const usernameInput = form.querySelector('input[name="Username"]');
+            const emailInput = form.querySelector('input[name="Email"]');
+            const passwordInput = form.querySelector('input[name="Password"]');
+            const confirmPasswordInput = form.querySelector('input[name="ConfirmPassword"]');
+
+            inputs.forEach(input => {
+                input.addEventListener('input', function () {
+                    validateInput(input);
+                });
+                input.addEventListener('blur', function () {
+                    if (input === emailInput) {
+                        checkEmailAvailability(input);
+                    }
+                });
+            });
+
+            usernameInput.addEventListener('blur', function () {
+                checkUsernameAvailability(usernameInput);
+            });
+
+            confirmPasswordInput.addEventListener('input', function () {
+                validateConfirmPassword();
+            });
+
+            function validateInput(input) {
+                const validationMessage = input.nextElementSibling;
+
+                if (input.validity.valid) {
+                    input.classList.remove('input-validation-error');
+                    input.classList.add('validation-input-valid');
+                    validationMessage.classList.remove('visible');
+                    validationMessage.textContent = ""; // Clear error message
+                } else {
+                    input.classList.add('input-validation-error');
+                    input.classList.remove('validation-input-valid');
+                    validationMessage.classList.add('visible');
+                    validationMessage.textContent = input.validationMessage || "Invalid input."; // Show validation error
+                }
+            }
+
+            function validateConfirmPassword() {
+                const validationMessage = confirmPasswordInput.nextElementSibling;
+                if (confirmPasswordInput.value === passwordInput.value && confirmPasswordInput.validity.valid) {
+                    confirmPasswordInput.classList.remove('input-validation-error');
+                    confirmPasswordInput.classList.add('validation-input-valid');
+                    validationMessage.classList.remove('visible');
+                    validationMessage.textContent = "";
+                } else {
+                    confirmPasswordInput.classList.add('input-validation-error');
+                    confirmPasswordInput.classList.remove('validation-input-valid');
+                    validationMessage.classList.add('visible');
+                    validationMessage.textContent = "Passwords do not match.";
+                }
+            }
+
+            function checkUsernameAvailability(input) {
+                const validationMessage = input.nextElementSibling;
+
+                fetch(`/Account/CheckUsername?username=${input.value}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.isAvailable) {
+                            input.classList.remove('input-validation-error');
+                            input.classList.add('validation-input-valid');
+                            validationMessage.classList.remove('visible');
+                            validationMessage.textContent = "";
+                        } else {
+                            input.classList.add('input-validation-error');
+                            input.classList.remove('validation-input-valid');
+                            validationMessage.classList.add('visible');
+                            validationMessage.textContent = "Username is already taken.";
+                        }
+                    });
+            }
+
+            function checkEmailAvailability(input) {
+                const validationMessage = input.nextElementSibling;
+
+                fetch(`/Account/CheckEmail?email=${input.value}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.isAvailable) {
+                            input.classList.remove('input-validation-error');
+                            input.classList.add('validation-input-valid');
+                            validationMessage.classList.remove('visible');
+                            validationMessage.textContent = "";
+                        } else {
+                            input.classList.add('input-validation-error');
+                            input.classList.remove('validation-input-valid');
+                            validationMessage.classList.add('visible');
+                            validationMessage.textContent = "There is an existing account with that email.";
+                        }
+                    });
+            }
+
+            form.addEventListener('submit', function (event) {
+                let isValid = true;
+                inputs.forEach(input => {
+                    validateInput(input);
+                    if (!input.validity.valid) {
+                        isValid = false;
+                    }
+                });
+
+                validateConfirmPassword();
+                if (!confirmPasswordInput.validity.valid || confirmPasswordInput.value !== passwordInput.value) {
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                form.classList.add('was-validated');
+            });
+
+            const serverErrors = document.querySelectorAll(".validation-message");
+            serverErrors.forEach(error => {
+                if (error.textContent.trim() !== "") {
+                    error.classList.add("visible");
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("form").validate();
+        });
+    </script>
+}

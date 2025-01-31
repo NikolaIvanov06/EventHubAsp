@@ -2,49 +2,51 @@
 
 <link rel="stylesheet" href="~/css/createEvent.css" asp-append-version="true" />
 
+<div class="hero">
+    <div class="container create-event-container">
+        <h2>Create Event</h2>
+        <form asp-action="CreateEvent" asp-controller="Event" method="post">
+            <!-- Title -->
+            <div class="form-group">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
 
-<div class="container">
-    <h2>Create Event</h2>
-    <form asp-action="CreateEvent" asp-controller="Event" method="post">
-        <!-- Title -->
-        <div class="form-group">
-            <label asp-for="Title" class="form-label"></label>
-            <input asp-for="Title" class="form-control" />
-            <span asp-validation-for="Title" class="text-danger"></span>
-        </div>
+            <!-- Description -->
+            <div class="form-group">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
 
-        <!-- Description -->
-        <div class="form-group">
-            <label asp-for="Description" class="form-label"></label>
-            <textarea asp-for="Description" class="form-control"></textarea>
-            <span asp-validation-for="Description" class="text-danger"></span>
-        </div>
+            <!-- Date -->
+            <div class="form-group">
+                <label asp-for="Date" class="form-label"></label>
+                <input asp-for="Date" class="form-control" type="date" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
 
-        <!-- Date -->
-        <div class="form-group">
-            <label asp-for="Date" class="form-label"></label>
-            <input asp-for="Date" class="form-control" type="date" />
-            <span asp-validation-for="Date" class="text-danger"></span>
-        </div>
+            <!-- Location -->
+            <div class="form-group">
+                <label asp-for="Location" class="form-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
 
-        <!-- Location -->
-        <div class="form-group">
-            <label asp-for="Location" class="form-label"></label>
-            <input asp-for="Location" class="form-control" />
-            <span asp-validation-for="Location" class="text-danger"></span>
-        </div>
+            <!-- Image URL -->
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="form-label"></label>
+                <input asp-for="ImageUrl" class="form-control" type="url" placeholder="Enter an image URL or leave blank for default" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
 
-        <!-- Image URL -->
-        <div class="form-group">
-            <label asp-for="ImageUrl" class="form-label"></label>
-            <input asp-for="ImageUrl" class="form-control" type="url" placeholder="Enter an image URL or leave blank for default" />
-            <span asp-validation-for="ImageUrl" class="text-danger"></span>
-        </div>
-
-        <!-- Submit Button -->
-        <button type="submit" class="btn btn-success">Create Event</button>
-    </form>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-create-event">Create Event</button>
+        </form>
+    </div>
 </div>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

@@ -1,0 +1,56 @@
+﻿/* mySubscriptions.css */
+.my-subscriptions-container {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #f9f9f9; /* Light background for modern feel */
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Floating effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .my-subscriptions-container:hover {
+        transform: translateY(-5px); /* Lift on hover */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+h2 {
+    color: #2c3e50;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.no-subscriptions-message {
+    font-size: 18px;
+    color: #6c757d; /* Muted text */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.table {
+    background-color: #ffffff; /* White background for the table */
+    border-radius: 10px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensures proper rounded border look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the table */
+}
+
+.thead-dark th {
+    background-color: #4e73df; /* Modern blue header */
+    color: #ffffff; /* White text for contrast */
+    font-weight: 600;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1; /* Light hover effect for rows */
+}
+
+.action-button {
+    border-radius: 5px; /* Slightly rounded buttons */
+    padding: 5px 10px; /* Comfortable padding for buttons */
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+    .action-button:hover {
+        transform: translateY(-2px); /* Subtle lift effect */
+        opacity: 0.9; /* Slight opacity change for interaction feedback */
+    }

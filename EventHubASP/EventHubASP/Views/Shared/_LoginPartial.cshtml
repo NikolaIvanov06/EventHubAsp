@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using EventHubASP.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<ul class="navbar-nav ms-auto">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        var user = await UserManager.GetUserAsync(User);
+        var roles = await UserManager.GetRolesAsync(user);
+
+        @if (roles.Contains("User"))
+        {
+            <li class="nav-item">
+                <a asp-controller="News" asp-action="MyFeed">
+                    <img width="25" height="25" style="margin-top: 15px" src="https://img.icons8.com/ios-filled/50/inbox.png" alt="inbox" />
+                    <span id="notificationDot" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">●</span>
+                </a>
+            </li>
+        }
+        <li class="nav-item">
+            <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                <button type="submit" class="btn btn-outline-danger">
+                    <img src="~/profile-picnb.png" style="margin-right: 8px;" alt="Logo" width="30" height="30">Logout
+                </button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="btn btn-outline-primary me-1" asp-area="" asp-controller="Account" asp-action="Login">
+                <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="btn btn-primary" asp-area="" asp-controller="Account" asp-action="Register">
+                <i class="bi bi-person-plus"></i> Register
+            </a>
+        </li>
+    }
+</ul>

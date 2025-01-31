@@ -23,11 +23,12 @@ public class Event
     public string Location { get; set; }
 
     [ForeignKey("Organizer")]
-    public int OrganizerID { get; set; }
+    public Guid OrganizerID { get; set; }
+
+    public User Organizer { get; set; } 
 
     public string ImageUrl { get; set; }
-    // Navigation Properties
-    public User Organizer { get; set; }
+
     public ICollection<Registration> Registrations { get; set; }
     public ICollection<News> News { get; set; } = new List<News>();
 }

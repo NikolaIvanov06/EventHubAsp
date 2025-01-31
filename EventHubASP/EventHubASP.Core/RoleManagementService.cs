@@ -1,10 +1,10 @@
 ﻿using EventHubASP.DataAccess;
 using EventHubASP.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace EventHubASP.Core
@@ -12,10 +12,14 @@ namespace EventHubASP.Core
     public class RoleManagementService
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole<Guid>> _roleManager;
 
-        public RoleManagementService(ApplicationDbContext context)
+        public RoleManagementService(ApplicationDbContext context, UserManager<User> userManager, RoleManager<IdentityRole<Guid>> roleManager)
         {
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         public async Task<List<RoleChangeRequest>> GetPendingRequestsAsync()
@@ -26,15 +30,18 @@ namespace EventHubASP.Core
                 .ToListAsync();
         }
 
-        public async Task ApproveRequestAsync(int requestId)
+        public async Task ApproveRequestAsync(Guid requestId)
         {
             var request = await _context.RoleChangeRequests.FindAsync(requestId);
             if (request != null)
             {
-                var user = await _context.Users.FindAsync(request.UserID);
+                var user = await _userManager.FindByIdAsync(request.UserID.ToString());
                 if (user != null)
                 {
-                    user.RoleID = _context.Roles.FirstOrDefault(r => r.RoleName == request.RequestedRole).RoleID;
+                    var currentRoles = await _userManager.GetRolesAsync(user);
+                    await _userManager.RemoveFromRolesAsync(user, currentRoles);
+                    await _userManager.AddToRoleAsync(user, request.RequestedRole);
+
                     request.IsApproved = true;
                     _context.RoleChangeRequests.Remove(request);
 
@@ -43,7 +50,7 @@ namespace EventHubASP.Core
             }
         }
 
-        public async Task DeclineRequestAsync(int requestId)
+        public async Task DeclineRequestAsync(Guid requestId)
         {
             var request = await _context.RoleChangeRequests.FindAsync(requestId);
             if (request != null)
@@ -53,15 +60,15 @@ namespace EventHubASP.Core
             }
         }
 
-        public async Task SubmitRoleChangeRequestAsync(int userId, string requestedRole)
+        public async Task SubmitRoleChangeRequestAsync(Guid userId, string requestedRole)
         {
-            var user = await _context.Users.FindAsync(userId);
-            if (user != null && user.Role.RoleName != requestedRole)
+            var user = await _userManager.FindByIdAsync(userId.ToString());
+            if (user != null && !await _userManager.IsInRoleAsync(user, requestedRole))
             {
                 var request = new RoleChangeRequest
                 {
                     UserID = userId,
-                    CurrentRole = user.Role.RoleName,
+                    CurrentRole = (await _userManager.GetRolesAsync(user)).FirstOrDefault(),
                     RequestedRole = requestedRole,
                     RequestDate = DateTime.Now,
                     IsApproved = false
@@ -72,5 +79,4 @@ namespace EventHubASP.Core
             }
         }
     }
-
 }

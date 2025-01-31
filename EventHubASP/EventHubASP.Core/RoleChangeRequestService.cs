@@ -1,30 +1,41 @@
 ﻿using EventHubASP.DataAccess;
 using EventHubASP.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace EventHubASP.Core
 {
     public class RoleChangeRequestService : IRoleChangeRequestService
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole<Guid>> _roleManager;
 
-        public RoleChangeRequestService(ApplicationDbContext context)
+        public RoleChangeRequestService(ApplicationDbContext context, UserManager<User> userManager, RoleManager<IdentityRole<Guid>> roleManager)
         {
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
-        public async Task<bool> CreateRequestAsync(int userId, string currentRole, string requestedRole)
+        public async Task<bool> CreateRequestAsync(Guid userId, string currentRole, string requestedRole)
         {
             if (await _context.RoleChangeRequests.AnyAsync(r => r.UserID == userId && !r.IsApproved))
             {
-                return false; // Prevent duplicate requests
+                return false; 
             }
 
             var request = new RoleChangeRequest
             {
                 UserID = userId,
                 CurrentRole = currentRole,
-                RequestedRole = requestedRole
+                RequestedRole = requestedRole,
+                RequestDate = DateTime.Now,
+                IsApproved = false
             };
 
             _context.RoleChangeRequests.Add(request);
@@ -40,29 +51,35 @@ namespace EventHubASP.Core
                 .ToListAsync();
         }
 
-        public async Task ApproveRequestAsync(int requestId)
+        public async Task ApproveRequestAsync(Guid requestId)
         {
-            var request = await _context.RoleChangeRequests.FindAsync(requestId);
+            var request = await _context.RoleChangeRequests.FirstOrDefaultAsync(r => r.RequestID == requestId);
             if (request != null)
             {
-                var user = await _context.Users.FindAsync(request.UserID);
+                var user = await _userManager.FindByIdAsync(request.UserID.ToString());
                 if (user != null)
                 {
-                    user.RoleID = 2; // Organizer Role
+                    var currentRoles = await _userManager.GetRolesAsync(user);
+                    await _userManager.RemoveFromRolesAsync(user, currentRoles);
+                    await _userManager.AddToRoleAsync(user, request.RequestedRole);
+
+                    request.IsApproved = true;
                     _context.RoleChangeRequests.Remove(request);
                     await _context.SaveChangesAsync();
                 }
             }
         }
 
-        public async Task DenyRequestAsync(int requestId)
+        public async Task DenyRequestAsync(Guid requestId)
         {
-            var request = await _context.RoleChangeRequests.FindAsync(requestId);
+            var request = await _context.RoleChangeRequests.FirstOrDefaultAsync(r => r.RequestID == requestId);
             if (request != null)
             {
                 _context.RoleChangeRequests.Remove(request);
                 await _context.SaveChangesAsync();
             }
         }
+
+
     }
 }
