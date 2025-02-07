@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace EventHubASP.Core
@@ -12,27 +11,17 @@ namespace EventHubASP.Core
     public class NewsService : INewsService
     {
         private readonly ApplicationDbContext _context;
+        private readonly INotificationService _notificationService;
 
-        public NewsService(ApplicationDbContext context)
+        public NewsService(ApplicationDbContext context, INotificationService notificationService)
         {
             _context = context;
+            _notificationService = notificationService;
         }
 
-   //    public async Task<List<News>> GetNewsForUserAsync(int userId)
-   //    {
-   //        var subscribedEventIds = await _context.Registrations
-   //            .Where(r => r.UserID == userId)
-   //            .Select(r => r.EventID)
-   //            .ToListAsync();
-   //
-   //        return await _context.News
-   //            .Where(n => subscribedEventIds.Contains(n.EventID))
-   //            .OrderByDescending(n => n.PublishedDate)
-   //            .ToListAsync();
-   //    }
-   //
-        public async Task CreateNewsAsync(News news)
+        public async Task<News> CreateNewsAsync(News news)
         {
+            news.PublishedDate = DateTime.UtcNow;
             _context.News.Add(news);
             await _context.SaveChangesAsync();
 
@@ -41,21 +30,27 @@ namespace EventHubASP.Core
                 .Select(r => r.UserID)
                 .ToListAsync();
 
-            foreach (var userId in subscribers)
-            {
-                var notification = new Notification
-                {
-                    UserID = userId,
-                    Message = $"News '{news.Title}' has been published for an event you're subscribed to.",
-                    Date = DateTime.UtcNow,
-                    IsRead = false
-                };
-                _context.Notifications.Add(notification);
-            }
-
-            await _context.SaveChangesAsync();
+            return news;
         }
 
-    }
+        public async Task<List<News>> GetNewsForUserAsync(Guid userId)
+        {
+            var eventIds = await _context.Registrations
+                .Where(r => r.UserID == userId)
+                .Select(r => r.EventID)
+                .ToListAsync();
 
+            return await _context.News
+                .Where(n => eventIds.Contains(n.EventID))
+                .OrderByDescending(n => n.PublishedDate)
+                .ToListAsync();
+        }
+
+        public async Task<List<Event>> GetEventsByOrganizerAsync(Guid organizerId)
+        {
+            return await _context.Events
+                .Where(e => e.OrganizerID == organizerId)
+                .ToListAsync();
+        }
+    }
 }

@@ -1,4 +1,5 @@
-﻿using EventHubASP.Models;
+﻿using EventHubASP.DataAccess;
+using EventHubASP.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,11 @@ namespace EventHubASP.Core
 {
     public interface INotificationService
     {
-       // public Task<List<Notification>> GetNotificationsForUserAsync(int userId);
-       // public Task MarkAsReadAsync(int notificationId);
-       // public Task CreateNotificationAsync(Notification notification);
-       // public Task CreateNotificationsForEventAsync(int eventId,  string content);
+        Task<IEnumerable<User>> GetParticipantsByEventIdAsync(int eventId);
+        Task CreateNotificationAsync(Notification notification);
+        Task<IEnumerable<Notification>> GetNotificationsForUserAsync(Guid userId);
+        Task<bool> MarkNotificationAsReadAsync(int notificationId, Guid userId);
     }
+
+
 }

@@ -1,4 +1,5 @@
 using EventHubASP.Core;
+using EventHubASP.Core.Hubs;
 using EventHubASP.DataAccess;
 using EventHubASP.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -13,6 +14,7 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<INewsService, NewsService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddSignalR();
 
 builder.Services.AddScoped<IRoleChangeRequestService, RoleChangeRequestService>();
 builder.Services.AddScoped<RoleManagementService>();
@@ -65,5 +67,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapHub<NotificationHub>("/notificationHub");
 
 app.Run();

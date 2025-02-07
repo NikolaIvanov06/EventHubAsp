@@ -1,73 +1,52 @@
-﻿using EventHubASP.DataAccess;
+﻿using EventHubASP.Core.Hubs;
+using EventHubASP.Core;
+using EventHubASP.DataAccess;
 using EventHubASP.Models;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EventHubASP.Core
+public class NotificationService : INotificationService
 {
-    public class NotificationService : INotificationService
+    private readonly ApplicationDbContext _context;
+
+    public NotificationService(ApplicationDbContext context)
     {
-        private readonly ApplicationDbContext _context;
-
-        public NotificationService(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-
-     //  public async Task<List<Notification>> GetNotificationsForUserAsync(int userId)
-     //  {
-     //      return await _context.Notifications
-     //          .Where(n => n.UserID == userId && !n.IsRead)
-     //          .OrderByDescending(n => n.Date)
-     //          .ToListAsync();
-     //  }
-     //
-        public async Task CreateNotificationsForEventAsync(int eventId,  string content)
-        {
-            var subscribers = await _context.Registrations
-                .Where(r => r.EventID == eventId)
-                .Select(r => r.UserID)
-                .ToListAsync();
-
-            foreach (var userId in subscribers)
-            {
-                var notification = new Notification
-                {
-                    UserID = userId,
-                    Message = content,
-                    Date = DateTime.UtcNow,
-                    IsRead = false
-                };
-                _context.Notifications.Add(notification);
-            }
-
-            await _context.SaveChangesAsync();
-        }
-
-
-
-        public async Task MarkAsReadAsync(int notificationId)
-        {
-            var notification = _context.Notifications
-                .Where(n => notificationId == n.NotificationID ).First();
-
-
-                notification.IsRead = true;
-            
-
-            await _context.SaveChangesAsync();
-        }
-
-
-        public async Task CreateNotificationAsync(Notification notification)
-        {
-            _context.Notifications.Add(notification);
-            await _context.SaveChangesAsync();
-        }
+        _context = context;
     }
 
+    public async Task<IEnumerable<User>> GetParticipantsByEventIdAsync(int eventId)
+    {
+        return await _context.Registrations
+            .Where(r => r.EventID == eventId)
+            .Select(r => r.User)
+            .ToListAsync();
+    }
+
+    public async Task CreateNotificationAsync(Notification notification)
+    {
+        _context.Notifications.Add(notification);
+        await _context.SaveChangesAsync();
+    }
+    public async Task<IEnumerable<Notification>> GetNotificationsForUserAsync(Guid userId)
+    {
+        return await _context.Notifications
+            .Where(n => n.UserID == userId)
+            .ToListAsync();
+    }
+
+    public async Task<bool> MarkNotificationAsReadAsync(int notificationId, Guid userId)
+    {
+        var notification = await _context.Notifications
+            .FirstOrDefaultAsync(n => n.NotificationID == notificationId && n.UserID == userId);
+
+        if (notification != null)
+        {
+            notification.IsRead = true;
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        return false;
+    }
 }
+

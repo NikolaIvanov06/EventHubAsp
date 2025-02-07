@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using EventHubASP.Models.CircDebugInterfaces;
+using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -12,7 +13,6 @@ namespace EventHubASP.Models
             Notifications = new List<Notification>();
         }
 
-       
         public override string UserName { get; set; }
         public override string Email { get; set; }
 

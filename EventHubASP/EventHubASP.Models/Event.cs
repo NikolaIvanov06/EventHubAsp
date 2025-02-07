@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using EventHubASP.Models.CircDebugInterfaces;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EventHubASP.Models;
@@ -25,10 +26,11 @@ public class Event
     [ForeignKey("Organizer")]
     public Guid OrganizerID { get; set; }
 
-    public User Organizer { get; set; } 
+    public User Organizer { get; set; }
 
     public string ImageUrl { get; set; }
 
     public ICollection<Registration> Registrations { get; set; }
     public ICollection<News> News { get; set; } = new List<News>();
 }
+

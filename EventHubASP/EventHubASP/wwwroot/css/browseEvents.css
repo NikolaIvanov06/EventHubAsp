@@ -3,109 +3,122 @@
     margin-top: 30px;
 }
 
-/* Filter Section Styling */
-.filter-wrapper {
+/* General container styling */
+.filter-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
     margin-bottom: 20px;
+}
+
+/* Filter Wrapper */
+.filter-wrapper {
     position: relative;
-    z-index: 10;
+    display: inline-block;
 }
 
 /* Filter Toggle Button */
 .filter-toggle-button {
-    background-color: #4e73df; /* Primary color */
+    background-color: #4e73df;
     color: white;
     border: none;
-    border-radius: 25px; /* Rounded top edges to match the section */
+    border-radius: 25px;
     padding: 10px 20px;
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
     transition: all 0.3s ease;
     cursor: pointer;
-    position: relative;
-    width: 200px;
-    margin: 0 auto;
-    outline: none; /* Removes the focus outline */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    outline: none;
 }
 
-    /* On hover, set bottom border radiuses to 0 */
-    .filter-toggle-button:hover {
-        border-radius: 25px 25px 0 0; /* Top corners remain rounded */
+    .filter-toggle-button img {
+        vertical-align: middle;
     }
-/* Filter Section */
+
+    .filter-toggle-button.hover {
+        border-radius: 25px 25px 0 0;
+
+    }
+/* Filter Section Styling */
 .filter-section {
-    margin-top: -1px; /* Seamlessly join the button and section */
-    padding: 20px;
-    background-color: #4e73df; /* Match button color */
-    border-radius: 0 0 25px 25px; /* Rounded bottom edges */
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #4e73df;
+    border-radius: 0 0 25px 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    overflow: hidden;
-    max-height: 0;
+    padding: 20px;
+    width: 300px;
+    z-index: 10;
+    transition: opacity 0.3s ease-in-out;
     opacity: 0;
-    visibility: hidden;
-    position: relative;
-    top: 100%; /* Align below the button */
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 300px;
 }
 
-/* Hover Behavior for Button and Section */
-.filter-wrapper:hover .filter-section {
-    max-height: 200px; /* Adjust based on content height */
+/* Show filter section when active */
+.filter-wrapper.active .filter-section {
+    display: block;
     opacity: 1;
-    visibility: visible;
-    z-index: 10;
 }
-
-.filter-wrapper:hover .filter-toggle-button {
-    max-height: 200px; /* Adjust based on content height */
-    opacity: 1;
-    visibility: visible;
-    z-index: 10;
-    border-radius: 25px 25px 0 0;
-}
+/* Filter Section Styling *
 
 /* Form Styling */
 .filter-form {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-    justify-content: space-between;
-    color: white; /* Ensure text is readable */
+    flex-direction: column;
+    gap: 15px;
+    color: white;
 }
 
     .filter-form .form-group {
-        flex: 1;
-        min-width: 200px;
         display: flex;
         align-items: center;
         gap: 10px;
     }
 
 .apply-filter-button {
-    background-color: #ffffff; /* Contrasts with filter section */
-    color: #4e73df; /* Matches the section/button */
+    background-color: #ffffff;
+    color: #4e73df;
     border: none;
     border-radius: 15px;
     padding: 10px 20px;
     font-weight: bold;
-    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
     cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
     .apply-filter-button:hover {
-        background-color: #375a7f; /* Darker blue */
-        color: white; /* Ensures readability */
+        background-color: #375a7f;
+        color: white;
         transform: translateY(-3px);
     }
-/* Event Card Styling */
+
+
+.search-bar input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+    .search-bar input:focus {
+        box-shadow: 0 0 8px rgba(78, 115, 223, 0.5);
+        outline: none;
+    }
+
 .event-card {
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px !important; /* Ensures spacing is consistent */
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -179,25 +192,4 @@
         .event-buttons .btn-danger:hover {
             background-color: #c0392b;
             transform: translateY(-3px);
-        }
-
-/* Search Bar Styling */
-.search-bar {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-}
-
-    .search-bar input[type="text"] {
-        width: 300px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 25px;
-        font-size: 1rem;
-        transition: box-shadow 0.3s ease;
-    }
-
-        .search-bar input[type="text"]:focus {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            outline: none;
         }

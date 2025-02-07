@@ -1,10 +1,20 @@
-﻿namespace EventHubASP.Models
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace EventHubASP.Models
 {
     public class NewsViewModel
     {
-        public int Id { get; set; }
+        [Required]
         public string Title { get; set; }
+
+        [Required]
         public string Content { get; set; }
-        public DateTime PublishedDate { get; set; }
+
+        [Required]
+        public int EventID { get; set; }
+
+        public List<SelectListItem> AvailableEvents { get; set; }
     }
 }

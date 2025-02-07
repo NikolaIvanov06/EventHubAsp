@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace EventHubASP.Core
 {
-    public interface INewsService
-    {
-       // public Task<List<News>> GetNewsForUserAsync(int userId);
-       // public Task CreateNewsAsync(News news);
-    }
+
+        public interface INewsService
+        {
+            Task<News> CreateNewsAsync(News news);
+            Task<List<News>> GetNewsForUserAsync(Guid userId);
+        Task<List<Event>> GetEventsByOrganizerAsync(Guid organizerId);
+
+
+        }
+    
 }
