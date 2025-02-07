@@ -95,8 +95,8 @@
                         </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
-                            var currentUser = await UserManager.GetUserAsync(User);
-                            var userRoles = await UserManager.GetRolesAsync(currentUser);
+                            var user = await UserManager.GetUserAsync(User);
+                            var userRoles = await UserManager.GetRolesAsync(user);
 
                             if (userRoles.Contains("Admin"))
                             {
@@ -150,6 +150,8 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
+    <script src="~/js/notifications.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
 </body>
 </html>

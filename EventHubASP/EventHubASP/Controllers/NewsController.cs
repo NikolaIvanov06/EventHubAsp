@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.SignalR;
 using EventHubASP.Core;
 using EventHubASP.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EventHubASP.Core.Hubs;
@@ -70,8 +69,17 @@ namespace EventHubASP.Controllers
                         Date = DateTime.UtcNow
                     };
                     await _notificationService.CreateNotificationAsync(notification);
-                    await _hubContext.Clients.User(participant.Id.ToString()).SendAsync("ReceiveNotification", notification);
+                    try
+                    {
+                        await _hubContext.Clients.User(participant.Id.ToString()).SendAsync("ReceiveNotification", notification.Message);
+                        await _hubContext.Clients.All.SendAsync("ReceiveNews", news);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error sending notification/news: {ex}");
+                    }
                 }
+
 
                 TempData["SuccessMessage"] = "Published!";
                 return RedirectToAction("Index", "Home");

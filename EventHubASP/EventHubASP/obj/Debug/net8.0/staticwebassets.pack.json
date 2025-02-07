@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets\\css\\myFeed.AndCreate.css"
     },
     {
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\myFeed.css",
+      "PackagePath": "staticwebassets\\css\\myFeed.css"
+    },
+    {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\mySubscriptions.css",
       "PackagePath": "staticwebassets\\css\\mySubscriptions.css"
     },
@@ -73,8 +77,8 @@
       "PackagePath": "staticwebassets\\js\\index.js"
     },
     {
-      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\notification.js",
-      "PackagePath": "staticwebassets\\js\\notification.js"
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\notifications.js",
+      "PackagePath": "staticwebassets\\js\\notifications.js"
     },
     {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\signalr.js",

@@ -1,5 +1,6 @@
 ﻿using EventHubASP.Core;
 using EventHubASP.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,6 +24,18 @@ public class AccountController : Controller
     public IActionResult Register()
     {
         return View();
+    }
+
+    public async Task<IActionResult> ClearCookies()
+    {
+        await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
+
+        foreach (var cookie in Request.Cookies.Keys)
+        {
+            Response.Cookies.Delete(cookie);
+        }
+
+        return RedirectToAction("ContactUs", "Home");
     }
 
     [HttpPost]

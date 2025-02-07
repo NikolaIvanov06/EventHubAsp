@@ -49,13 +49,13 @@ namespace EventHubASP.DataAccess
                 .HasOne(n => n.News)
                 .WithMany()
                 .HasForeignKey(n => n.NewsID)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<News>()
                 .HasOne(n => n.Event)
                 .WithMany(e => e.News)
                 .HasForeignKey(n => n.EventID)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<News>()
                 .HasOne(n => n.Organizer)

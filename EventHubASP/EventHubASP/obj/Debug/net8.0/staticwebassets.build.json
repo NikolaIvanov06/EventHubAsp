@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XZ5QyrleOnuJy7eSKkLQL8hmJ0zQBWsjyF84ptJt6eo=",
+  "Hash": "hEuCdwUK4skkr+7VTGAfrstW16oc3tgSxfbpIF44R4g=",
   "Source": "EventHubASP",
   "BasePath": "_content/EventHubASP",
   "Mode": "Default",
@@ -245,6 +245,25 @@
       "OriginalItemSpec": "wwwroot\\css\\myFeed.AndCreate.css"
     },
     {
+      "Identity": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\myFeed.css",
+      "SourceId": "EventHubASP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\",
+      "BasePath": "_content/EventHubASP",
+      "RelativePath": "css/myFeed.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\myFeed.css"
+    },
+    {
       "Identity": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\mySubscriptions.css",
       "SourceId": "EventHubASP",
       "SourceType": "Discovered",
@@ -378,12 +397,12 @@
       "OriginalItemSpec": "wwwroot\\js\\index.js"
     },
     {
-      "Identity": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\notification.js",
+      "Identity": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\notifications.js",
       "SourceId": "EventHubASP",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\",
       "BasePath": "_content/EventHubASP",
-      "RelativePath": "js/notification.js",
+      "RelativePath": "js/notifications.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -394,7 +413,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\notification.js"
+      "OriginalItemSpec": "wwwroot\\js\\notifications.js"
     },
     {
       "Identity": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\signalr.js",

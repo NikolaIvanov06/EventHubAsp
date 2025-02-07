@@ -1,45 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EventHubASP.Core;
 using EventHubASP.Models;
-using EventHubASP.Core;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace EventHubASP.Controllers
 {
-    [Authorize]
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
+    [Authorize]
     public class NotificationController : ControllerBase
     {
         private readonly INotificationService _notificationService;
-        private readonly UserManager<User> _userManager;
 
-        public NotificationController(INotificationService notificationService, UserManager<User> userManager)
+        public NotificationController(INotificationService notificationService)
         {
             _notificationService = notificationService;
-            _userManager = userManager;
         }
 
-        [HttpGet("user-notifications")]
-        public async Task<IActionResult> GetUserNotifications()
+        [HttpGet("unread-count")]
+        public async Task<IActionResult> GetUnreadNotificationCount()
         {
-            var userId = Guid.Parse(_userManager.GetUserId(User));
+            var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             var notifications = await _notificationService.GetNotificationsForUserAsync(userId);
-            return Ok(notifications);
+            return Ok(new { count = notifications.Count });
         }
 
-        [HttpPost("mark-as-read/{notificationId}")]
-        public async Task<IActionResult> MarkAsRead(int notificationId)
+        [HttpPost("mark-read")]
+        public async Task<IActionResult> MarkNotificationsAsRead()
         {
-            var userId = Guid.Parse(_userManager.GetUserId(User));
-            var result = await _notificationService.MarkNotificationAsReadAsync(notificationId, userId);
-            if (result)
-            {
-                return Ok();
-            }
-            return BadRequest("Failed to mark notification as read.");
+            var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            await _notificationService.MarkAsReadAsync(userId);
+            return Ok();
         }
     }
 }

@@ -10,9 +10,13 @@ namespace EventHubASP.Core.Hubs
 {
     public class NotificationHub: Hub
     {
-        public async Task SendNotification(string userId, Notification notification)
+        public async Task SendNotification(string userId, string message)
         {
-            await Clients.User(userId).SendAsync("ReceiveNotification", notification);
+            await Clients.User(userId).SendAsync("ReceiveNotification", message);
+        }
+        public async Task BroadcastNews(News news)
+        {
+            await Clients.All.SendAsync("ReceiveNews", news);
         }
     }
 }

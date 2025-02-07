@@ -30,6 +30,18 @@ namespace EventHubASP.Core
                 .Select(r => r.UserID)
                 .ToListAsync();
 
+            foreach (var userId in subscribers)
+            {
+                await _notificationService.CreateNotificationAsync(new Notification
+                {
+                    UserID = userId,
+                    NewsID = news.NewsID,
+                    Message = $"New update for event {news.EventID}: {news.Title}",
+                    IsRead = false,
+                    Date = DateTime.UtcNow
+                });
+            }
+
             return news;
         }
 

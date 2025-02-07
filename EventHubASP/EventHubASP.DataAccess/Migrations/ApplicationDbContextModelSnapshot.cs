@@ -251,19 +251,19 @@ namespace EventHubASP.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("51f1b288-031e-4736-8d37-a24a83a074fc"),
+                            Id = new Guid("a5d3d8f0-805f-4d3e-b8a8-9860bc32128d"),
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = new Guid("e36a976a-1f53-4e3d-b6c5-d4773c8456d3"),
+                            Id = new Guid("7c37a28a-99b4-4182-8c16-3caeb1e199a8"),
                             Name = "Organizer",
                             NormalizedName = "ORGANIZER"
                         },
                         new
                         {
-                            Id = new Guid("c77cc13a-2e87-4187-a95c-fd1736a459b9"),
+                            Id = new Guid("8524757c-3c51-4c72-bb9d-7266be080c59"),
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -422,7 +422,7 @@ namespace EventHubASP.DataAccess.Migrations
                     b.HasOne("News", "News")
                         .WithMany()
                         .HasForeignKey("NewsID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EventHubASP.Models.User", "User")
@@ -522,7 +522,7 @@ namespace EventHubASP.DataAccess.Migrations
                     b.HasOne("EventHubASP.Models.Event", "Event")
                         .WithMany("News")
                         .HasForeignKey("EventID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EventHubASP.Models.User", "Organizer")

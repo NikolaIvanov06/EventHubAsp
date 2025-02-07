@@ -3,16 +3,100 @@
   "WorkspaceRootPath": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F44B015-AC0D-43BF-BED4-50BB6314CA70}|EventHubASP.DataAccess\\EventHubASP.DataAccess.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.dataaccess\\migrations\\20250207105045_initialmig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F44B015-AC0D-43BF-BED4-50BB6314CA70}|EventHubASP.DataAccess\\EventHubASP.DataAccess.csproj|solutionrelative:eventhubasp.dataaccess\\migrations\\20250207105045_initialmig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F44B015-AC0D-43BF-BED4-50BB6314CA70}|EventHubASP.DataAccess\\EventHubASP.DataAccess.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.dataaccess\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F44B015-AC0D-43BF-BED4-50BB6314CA70}|EventHubASP.DataAccess\\EventHubASP.DataAccess.csproj|solutionrelative:eventhubasp.dataaccess\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|solutionrelative:eventhubasp.models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|solutionrelative:eventhubasp.models\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\wwwroot\\js\\notifications.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\wwwroot\\js\\notifications.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\wwwroot\\css\\myfeed.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\wwwroot\\css\\myfeed.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\views\\news\\myfeed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\views\\news\\myfeed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\wwwroot\\css\\browseevents.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\wwwroot\\css\\browseevents.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.core\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|solutionrelative:eventhubasp.core\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.core\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|solutionrelative:eventhubasp.core\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.core\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|solutionrelative:eventhubasp.core\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.core\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|solutionrelative:eventhubasp.core\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.core\\inewsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|solutionrelative:eventhubasp.core\\inewsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\models\\newsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\models\\newsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\circdebuginterfaces\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|solutionrelative:eventhubasp.models\\circdebuginterfaces\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\eventhubasp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -30,28 +114,12 @@
       "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\wwwroot\\js\\signalr.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\wwwroot\\js\\notification.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\wwwroot\\js\\notification.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\wwwroot\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\wwwroot\\js\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\models\\newscreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\models\\newscreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\models\\newsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\models\\newsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\views\\news\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -60,26 +128,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\views\\event\\browseevents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\views\\event\\browseevents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.core\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|solutionrelative:eventhubasp.core\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.core\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|solutionrelative:eventhubasp.core\\hubs\\notificationhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.core\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|solutionrelative:eventhubasp.core\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.core\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|solutionrelative:eventhubasp.core\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,22 +146,6 @@
       "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F44B015-AC0D-43BF-BED4-50BB6314CA70}|EventHubASP.DataAccess\\EventHubASP.DataAccess.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.dataaccess\\migrations\\20250206083111_initialmig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F44B015-AC0D-43BF-BED4-50BB6314CA70}|EventHubASP.DataAccess\\EventHubASP.DataAccess.csproj|solutionrelative:eventhubasp.dataaccess\\migrations\\20250206083111_initialmig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F44B015-AC0D-43BF-BED4-50BB6314CA70}|EventHubASP.DataAccess\\EventHubASP.DataAccess.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.dataaccess\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F44B015-AC0D-43BF-BED4-50BB6314CA70}|EventHubASP.DataAccess\\EventHubASP.DataAccess.csproj|solutionrelative:eventhubasp.dataaccess\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|solutionrelative:eventhubasp.models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\circdebuginterfaces\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|solutionrelative:eventhubasp.models\\circdebuginterfaces\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\circdebuginterfaces\\ievent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|solutionrelative:eventhubasp.models\\circdebuginterfaces\\ievent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -122,24 +154,8 @@
       "RelativeMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|solutionrelative:eventhubasp.models\\eventhubasp.models.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|solutionrelative:eventhubasp.models\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\wwwroot\\css\\browseevents.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\wwwroot\\css\\browseevents.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\wwwroot\\css\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\views\\news\\myfeed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\views\\news\\myfeed.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\wwwroot\\css\\myfeed.andcreate.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -148,10 +164,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp\\views\\notification\\notification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{59CA1886-4CA6-4332-AA3D-37D16E056B7E}|EventHubASP\\EventHubASP.csproj|solutionrelative:eventhubasp\\views\\notification\\notification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.core\\inewsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|solutionrelative:eventhubasp.core\\inewsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{993AB70E-F514-40E5-AC49-A5BC66C66541}|EventHubASP.Core\\EventHubASP.Core.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.core\\eventhubasp.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -165,442 +177,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "EventHubASP\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "EventHubASP\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-07T06:37:34.203Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "site.js",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\js\\site.js",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "EventHubASP\\wwwroot\\js\\site.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-02-07T06:08:51.223Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "NewsController.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\NewsController.cs",
-              "RelativeDocumentMoniker": "EventHubASP\\Controllers\\NewsController.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\NewsController.cs",
-              "RelativeToolTip": "EventHubASP\\Controllers\\NewsController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAADgv0gAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:45:58.398Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "EventHubASP\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "EventHubASP\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAAAJQAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAywGIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-30T17:24:00.128Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_LoginPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeDocumentMoniker": "EventHubASP\\Views\\Shared\\_LoginPartial.cshtml",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Shared\\_LoginPartial.cshtml",
-              "RelativeToolTip": "EventHubASP\\Views\\Shared\\_LoginPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-31T07:04:31.342Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EventHubASP.csproj",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\EventHubASP.csproj",
-              "RelativeDocumentMoniker": "EventHubASP\\EventHubASP.csproj",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\EventHubASP.csproj",
-              "RelativeToolTip": "EventHubASP\\EventHubASP.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-31T07:59:27.343Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Monitor.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\AppData\\Local\\Temp\\.vsdbgsrc\\1ca169b5f8096b3fd01bc738c77225099d363dea7bb508bd774b256157500bca\\Monitor.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\1ca169b5f8096b3fd01bc738c77225099d363dea7bb508bd774b256157500bca\\Monitor.cs",
-              "ToolTip": "C:\\Users\\Fenix\\AppData\\Local\\Temp\\.vsdbgsrc\\1ca169b5f8096b3fd01bc738c77225099d363dea7bb508bd774b256157500bca\\Monitor.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\1ca169b5f8096b3fd01bc738c77225099d363dea7bb508bd774b256157500bca\\Monitor.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAA1wFcAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T06:26:38.029Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "notification.js",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\notification.js",
-              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\js\\notification.js",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\notification.js",
-              "RelativeToolTip": "EventHubASP\\wwwroot\\js\\notification.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-01-31T06:58:44.667Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "NewsViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Models\\NewsViewModel.cs",
-              "RelativeDocumentMoniker": "EventHubASP\\Models\\NewsViewModel.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Models\\NewsViewModel.cs",
-              "RelativeToolTip": "EventHubASP\\Models\\NewsViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T07:09:06.902Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "index.js",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\index.js",
-              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\js\\index.js",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\index.js",
-              "RelativeToolTip": "EventHubASP\\wwwroot\\js\\index.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-01-30T09:11:50.415Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "signalr.js",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\signalr.js",
-              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\js\\signalr.js",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\signalr.js",
-              "RelativeToolTip": "EventHubASP\\wwwroot\\js\\signalr.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-01-31T06:58:14.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "NotificationController.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\NotificationController.cs",
-              "RelativeDocumentMoniker": "EventHubASP\\Controllers\\NotificationController.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\NotificationController.cs",
-              "RelativeToolTip": "EventHubASP\\Controllers\\NotificationController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAwwBoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:48:46.59Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "NewsCreateViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Models\\NewsCreateViewModel.cs",
-              "RelativeDocumentMoniker": "EventHubASP\\Models\\NewsCreateViewModel.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Models\\NewsCreateViewModel.cs",
-              "RelativeToolTip": "EventHubASP\\Models\\NewsCreateViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T12:44:32.435Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\News\\Create.cshtml",
-              "RelativeDocumentMoniker": "EventHubASP\\Views\\News\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\News\\Create.cshtml",
-              "RelativeToolTip": "EventHubASP\\Views\\News\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-31T06:52:22.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "BrowseEvents.cshtml",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Event\\BrowseEvents.cshtml",
-              "RelativeDocumentMoniker": "EventHubASP\\Views\\Event\\BrowseEvents.cshtml",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Event\\BrowseEvents.cshtml",
-              "RelativeToolTip": "EventHubASP\\Views\\Event\\BrowseEvents.cshtml",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAAHQAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-03T09:04:33.183Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "NotificationService.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\NotificationService.cs",
-              "RelativeDocumentMoniker": "EventHubASP.Core\\NotificationService.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\NotificationService.cs",
-              "RelativeToolTip": "EventHubASP.Core\\NotificationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:31:56.137Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Program.cs",
-              "RelativeDocumentMoniker": "EventHubASP\\Program.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Program.cs",
-              "RelativeToolTip": "EventHubASP\\Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAADgvxYAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T14:04:25.391Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "INotificationService.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\INotificationService.cs",
-              "RelativeDocumentMoniker": "EventHubASP.Core\\INotificationService.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\INotificationService.cs",
-              "RelativeToolTip": "EventHubASP.Core\\INotificationService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:31:32.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "NotificationHub.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\Hubs\\NotificationHub.cs",
-              "RelativeDocumentMoniker": "EventHubASP.Core\\Hubs\\NotificationHub.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\Hubs\\NotificationHub.cs",
-              "RelativeToolTip": "EventHubASP.Core\\Hubs\\NotificationHub.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:36:24.124Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "NewsService.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\NewsService.cs",
-              "RelativeDocumentMoniker": "EventHubASP.Core\\NewsService.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\NewsService.cs",
-              "RelativeToolTip": "EventHubASP.Core\\NewsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:30:58.704Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\User.cs",
-              "RelativeDocumentMoniker": "EventHubASP.Models\\User.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\User.cs",
-              "RelativeToolTip": "EventHubASP.Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T07:56:28.612Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "20250206083111_InitialMig.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.DataAccess\\Migrations\\20250206083111_InitialMig.cs",
-              "RelativeDocumentMoniker": "EventHubASP.DataAccess\\Migrations\\20250206083111_InitialMig.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.DataAccess\\Migrations\\20250206083111_InitialMig.cs",
-              "RelativeToolTip": "EventHubASP.DataAccess\\Migrations\\20250206083111_InitialMig.cs",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAAAIkAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T08:31:11.83Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "EventHubASP\\Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "EventHubASP\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T08:44:02.106Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "EventHubASP\\Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "EventHubASP\\Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAAANAAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T08:45:27.256Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Registration.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\Registration.cs",
-              "RelativeDocumentMoniker": "EventHubASP.Models\\Registration.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\Registration.cs",
-              "RelativeToolTip": "EventHubASP.Models\\Registration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T09:12:52.607Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "EventHubASP.Models.csproj",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\EventHubASP.Models.csproj",
-              "RelativeDocumentMoniker": "EventHubASP.Models\\EventHubASP.Models.csproj",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\EventHubASP.Models.csproj",
-              "RelativeToolTip": "EventHubASP.Models\\EventHubASP.Models.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-06T08:24:37.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "IUser.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\CircDebugInterfaces\\IUser.cs",
-              "RelativeDocumentMoniker": "EventHubASP.Models\\CircDebugInterfaces\\IUser.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\CircDebugInterfaces\\IUser.cs",
-              "RelativeToolTip": "EventHubASP.Models\\CircDebugInterfaces\\IUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T08:25:44.222Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "IEvent.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\CircDebugInterfaces\\IEvent.cs",
-              "RelativeDocumentMoniker": "EventHubASP.Models\\CircDebugInterfaces\\IEvent.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\CircDebugInterfaces\\IEvent.cs",
-              "RelativeToolTip": "EventHubASP.Models\\CircDebugInterfaces\\IEvent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T08:25:55.387Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Event.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\Event.cs",
-              "RelativeDocumentMoniker": "EventHubASP.Models\\Event.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\Event.cs",
-              "RelativeToolTip": "EventHubASP.Models\\Event.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T08:26:29.381Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.DataAccess\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "EventHubASP.DataAccess\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.DataAccess\\ApplicationDbContext.cs",
-              "RelativeToolTip": "EventHubASP.DataAccess\\ApplicationDbContext.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAACcAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T08:29:20.022Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "browseEvents.css",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\browseEvents.css",
-              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\css\\browseEvents.css",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\browseEvents.css",
-              "RelativeToolTip": "EventHubASP\\wwwroot\\css\\browseEvents.css",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAzwC4AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-03T08:19:01.77Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "index.css",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\index.css",
-              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\css\\index.css",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\index.css",
-              "RelativeToolTip": "EventHubASP\\wwwroot\\css\\index.css",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAkwIYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-30T09:09:39.691Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "EventHubASP\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "EventHubASP\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-30T09:06:48.298Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "MyFeed.cshtml",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\News\\MyFeed.cshtml",
-              "RelativeDocumentMoniker": "EventHubASP\\Views\\News\\MyFeed.cshtml",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\News\\MyFeed.cshtml",
-              "RelativeToolTip": "EventHubASP\\Views\\News\\MyFeed.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-31T06:53:25.666Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
               "Title": "News.cs",
               "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\News.cs",
               "RelativeDocumentMoniker": "EventHubASP.Models\\News.cs",
@@ -612,7 +210,464 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.DataAccess\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "EventHubASP.DataAccess\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.DataAccess\\ApplicationDbContext.cs",
+              "RelativeToolTip": "EventHubASP.DataAccess\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T08:29:20.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "EventHubASP\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\HomeController.cs*",
+              "RelativeToolTip": "EventHubASP\\Controllers\\HomeController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T10:33:30.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NewsController.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\NewsController.cs",
+              "RelativeDocumentMoniker": "EventHubASP\\Controllers\\NewsController.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\NewsController.cs",
+              "RelativeToolTip": "EventHubASP\\Controllers\\NewsController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAA2wEsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T06:45:58.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "EventHubASP\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "EventHubASP\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T10:28:54.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20250207105045_InitialMig.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.DataAccess\\Migrations\\20250207105045_InitialMig.cs",
+              "RelativeDocumentMoniker": "EventHubASP.DataAccess\\Migrations\\20250207105045_InitialMig.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.DataAccess\\Migrations\\20250207105045_InitialMig.cs",
+              "RelativeToolTip": "EventHubASP.DataAccess\\Migrations\\20250207105045_InitialMig.cs",
+              "ViewState": "AgIAANgAAAAAAAAAAAAAAOsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T10:50:45.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MyFeed.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\News\\MyFeed.cshtml",
+              "RelativeDocumentMoniker": "EventHubASP\\Views\\News\\MyFeed.cshtml",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\News\\MyFeed.cshtml",
+              "RelativeToolTip": "EventHubASP\\Views\\News\\MyFeed.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T06:53:25.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "EventHubASP\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "EventHubASP\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T07:04:31.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Event.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\Event.cs",
+              "RelativeDocumentMoniker": "EventHubASP.Models\\Event.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\Event.cs",
+              "RelativeToolTip": "EventHubASP.Models\\Event.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T08:26:29.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NotificationHub.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\Hubs\\NotificationHub.cs",
+              "RelativeDocumentMoniker": "EventHubASP.Core\\Hubs\\NotificationHub.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\Hubs\\NotificationHub.cs",
+              "RelativeToolTip": "EventHubASP.Core\\Hubs\\NotificationHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T06:36:24.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "index.css",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\index.css",
+              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\css\\index.css",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\index.css",
+              "RelativeToolTip": "EventHubASP\\wwwroot\\css\\index.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-30T09:09:39.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "notifications.js",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\notifications.js",
+              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\js\\notifications.js",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\notifications.js",
+              "RelativeToolTip": "EventHubASP\\wwwroot\\js\\notifications.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-01-31T06:58:44.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "myFeed.css",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\myFeed.css",
+              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\css\\myFeed.css",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\myFeed.css",
+              "RelativeToolTip": "EventHubASP\\wwwroot\\css\\myFeed.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-07T09:07:18.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "browseEvents.css",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\browseEvents.css",
+              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\css\\browseEvents.css",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\browseEvents.css",
+              "RelativeToolTip": "EventHubASP\\wwwroot\\css\\browseEvents.css",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAC4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-03T08:19:01.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NotificationController.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\NotificationController.cs",
+              "RelativeDocumentMoniker": "EventHubASP\\Controllers\\NotificationController.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Controllers\\NotificationController.cs",
+              "RelativeToolTip": "EventHubASP\\Controllers\\NotificationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T06:48:46.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Program.cs",
+              "RelativeDocumentMoniker": "EventHubASP\\Program.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Program.cs",
+              "RelativeToolTip": "EventHubASP\\Program.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAywB4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T14:04:25.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "NewsService.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\NewsService.cs",
+              "RelativeDocumentMoniker": "EventHubASP.Core\\NewsService.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\NewsService.cs",
+              "RelativeToolTip": "EventHubASP.Core\\NewsService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA2wBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T06:30:58.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\NotificationService.cs",
+              "RelativeDocumentMoniker": "EventHubASP.Core\\NotificationService.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\NotificationService.cs",
+              "RelativeToolTip": "EventHubASP.Core\\NotificationService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA2wD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T06:31:56.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\INotificationService.cs",
+              "RelativeDocumentMoniker": "EventHubASP.Core\\INotificationService.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\INotificationService.cs",
+              "RelativeToolTip": "EventHubASP.Core\\INotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T06:31:32.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "INewsService.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\INewsService.cs",
+              "RelativeDocumentMoniker": "EventHubASP.Core\\INewsService.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\INewsService.cs",
+              "RelativeToolTip": "EventHubASP.Core\\INewsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T06:30:34.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "EventHubASP\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "EventHubASP\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-07T06:37:34.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "NewsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Models\\NewsViewModel.cs",
+              "RelativeDocumentMoniker": "EventHubASP\\Models\\NewsViewModel.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Models\\NewsViewModel.cs",
+              "RelativeToolTip": "EventHubASP\\Models\\NewsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T07:09:06.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IUser.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\CircDebugInterfaces\\IUser.cs",
+              "RelativeDocumentMoniker": "EventHubASP.Models\\CircDebugInterfaces\\IUser.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\CircDebugInterfaces\\IUser.cs",
+              "RelativeToolTip": "EventHubASP.Models\\CircDebugInterfaces\\IUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T08:25:44.222Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Monitor.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\AppData\\Local\\Temp\\.vsdbgsrc\\1ca169b5f8096b3fd01bc738c77225099d363dea7bb508bd774b256157500bca\\Monitor.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\1ca169b5f8096b3fd01bc738c77225099d363dea7bb508bd774b256157500bca\\Monitor.cs",
+              "ToolTip": "C:\\Users\\Fenix\\AppData\\Local\\Temp\\.vsdbgsrc\\1ca169b5f8096b3fd01bc738c77225099d363dea7bb508bd774b256157500bca\\Monitor.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\1ca169b5f8096b3fd01bc738c77225099d363dea7bb508bd774b256157500bca\\Monitor.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAA1wFcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T06:26:38.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EventHubASP.csproj",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\EventHubASP.csproj",
+              "RelativeDocumentMoniker": "EventHubASP\\EventHubASP.csproj",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\EventHubASP.csproj",
+              "RelativeToolTip": "EventHubASP\\EventHubASP.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-31T07:59:27.343Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "EventHubASP\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-02-07T06:08:51.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "index.js",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\index.js",
+              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\js\\index.js",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\index.js",
+              "RelativeToolTip": "EventHubASP\\wwwroot\\js\\index.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-01-30T09:11:50.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "signalr.js",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\signalr.js",
+              "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\js\\signalr.js",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\signalr.js",
+              "RelativeToolTip": "EventHubASP\\wwwroot\\js\\signalr.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-01-31T06:58:14.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "NewsCreateViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Models\\NewsCreateViewModel.cs",
+              "RelativeDocumentMoniker": "EventHubASP\\Models\\NewsCreateViewModel.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Models\\NewsCreateViewModel.cs",
+              "RelativeToolTip": "EventHubASP\\Models\\NewsCreateViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T12:44:32.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\News\\Create.cshtml",
+              "RelativeDocumentMoniker": "EventHubASP\\Views\\News\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\News\\Create.cshtml",
+              "RelativeToolTip": "EventHubASP\\Views\\News\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T06:52:22.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "BrowseEvents.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Event\\BrowseEvents.cshtml",
+              "RelativeDocumentMoniker": "EventHubASP\\Views\\Event\\BrowseEvents.cshtml",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Event\\BrowseEvents.cshtml",
+              "RelativeToolTip": "EventHubASP\\Views\\Event\\BrowseEvents.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAAHQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T09:04:33.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\User.cs",
+              "RelativeDocumentMoniker": "EventHubASP.Models\\User.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\User.cs",
+              "RelativeToolTip": "EventHubASP.Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T07:56:28.612Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 35,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "EventHubASP\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "EventHubASP\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T08:44:02.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "EventHubASP\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "EventHubASP\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAAANAAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T08:45:27.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Registration.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\Registration.cs",
+              "RelativeDocumentMoniker": "EventHubASP.Models\\Registration.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\Registration.cs",
+              "RelativeToolTip": "EventHubASP.Models\\Registration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T09:12:52.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "EventHubASP.Models.csproj",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\EventHubASP.Models.csproj",
+              "RelativeDocumentMoniker": "EventHubASP.Models\\EventHubASP.Models.csproj",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\EventHubASP.Models.csproj",
+              "RelativeToolTip": "EventHubASP.Models\\EventHubASP.Models.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-06T08:24:37.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IEvent.cs",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\CircDebugInterfaces\\IEvent.cs",
+              "RelativeDocumentMoniker": "EventHubASP.Models\\CircDebugInterfaces\\IEvent.cs",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\CircDebugInterfaces\\IEvent.cs",
+              "RelativeToolTip": "EventHubASP.Models\\CircDebugInterfaces\\IEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T08:25:55.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EventHubASP\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "EventHubASP\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-30T09:06:48.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
               "Title": "myFeed.AndCreate.css",
               "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\myFeed.AndCreate.css",
               "RelativeDocumentMoniker": "EventHubASP\\wwwroot\\css\\myFeed.AndCreate.css",
@@ -624,7 +679,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "Notification.cshtml",
               "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\Views\\Notification\\Notification.cshtml",
               "RelativeDocumentMoniker": "EventHubASP\\Views\\Notification\\Notification.cshtml",
@@ -636,7 +691,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "EventHubASP.Core.csproj",
               "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\EventHubASP.Core.csproj",
               "RelativeDocumentMoniker": "EventHubASP.Core\\EventHubASP.Core.csproj",
@@ -644,20 +699,7 @@
               "RelativeToolTip": "EventHubASP.Core\\EventHubASP.Core.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-31T06:35:43.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "INewsService.cs",
-              "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\INewsService.cs",
-              "RelativeDocumentMoniker": "EventHubASP.Core\\INewsService.cs",
-              "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Core\\INewsService.cs",
-              "RelativeToolTip": "EventHubASP.Core\\INewsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:30:34.077Z"
+              "WhenOpened": "2025-01-31T06:35:43.702Z"
             }
           ]
         },

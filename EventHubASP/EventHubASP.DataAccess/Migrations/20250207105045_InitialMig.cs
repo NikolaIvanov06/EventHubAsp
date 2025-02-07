@@ -70,7 +70,7 @@ namespace EventHubASP.DataAccess.Migrations
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -91,7 +91,7 @@ namespace EventHubASP.DataAccess.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -111,7 +111,7 @@ namespace EventHubASP.DataAccess.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -129,13 +129,13 @@ namespace EventHubASP.DataAccess.Migrations
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_AspNetUserRoles_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -155,7 +155,7 @@ namespace EventHubASP.DataAccess.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -179,7 +179,7 @@ namespace EventHubASP.DataAccess.Migrations
                         column: x => x.OrganizerID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -201,7 +201,7 @@ namespace EventHubASP.DataAccess.Migrations
                         column: x => x.UserID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -230,7 +230,7 @@ namespace EventHubASP.DataAccess.Migrations
                         column: x => x.EventID,
                         principalTable: "Events",
                         principalColumn: "EventID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -251,7 +251,7 @@ namespace EventHubASP.DataAccess.Migrations
                         column: x => x.UserID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Registrations_Events_EventID",
                         column: x => x.EventID,
@@ -286,7 +286,7 @@ namespace EventHubASP.DataAccess.Migrations
                         column: x => x.NewsID,
                         principalTable: "News",
                         principalColumn: "NewsID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -294,9 +294,9 @@ namespace EventHubASP.DataAccess.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("51f1b288-031e-4736-8d37-a24a83a074fc"), null, "Admin", "ADMIN" },
-                    { new Guid("c77cc13a-2e87-4187-a95c-fd1736a459b9"), null, "User", "USER" },
-                    { new Guid("e36a976a-1f53-4e3d-b6c5-d4773c8456d3"), null, "Organizer", "ORGANIZER" }
+                    { new Guid("7c37a28a-99b4-4182-8c16-3caeb1e199a8"), null, "Organizer", "ORGANIZER" },
+                    { new Guid("8524757c-3c51-4c72-bb9d-7266be080c59"), null, "User", "USER" },
+                    { new Guid("a5d3d8f0-805f-4d3e-b8a8-9860bc32128d"), null, "Admin", "ADMIN" }
                 });
 
             migrationBuilder.CreateIndex(

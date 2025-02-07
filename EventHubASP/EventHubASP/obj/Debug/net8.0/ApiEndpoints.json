@@ -1,24 +1,18 @@
 [
   {
     "ContainingType": "EventHubASP.Controllers.NotificationController",
-    "Method": "MarkAsRead",
-    "RelativePath": "api/Notification/mark-as-read/{notificationId}",
+    "Method": "MarkNotificationsAsRead",
+    "RelativePath": "api/Notification/mark-read",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "notificationId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
     "ContainingType": "EventHubASP.Controllers.NotificationController",
-    "Method": "GetUserNotifications",
-    "RelativePath": "api/Notification/user-notifications",
+    "Method": "GetUnreadNotificationCount",
+    "RelativePath": "api/Notification/unread-count",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

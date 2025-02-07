@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "My News Feed";
 }
-<link rel="stylesheet" href="~/css/myFeed.AndCreate.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/myFeed.css" asp-append-version="true" />
 
 <div class="my-feed-container">
     <h2>My News Feed</h2>
@@ -13,16 +13,15 @@
     }
     else
     {
-        <ul>
+        <div id="newsFeed">
             @foreach (var news in Model)
             {
-                <li>
+                <div class="news-item">
                     <h3>@news.Title</h3>
                     <p>@news.Content</p>
-                    <small>@news.PublishedDate.ToString("g")</small>
-
-                </li>
+                    <small>Published on: @news.PublishedDate.ToString("g")</small>
+                </div>
             }
-        </ul>
+        </div>
     }
 </div>
