@@ -9,110 +9,110 @@
     <div class="container browse-events-container">
         <h2>Browse Events</h2>
 
-<div class="filter-search-container">
-    <div class="filter-wrapper">
-        <button id="filterToggleButton" class="filter-toggle-button">
-            <img src="~/filter.png" style="margin-right: 8px;" width="19px" height="19px">Filter
-        </button>
-        <div id="filterSection" class="filter-section">
-            <form method="get" action="/Event/BrowseEvents" class="filter-form">
-                <div class="form-group">
-                    <input type="checkbox" id="sortByDate" name="SortByDate" value="true" @(filter.SortByDate ? "checked" : "") />
-                    <label for="sortByDate">Sort by Date [Newest]</label>
+        <div class="filter-search-container">
+            <div class="filter-wrapper">
+                <button id="filterToggleButton" class="filter-toggle-button">
+                    <img src="~/filter.png" style="margin-right: 8px;" width="19px" height="19px">Filter
+                </button>
+                <div id="filterSection" class="filter-section">
+                    <form method="get" action="/Event/BrowseEvents" class="filter-form">
+                        <div class="form-group">
+                            <input type="checkbox" id="sortByDate" name="SortByDate" value="true" @(filter.SortByDate ? "checked" : "") />
+                            <label for="sortByDate">Sort by Date [Newest]</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="sortByTitleLength" name="SortByTitleLength" value="true" @(filter.SortByTitleLength ? "checked" : "") />
+                            <label for="sortByTitleLength">Sort by Title [A-Z]</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="filterByDate">Filter by Date</label>
+                            <input type="date" id="filterByDate" name="FilterByDate" value="@(filter.FilterByDate?.ToString("yyyy-MM-dd") ?? "")" />
+                        </div>
+                        <button type="submit" class="btn apply-filter-button">Apply Filters</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <input type="checkbox" id="sortByTitleLength" name="SortByTitleLength" value="true" @(filter.SortByTitleLength ? "checked" : "") />
-                    <label for="sortByTitleLength">Sort by Title [A-Z]</label>
-                </div>
-                <div class="form-group">
-                    <label for="filterByDate">Filter by Date</label>
-                    <input type="date" id="filterByDate" name="FilterByDate" value="@(filter.FilterByDate?.ToString("yyyy-MM-dd") ?? "")" />
-                </div>
-                <button type="submit" class="btn apply-filter-button">Apply Filters</button>
-            </form>
-        </div>
-    </div>
+            </div>
 
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search events..." value="@(filter.SearchQuery ?? "")" />
-    </div>
-</div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search events..." value="@(filter.SearchQuery ?? "")" />
+            </div>
+        </div>
         <div class="row events-container">
             @if (Model.Count() != 0)
             {
                 @foreach (var eventItem in Model)
                 {
-                            <div class="col-md-4">
-                                <div class="event-card">
-                                    <img src="@eventItem.ImageUrl" class="event-image" alt="Event Image">
-                                    <div class="event-details">
-                                        <h5 class="event-title">@eventItem.Title</h5>
-                                        <p class="event-description">@eventItem.Description</p>
-                                        <p><strong>Date:</strong> @eventItem.Date.ToString("MMM dd, yyyy")</p>
-                                        <p><strong>Location:</strong> @eventItem.Location</p>
-                                        <div class="event-buttons">
+                    <div class="col-md-4">
+                        <div class="event-card">
+                            <img src="@eventItem.ImageUrl" class="event-image" alt="Event Image">
+                            <div class="event-details">
+                                <h5 class="event-title">@eventItem.Title</h5>
+                                <p class="event-description">@eventItem.Description</p>
+                                <p><strong>Date:</strong> @eventItem.Date.ToString("MMM dd, yyyy")</p>
+                                <p><strong>Location:</strong> @eventItem.Location</p>
+                                <div class="event-buttons">
                                     @if (User.IsInRole("Admin"))
                                     {
-                                                    <form method="post" action="/Event/DeleteEvent">
-                                                        <input type="hidden" name="eventId" value="@eventItem.EventID" />
-                                                        <button type="submit" class="btn btn-danger"
-                                                                onclick="return confirm('Are you sure you want to delete this event?');">
-                                                            Delete Event
-                                                        </button>
-                                                    </form>
+                                        <form method="post" action="/Event/DeleteEvent">
+                                            <input type="hidden" name="eventId" value="@eventItem.EventID" />
+                                            <button type="submit" class="btn btn-danger"
+                                                    onclick="return confirm('Are you sure you want to delete this event?');">
+                                                Delete Event
+                                            </button>
+                                        </form>
                                     }
                                     else if (User.IsInRole("User"))
                                     {
-                                                    <form method="post" asp-controller="Event" asp-action="Subscribe">
-                                                        <input type="hidden" name="eventId" value="@eventItem.EventID" />
-                                                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                                                    </form>
+                                        <form method="post" asp-controller="Event" asp-action="Subscribe">
+                                            <input type="hidden" name="eventId" value="@eventItem.EventID" />
+                                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                                        </form>
                                     }
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
                 }
             }
             else
             {
-                    <h5 style="text-align: center; align-content: center;">No Events Available</h5>
+                <h5 style="text-align: center; align-content: center;">No Events Available</h5>
             }
         </div>
     </div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const filterToggleButton = document.getElementById('filterToggleButton');
-    const filterSection = document.getElementById('filterSection');
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterToggleButton = document.getElementById('filterToggleButton');
+        const filterSection = document.getElementById('filterSection');
 
-    filterToggleButton.addEventListener('mouseenter', function() {
-        filterSection.style.display = 'block';
-        filterSection.style.opacity = '1';
-        filterToggleButton.classList.add('hover');
-    });
+        filterToggleButton.addEventListener('mouseenter', function () {
+            filterSection.style.display = 'block';
+            filterSection.style.opacity = '1';
+            filterToggleButton.classList.add('hover');
+        });
 
-    filterToggleButton.addEventListener('mouseleave', function() {
-        if (!filterSection.matches(':hover')) {
-            filterSection.style.display = 'none';
-            filterSection.style.opacity = '0';
-            filterToggleButton.classList.remove('hover');
-        }
-    });
+        filterToggleButton.addEventListener('mouseleave', function () {
+            if (!filterSection.matches(':hover')) {
+                filterSection.style.display = 'none';
+                filterSection.style.opacity = '0';
+                filterToggleButton.classList.remove('hover');
+            }
+        });
 
-    filterSection.addEventListener('mouseenter', function() {
-        filterSection.style.display = 'block';
-        filterSection.style.opacity = '1';
-        filterToggleButton.classList.add('hover');
-    });
+        filterSection.addEventListener('mouseenter', function () {
+            filterSection.style.display = 'block';
+            filterSection.style.opacity = '1';
+            filterToggleButton.classList.add('hover');
+        });
 
-    filterSection.addEventListener('mouseleave', function() {
-        if (!filterToggleButton.matches(':hover')) {
-            filterSection.style.display = 'none';
-            filterSection.style.opacity = '0';
-            filterToggleButton.classList.remove('hover');
-        }
+        filterSection.addEventListener('mouseleave', function () {
+            if (!filterToggleButton.matches(':hover')) {
+                filterSection.style.display = 'none';
+                filterSection.style.opacity = '0';
+                filterToggleButton.classList.remove('hover');
+            }
+        });
     });
-});
 </script>

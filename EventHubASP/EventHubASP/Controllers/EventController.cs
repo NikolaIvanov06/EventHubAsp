@@ -1,6 +1,9 @@
-﻿using EventHubASP.Core;
+﻿using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using EventHubASP.Core;
 using EventHubASP.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
@@ -12,10 +15,12 @@ namespace EventHubASP.Controllers
     public class EventController : Controller
     {
         private readonly IEventService _eventService;
+        private readonly Cloudinary _cloudinary;
 
-        public EventController(IEventService eventService)
+        public EventController(IEventService eventService, Cloudinary cloudinary)
         {
             _eventService = eventService;
+            _cloudinary = cloudinary;
         }
 
         [AllowAnonymous]
@@ -114,6 +119,24 @@ namespace EventHubASP.Controllers
                 {
                     Console.WriteLine($"Validation Error: {error.ErrorMessage}");
                 }
+                TempData["ErrorMessage"] = "Event creation failed due to validation errors.";
+                return View(viewModel);
+            }
+
+            if (viewModel.fileUpload != null)
+            {
+                var uploadParams = new ImageUploadParams()
+                {
+                    File = new FileDescription(viewModel.fileUpload.FileName, viewModel.fileUpload.OpenReadStream())
+                };
+
+                var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+                viewModel.ImageUrl = uploadResult.SecureUrl.ToString();
+            }
+
+            if (string.IsNullOrWhiteSpace(viewModel.ImageUrl))
+            {
+                TempData["ErrorMessage"] = "Please provide an image URL or upload a file.";
                 return View(viewModel);
             }
 
@@ -123,14 +146,22 @@ namespace EventHubASP.Controllers
                 Description = viewModel.Description,
                 Date = viewModel.Date,
                 Location = viewModel.Location,
-                ImageUrl = string.IsNullOrWhiteSpace(viewModel.ImageUrl) ? "/images/default-event.jpg" : viewModel.ImageUrl,
+                ImageUrl = viewModel.ImageUrl,
                 OrganizerID = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)
             };
 
-            await _eventService.CreateEventAsync(newEvent);
-
-            TempData["SuccessMessage"] = "Event created successfully!";
-            return RedirectToAction("MyEvents");
+            try
+            {
+                await _eventService.CreateEventAsync(newEvent);
+                TempData["SuccessMessage"] = "Event created successfully!";
+                return RedirectToAction("MyEvents");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error creating event: {ex.Message}");
+                TempData["ErrorMessage"] = "Event creation failed. Please try again.";
+                return View(viewModel);
+            }
         }
 
         [Authorize(Roles = "Organizer")]
@@ -168,7 +199,8 @@ namespace EventHubASP.Controllers
             var eventToEdit = await _eventService.GetEventByIdAsync(eventId);
             if (eventToEdit == null || eventToEdit.OrganizerID != organizerId)
             {
-                return Forbid();
+                TempData["ErrorMessage"] = "Event not found or you do not have permission to edit this event.";
+                return RedirectToAction("MyEvents");
             }
 
             var viewModel = new EventViewModel
@@ -185,9 +217,9 @@ namespace EventHubASP.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Organizer")]
-        public async Task<IActionResult> EditEvent(int eventId, EventViewModel viewModel)
+        public async Task<IActionResult> EditEvent( EventViewModel viewModel)
         {
-            Console.WriteLine($"EditEvent POST called with eventId: {eventId}");
+            Console.WriteLine($"EditEvent POST called with eventId: {viewModel.EventID}");
             if (!ModelState.IsValid)
             {
                 Console.WriteLine("Model state is invalid.");
@@ -195,35 +227,71 @@ namespace EventHubASP.Controllers
                 {
                     Console.WriteLine($"Validation Error: {error.ErrorMessage}");
                 }
+                TempData["ErrorMessage"] = "Event update failed due to validation errors.";
                 return View(viewModel);
             }
 
-            Console.WriteLine($"Attempting to update event with ID: {eventId}");
             var organizerId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var existingEvent = await _eventService.GetEventByIdAsync(viewModel.EventID);
 
-            var updatedEvent = new Event
+            if (existingEvent == null || existingEvent.OrganizerID != organizerId)
             {
-                EventID = eventId,
-                Title = viewModel.Title,
-                Description = viewModel.Description,
-                Date = viewModel.Date,
-                Location = viewModel.Location,
-                ImageUrl = string.IsNullOrWhiteSpace(viewModel.ImageUrl) ? "/images/default-event.jpg" : viewModel.ImageUrl,
-                OrganizerID = organizerId
-            };
-
-            var success = await _eventService.UpdateEventAsync(updatedEvent, organizerId);
-
-            if (success)
-            {
-                TempData["SuccessMessage"] = "Event updated successfully.";
-                Console.WriteLine("Event updated successfully.");
+                TempData["ErrorMessage"] = "Event not found or you do not have permission to edit this event.";
                 return RedirectToAction("MyEvents");
             }
 
-            TempData["ErrorMessage"] = "Failed to update event.";
-            Console.WriteLine("Failed to update event.");
-            return View(viewModel);
+            string newImageUrl = viewModel.ImageUrl;
+
+            if (viewModel.fileUpload != null)
+            {
+                var uploadParams = new ImageUploadParams()
+                {
+                    File = new FileDescription(viewModel.fileUpload.FileName, viewModel.fileUpload.OpenReadStream())
+                };
+
+                var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+                newImageUrl = uploadResult.SecureUrl.ToString();
+
+
+                if (!string.IsNullOrWhiteSpace(existingEvent.ImageUrl) && existingEvent.ImageUrl.Contains("cloudinary.com"))
+                {
+                    var publicId = existingEvent.ImageUrl.Split('/').Last().Split('.').First();
+                    await _cloudinary.DestroyAsync(new DeletionParams(publicId));
+                }
+            }
+            else if (!string.IsNullOrWhiteSpace(viewModel.ImageUrl) && viewModel.ImageUrl != existingEvent.ImageUrl)
+            {
+                if (!string.IsNullOrWhiteSpace(existingEvent.ImageUrl) && existingEvent.ImageUrl.Contains("cloudinary.com"))
+                {
+                    var publicId = existingEvent.ImageUrl.Split('/').Last().Split('.').First();
+                    await _cloudinary.DestroyAsync(new DeletionParams(publicId));
+                }
+            }
+
+            if (string.IsNullOrWhiteSpace(newImageUrl))
+            {
+                TempData["ErrorMessage"] = "Please provide an image URL or upload a file.";
+                return View(viewModel);
+            }
+
+            existingEvent.Title = viewModel.Title;
+            existingEvent.Description = viewModel.Description;
+            existingEvent.Date = viewModel.Date;
+            existingEvent.Location = viewModel.Location;
+            existingEvent.ImageUrl = newImageUrl;
+
+            try
+            {
+                await _eventService.UpdateEventAsync(existingEvent, organizerId);
+                TempData["SuccessMessage"] = "Event updated successfully.";
+                return RedirectToAction("MyEvents");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error updating event: {ex.Message}");
+                TempData["ErrorMessage"] = "Event update failed. Please try again.";
+                return View(viewModel);
+            }
         }
 
         [HttpPost]

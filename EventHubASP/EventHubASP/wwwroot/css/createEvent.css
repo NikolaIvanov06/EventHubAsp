@@ -51,13 +51,14 @@ h2 {
     color: #ffffff;
     font-weight: bold;
     padding: 12px;
-    border-radius: 10px; /* Rounded button */
-    border: none; /* Remove default border */
+    border-radius: 10px;
+    border: none;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease;
 }
 
     .btn-create-event:hover {
-        background-color: #375a7f; /* Darker blue on hover */
+        background-color: #375a7f;
+        color: #ffffff; /* Darker blue on hover */
         transform: translateY(-2px); /* Subtle lift effect */
     }
 

@@ -5,49 +5,89 @@
 <div class="hero">
     <div class="container create-event-container">
         <h2>Create Event</h2>
-        <form asp-action="CreateEvent" asp-controller="Event" method="post">
-            <!-- Title -->
+        <form asp-action="CreateEvent" asp-controller="Event" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label asp-for="Title" class="form-label"></label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
-
-            <!-- Description -->
             <div class="form-group">
                 <label asp-for="Description" class="form-label"></label>
                 <textarea asp-for="Description" class="form-control"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-
-            <!-- Date -->
             <div class="form-group">
                 <label asp-for="Date" class="form-label"></label>
                 <input asp-for="Date" class="form-control" type="date" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
-
-            <!-- Location -->
             <div class="form-group">
                 <label asp-for="Location" class="form-label"></label>
                 <input asp-for="Location" class="form-control" />
                 <span asp-validation-for="Location" class="text-danger"></span>
             </div>
-
-            <!-- Image URL -->
             <div class="form-group">
                 <label asp-for="ImageUrl" class="form-label"></label>
-                <input asp-for="ImageUrl" class="form-control" type="url" placeholder="Enter an image URL or leave blank for default" />
+                <input asp-for="ImageUrl" class="form-control" type="url" placeholder="Enter an image URL" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                <p>or</p>
+                <input type="file" id="fileUpload" name="fileUpload" class="form-control" style="margin-top: -15px"/>
+                <button type="button" id="removeFile" class="btn btn-danger" style="display: none; background-color: #4e73df; border-radius: 20px; margin-top: 10px;">Remove File</button>
             </div>
 
-            <!-- Submit Button -->
             <button type="submit" class="btn btn-create-event">Create Event</button>
         </form>
     </div>
 </div>
 
-
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script>
+        document.getElementById('fileUpload').addEventListener('change', function (event) {
+            var file = event.target.files[0];
+            if (file) {
+                document.querySelector('label[for="ImageUrl"]').style.display = 'none';
+                document.querySelector('input[name="ImageUrl"]').style.display = 'none';
+                document.querySelector('p').style.display = 'none';
+                document.getElementById('removeFile').style.display = 'inline-block';
+                var formData = new FormData();
+                formData.append('file', file);
+                formData.append('upload_preset', 'eventhub-img-insertion');
+
+                fetch('https://api.cloudinary.com/v1_1/your-cloud-name/image/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.secure_url) {
+                            document.querySelector('input[name="ImageUrl"]').value = data.secure_url;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+        });
+
+        document.getElementById('removeFile').addEventListener('click', function () {
+            document.getElementById('fileUpload').value = '';
+            document.querySelector('label[for="ImageUrl"]').style.display = 'block';
+            document.querySelector('input[name="ImageUrl"]').style.display = 'block';
+            document.querySelector('p').style.display = 'block';
+            document.getElementById('removeFile').style.display = 'none';
+        });
+
+        document.querySelector('form').addEventListener('submit', function (event) {
+            var fileUpload = document.getElementById('fileUpload').files[0];
+            var imageUrl = document.querySelector('input[name="ImageUrl"]').value;
+
+            if (!fileUpload && !imageUrl) {
+                event.preventDefault();
+                TempData["ErrorMessage"] = "Please provide an image URL or upload a file.";
+                toastr.error(TempData["ErrorMessage"]);
+            }
+        });
+    </script>
 }

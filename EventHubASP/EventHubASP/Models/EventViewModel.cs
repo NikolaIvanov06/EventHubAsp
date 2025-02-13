@@ -25,5 +25,8 @@ namespace EventHubASP.Models
 
         [Url(ErrorMessage = "Please provide a valid URL.")]
         public string? ImageUrl { get; set; }
+
+        
+        public IFormFile? fileUpload { get; set; }
     }
 }

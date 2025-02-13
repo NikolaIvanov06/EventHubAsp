@@ -155,3 +155,4 @@ C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\obj\De
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\obj\Debug\net8.0\EventHubASP.pdb
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\obj\Debug\net8.0\EventHubASP.genruntimeconfig.cache
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\obj\Debug\net8.0\ref\EventHubASP.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\CloudinaryDotNet.dll

@@ -1,3 +1,4 @@
+using CloudinaryDotNet;
 using EventHubASP.Core;
 using EventHubASP.Core.Hubs;
 using EventHubASP.DataAccess;
@@ -8,8 +9,18 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var cloudinaryAccount = new Account(
+
+        "dyzmm3onv",
+        "448933911759921",
+        "4CVDRLkMFY_-84HS4JHj29IQf7k"
+
+);
+
+var cloudinary = new Cloudinary(cloudinaryAccount);
+builder.Services.AddSingleton(cloudinary);
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<INewsService, NewsService>();
