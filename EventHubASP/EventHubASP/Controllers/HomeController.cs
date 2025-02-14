@@ -21,6 +21,13 @@ namespace EventHubASP.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult ClearCookieNoticeFlag()
+        {
+            HttpContext.Session.Remove("ShowCookieNotice");
+            return Ok();
+        }
+
         public async Task<IActionResult> Privacy()
         {
             

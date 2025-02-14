@@ -9,14 +9,20 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 builder.Services.AddControllersWithViews();
 
 var cloudinaryAccount = new Account(
-
-        "dyzmm3onv",
-        "448933911759921",
-        "4CVDRLkMFY_-84HS4JHj29IQf7k"
-
+    "dyzmm3onv",
+    "448933911759921",
+    "4CVDRLkMFY_-84HS4JHj29IQf7k"
 );
 
 var cloudinary = new Cloudinary(cloudinaryAccount);
@@ -30,7 +36,6 @@ builder.Services.AddSignalR();
 builder.Services.AddScoped<IRoleChangeRequestService, RoleChangeRequestService>();
 builder.Services.AddScoped<RoleManagementService>();
 
-
 builder.Services.AddDbContext<ApplicationDbContext>(b => b.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("EventHubASP.DataAccess")));
 builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
 {
@@ -42,13 +47,13 @@ builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
 
-
-
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
         options.LoginPath = "/Account/Login";
         options.LogoutPath = "/Account/Logout";
+        options.Cookie.HttpOnly = true;
+        options.Cookie.IsEssential = false;
     });
 
 builder.Services.AddHttpContextAccessor();
@@ -74,6 +79,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

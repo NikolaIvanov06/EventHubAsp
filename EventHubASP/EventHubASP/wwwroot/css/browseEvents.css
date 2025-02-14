@@ -1,6 +1,9 @@
 ﻿/* General container styling */
 .browse-events-container {
     margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
 }
 
 /* General container styling */
@@ -43,8 +46,8 @@
 
     .filter-toggle-button.hover {
         border-radius: 25px 25px 0 0;
-
     }
+
 /* Filter Section Styling */
 .filter-section {
     display: none;
@@ -66,7 +69,6 @@
     display: block;
     opacity: 1;
 }
-/* Filter Section Styling *
 
 /* Form Styling */
 .filter-form {
@@ -99,7 +101,6 @@
         transform: translateY(-3px);
     }
 
-
 .search-bar input {
     width: 300px;
     padding: 10px;
@@ -118,9 +119,9 @@
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px !important; /* Ensures spacing is consistent */
+    margin-bottom: 20px !important;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
     .event-card:hover {

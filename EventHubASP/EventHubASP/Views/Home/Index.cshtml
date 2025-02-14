@@ -1,5 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Http
 
+<!-- Include FontAwesome for star icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
 <link rel="icon" href="~/logo.png" />
 
@@ -15,19 +17,16 @@
 <section id="features" class="features">
     <div class="container">
         <div class="row text-center">
-            <!-- Feature 1 -->
             <div class="col-md-4 feature-card">
                 <div class="feature-icon">📅</div>
                 <h3>Easy Management</h3>
                 <p>Organize events effortlessly using our powerful tools.</p>
             </div>
-            <!-- Feature 2 -->
             <div class="col-md-4 feature-card">
                 <div class="feature-icon">🌍</div>
                 <h3>Wide Reach</h3>
                 <p>Promote your events to a larger audience.</p>
             </div>
-            <!-- Feature 3 -->
             <div class="col-md-4 feature-card">
                 <div class="feature-icon">🔒</div>
                 <h3>Secure Platform</h3>
@@ -37,8 +36,68 @@
     </div>
 </section>
 
-@if (User.IsInRole("User"))
+<!-- Reviews Section -->
+<section id="reviews" class="reviews">
+    <div class="container">
+        <h2 class="text-center">What Our Users Say</h2>
+        <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @{
+                    var reviews = new List<(string text, string author, int stars, string logoUrl)>
+                {
+                ("EventHub has completely streamlined our internal and external event planning. The seamless registration process and real-time analytics have transformed how we manage global tech summits.", "Sundar Pichai, CEO, Google", 5, "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"),
+                ("Managing large-scale developer conferences like Microsoft Build has never been easier. EventHub’s automation tools have saved us countless hours.", "Satya Nadella, CEO, Microsoft", 5, "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"),
+                ("From product launches to employee events, EventHub provides an intuitive and powerful platform that helps us connect with our audience effortlessly.", "Andy Jassy, CEO, Amazon", 5, "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"),
+                ("EventHub helped us host virtual and in-person events for new vehicle launches, ensuring a flawless experience for our attendees worldwide.", "Elon Musk, CEO, Tesla", 5, "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg"),
+                ("The simplicity and efficiency of EventHub make it a game-changer for our product keynote events. A must-have for any company hosting global events!", "Tim Cook, CEO, Apple", 5, "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"),
+                ("With EventHub’s audience engagement tools, we’ve enhanced the way we host events for our communities. The real-time interaction features are fantastic!", "Mark Zuckerberg, CEO, Meta", 5, "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"),
+                ("Managing film premieres and fan events has never been easier. EventHub’s ticketing and scheduling tools keep everything organized flawlessly.", "Ted Sarandos, Co-CEO, Netflix", 5, "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"),
+                ("We’ve used EventHub to host exclusive artist events and music industry summits. It’s incredibly easy to manage RSVPs and live-stream integrations.", "Daniel Ek, CEO, Spotify", 5, "https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg"),
+                ("EventHub makes organizing corporate gatherings and networking events simple. The data insights help us optimize attendance and engagement.", "Dara Khosrowshahi, CEO, Uber", 5, "https://upload.wikimedia.org/wikipedia/commons/5/58/Uber_logo_2018.svg"),
+                ("We’ve used EventHub to power our global brand activations and sports events. The real-time attendee tracking is a game-changer!", "John Donahoe, CEO, Nike", 5, "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg"),
+                ("EventHub’s CRM integrations help us manage massive industry conferences like Dreamforce with ease. Highly recommended for enterprise event planning.", "Marc Benioff, CEO, Salesforce", 5, "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/768px-Salesforce.com_logo.svg.png"),
+                ("EventHub was our go-to platform for coordinating high-profile rocket launch events. The precision and reliability match our standards for excellence.", "Gwynne Shotwell, President, SpaceX", 5, "https://upload.wikimedia.org/wikipedia/commons/d/de/SpaceX-Logo.svg")
+                };
+                }
 
+                @for (int i = 0; i < reviews.Count; i += 4)
+                {
+                    <div class="carousel-item @(i == 0 ? "active" : "")">
+                        <div class="row justify-content-center">
+                            @for (int j = i; j < i + 4 && j < reviews.Count; j++)
+                            {
+                                var review = reviews[j];
+                                <div class="col-md-3">
+                                    <div class="review-card">
+                                        <img src="@review.logoUrl" alt="@review.author Logo" class="review-logo">
+                                        <div class="review-stars">
+                                            @for (int k = 0; k < 5; k++)
+                                            {
+                                                <span class="fa fa-star @(k < review.stars ? "checked" : "")"></span>
+                                            }
+                                        </div>
+                                        <p class="review-text">"@review.text"</p>
+                                        <p class="review-author">- @review.author</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+@if (User.IsInRole("User"))
 {
     <section id="cta" class="cta text-center">
         <div class="container">
@@ -50,7 +109,6 @@
 }
 
 @if (!User.Identity.IsAuthenticated)
-
 {
     <section id="cta" class="cta text-center">
         <div class="container">
@@ -60,5 +118,53 @@
         </div>
     </section>
 }
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let carousel = document.querySelector("#reviewsCarousel");
+        let interval = 4000;
+        new bootstrap.Carousel(carousel, {
+            interval: interval,
+            ride: "carousel",
+            pause: false
+        });
+
+        function adjustReviewsPerSlide() {
+            let itemsPerSlide;
+            if (window.innerWidth >= 1200) {
+                itemsPerSlide = 4;
+            } else if (window.innerWidth >= 992) {
+                itemsPerSlide = 3;
+            } else if (window.innerWidth >= 768) {
+                itemsPerSlide = 2;
+            } else {
+                itemsPerSlide = 1;
+            }
+
+            let reviews = document.querySelectorAll('.review-card');
+            let carouselInner = document.querySelector('.carousel-inner');
+            carouselInner.innerHTML = '';
+
+            for (let i = 0; i < reviews.length; i += itemsPerSlide) {
+                let carouselItem = document.createElement('div');
+                carouselItem.classList.add('carousel-item');
+                if (i === 0) carouselItem.classList.add('active');
+
+                let row = document.createElement('div');
+                row.classList.add('row', 'justify-content-center');
+
+                for (let j = i; j < i + itemsPerSlide && j < reviews.length; j++) {
+                    let col = document.createElement('div');
+                    col.classList.add('col-md-3');
+                    col.appendChild(reviews[j].cloneNode(true));
+                    row.appendChild(col);
+                }
+
+                carouselItem.appendChild(row);
+                carouselInner.appendChild(carouselItem);
+            }
+        }
+
+        adjustReviewsPerSlide();
+        window.addEventListener('resize', adjustReviewsPerSlide);
+    });
+</script>

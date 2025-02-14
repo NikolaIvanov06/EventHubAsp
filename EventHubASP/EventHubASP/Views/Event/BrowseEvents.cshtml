@@ -37,12 +37,12 @@
                 <input type="text" id="searchInput" placeholder="Search events..." value="@(filter.SearchQuery ?? "")" />
             </div>
         </div>
-        <div class="row events-container">
+        <div class="row events-container" id="eventsContainer">
             @if (Model.Count() != 0)
             {
                 @foreach (var eventItem in Model)
                 {
-                    <div class="col-md-4">
+                    <div class="col-md-4 event-item" data-title="@eventItem.Title.ToLower()">
                         <div class="event-card">
                             <img src="@eventItem.ImageUrl" class="event-image" alt="Event Image">
                             <div class="event-details">
@@ -86,6 +86,9 @@
     document.addEventListener('DOMContentLoaded', function () {
         const filterToggleButton = document.getElementById('filterToggleButton');
         const filterSection = document.getElementById('filterSection');
+        const searchInput = document.getElementById('searchInput');
+        const eventsContainer = document.getElementById('eventsContainer');
+        const eventItems = document.querySelectorAll('.event-item');
 
         filterToggleButton.addEventListener('mouseenter', function () {
             filterSection.style.display = 'block';
@@ -113,6 +116,29 @@
                 filterSection.style.opacity = '0';
                 filterToggleButton.classList.remove('hover');
             }
+        });
+
+        searchInput.addEventListener('input', function () {
+            const query = searchInput.value.toLowerCase();
+            eventItems.forEach(function (item) {
+                const title = item.getAttribute('data-title');
+                if (title.includes(query)) {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                    item.style.display = 'block';
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+            const visibleItems = Array.from(eventItems).filter(item => item.style.display === 'block');
+            const hiddenItems = Array.from(eventItems).filter(item => item.style.display === 'none');
+            eventsContainer.innerHTML = '';
+            visibleItems.forEach(item => eventsContainer.appendChild(item));
+            hiddenItems.forEach(item => eventsContainer.appendChild(item));
         });
     });
 </script>

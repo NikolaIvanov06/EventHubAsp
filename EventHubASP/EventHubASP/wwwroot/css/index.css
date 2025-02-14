@@ -112,7 +112,7 @@
 /* CTA Section */
 .cta {
     padding: 4rem 0;
-    background: linear-gradient(to bottom, #222, #444);
+    background: linear-gradient(to bottom, #444, #666);
     color: #fff;
     animation: fadeIn 2s ease-in-out;
 }
@@ -132,3 +132,139 @@
     .cta .btn {
         animation: pulse 2s infinite;
     }
+
+
+.reviews {
+    padding: 50px 0;
+    background: linear-gradient(to bottom, #222, #444);
+    color: white;
+    text-align: center;
+    overflow: hidden; /* Prevents unwanted shifting */
+}
+
+    .reviews h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: white;
+        font-weight: bold;
+    }
+
+/* Carousel */
+.carousel-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-height: 400px; /* Adjusted for better responsiveness */
+    overflow: hidden;
+}
+
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+.review-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 250px;
+    height: 100%; /* Ensures equal height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+    .review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+/* Review Logos */
+.review-logo {
+    max-width: 80px;
+    max-height: 50px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 15px;
+    object-fit: contain; /* Ensures proper scaling */
+}
+
+/* Star Ratings */
+.review-stars {
+    margin-bottom: 10px;
+}
+
+    .review-stars .fa-star {
+        font-size: 1.2rem;
+        color: #ddd;
+        transition: color 0.3s ease;
+    }
+
+        .review-stars .fa-star.checked {
+            color: #ffcc00;
+        }
+
+/* Review Text */
+.review-text {
+    font-size: 1rem;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds ellipsis (...) */
+}
+
+/* Review Author */
+.review-author {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #666;
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    filter: brightness(0.8);
+    transition: filter 0.3s ease-in-out;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.8);
+    filter: brightness(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-item .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .carousel-item .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel-item .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}

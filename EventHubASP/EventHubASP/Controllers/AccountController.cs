@@ -50,13 +50,28 @@ public class AccountController : Controller
                 var user = await _userManager.FindByNameAsync(model.Username);
                 await _userManager.AddToRoleAsync(user, "User");
                 await _signInManager.SignInAsync(user, isPersistent: false);
+                HttpContext.Session.SetString("ShowCookieNotice", "true");
                 return RedirectToAction("Index", "Home");
             }
 
             ModelState.AddModelError("", "Registration failed. Username or email might already be taken.");
         }
-
         return View(model);
+    }
+
+    [HttpPost]
+    public IActionResult EnableCookies()
+    {
+
+        HttpContext.Response.Cookies.Append("CookieAccepted", "true", new CookieOptions
+        {
+            Path = "/",
+            HttpOnly = true,
+            IsEssential = true,
+            Expires = DateTimeOffset.UtcNow.AddYears(1)
+        });
+
+        return Ok();
     }
 
     [HttpGet]
