@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\EventHubASP.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\about_the_eif.jpg",
+      "PackagePath": "staticwebassets\\about_the_eif.jpg"
+    },
+    {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\bg-video.mp4",
       "PackagePath": "staticwebassets\\bg-video.mp4"
     },
@@ -67,6 +71,10 @@
     {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\imageofschool.png",
       "PackagePath": "staticwebassets\\imageofschool.png"
+    },
+    {
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\inbox.png",
+      "PackagePath": "staticwebassets\\inbox.png"
     },
     {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\js\\authUI.js",
@@ -327,6 +335,10 @@
     {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\profile-picnb.png",
       "PackagePath": "staticwebassets\\profile-picnb.png"
+    },
+    {
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\profilepic.png",
+      "PackagePath": "staticwebassets\\profilepic.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.EventHubASP.Microsoft.AspNetCore.StaticWebAssets.props",

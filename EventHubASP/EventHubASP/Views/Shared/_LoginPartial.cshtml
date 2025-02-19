@@ -18,6 +18,26 @@
     #inboxLink {
         position: relative;
     }
+
+    .btn-outline-primary 
+    {
+        border: 1px solid;
+        border-color: white;
+        border-radius: 20px;
+        color: white;
+    }
+
+    .btn-outline-primary:hover {
+        border: none;
+        background-color: white;
+        border-radius: 20px;
+        color: black;
+        transition: ease-in-out 0.3s;
+    }
+    .btn 
+    {
+        border-radius: 20px;
+    }
 </style>
 <ul class="navbar-nav ms-auto">
     @if (SignInManager.IsSignedIn(User))
@@ -29,7 +49,7 @@
         {
             <li class="nav-item">
                 <a id="inboxLink" asp-controller="News" asp-action="MyFeed">
-                    <img id="inboxIcon" width="25" height="25" style="margin-top: 15px" src="https://img.icons8.com/ios-filled/50/inbox.png" alt="inbox" />
+                    <img id="inboxIcon" width="25" height="25" style="margin-top: 15px" src="~/inbox.png" alt="inbox" />
                     <span id="notificationDot"></span>
                 </a>
             </li>
@@ -37,7 +57,7 @@
         <li class="nav-item">
             <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
                 <button type="submit" class="btn btn-outline-danger">
-                    <img src="~/profile-picnb.png" style="margin-right: 8px;" alt="Logo" width="30" height="30">Logout
+                    <img src="~/profilepic.png" style="margin-right: 8px;" alt="Logo" width="30" height="30">Logout
                 </button>
             </form>
         </li>

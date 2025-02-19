@@ -5,10 +5,13 @@
 <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
 <link rel="icon" href="~/logo.png" />
 
+
+
 <div class="hero">
     <div class="text-center">
+        <img src="~/logo.png" alt="Logo" width="60" height="60" class="img-logo">
         <h1>Welcome to EventHub</h1>
-        <p class="lead">Discover and manage events with ease.</p>
+        <p>Discover and manage events with ease.</p>
         <form action="/" method="post">
             <a href="#features" class="button">Explore Features</a>
         </form>
@@ -46,7 +49,18 @@
         <div class="container">
             <h2>Want to become an organizer?</h2>
             <p>Join our team of organizers and start creating amazing events. Submit a request to become an organizer and we'll review it promptly.</p>
-            <a class="btn btn-primary custom-btn" asp-controller="RoleRequest" asp-action="RequestOrganizerRole">Request Organizer Role</a>
+            <form asp-controller="RoleRequest" asp-action="RequestOrganizerRole" method="post"> </form>
+            <button class="buttonReq" type="button" >
+
+                <strong>Request Organizer Role</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
         </div>
     </section>
 }
