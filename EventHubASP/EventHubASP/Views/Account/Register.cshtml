@@ -96,10 +96,15 @@
             const emailInput = form.querySelector('input[name="Email"]');
             const passwordInput = form.querySelector('input[name="Password"]');
             const confirmPasswordInput = form.querySelector('input[name="ConfirmPassword"]');
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            // Disable submit button initially
+            submitButton.disabled = true;
 
             inputs.forEach(input => {
                 input.addEventListener('input', function () {
                     validateInput(input);
+                    checkFormValidity();
                 });
                 input.addEventListener('blur', function () {
                     if (input === emailInput) {
@@ -108,12 +113,24 @@
                 });
             });
 
+            usernameInput.addEventListener('input', function () {
+                validateUsername();
+                checkFormValidity();
+            });
+
             usernameInput.addEventListener('blur', function () {
                 checkUsernameAvailability(usernameInput);
             });
 
+            passwordInput.addEventListener('input', function () {
+                validatePassword();
+                validateConfirmPassword();
+                checkFormValidity();
+            });
+
             confirmPasswordInput.addEventListener('input', function () {
                 validateConfirmPassword();
+                checkFormValidity();
             });
 
             function validateInput(input) {
@@ -123,27 +140,68 @@
                     input.classList.remove('input-validation-error');
                     input.classList.add('validation-input-valid');
                     validationMessage.classList.remove('visible');
-                    validationMessage.textContent = ""; // Clear error message
+                    validationMessage.textContent = "";
                 } else {
                     input.classList.add('input-validation-error');
                     input.classList.remove('validation-input-valid');
                     validationMessage.classList.add('visible');
-                    validationMessage.textContent = input.validationMessage || "Invalid input."; // Show validation error
+                    validationMessage.textContent = input.validationMessage;
+                }
+            }
+
+            function validateUsername() {
+                const value = usernameInput.value.trim();
+                const validationMessage = usernameInput.nextElementSibling;
+
+                if (value.length < 3) {
+                    usernameInput.classList.add('input-validation-error');
+                    usernameInput.classList.remove('validation-input-valid');
+                    validationMessage.classList.add('visible');
+                    validationMessage.textContent = "Username must be at least 3 characters long.";
+                    return false;
+                } else {
+                    usernameInput.classList.remove('input-validation-error');
+                    usernameInput.classList.add('validation-input-valid');
+                    validationMessage.classList.remove('visible');
+                    validationMessage.textContent = "";
+                    return true;
+                }
+            }
+
+            function validatePassword() {
+                const value = passwordInput.value.trim();
+                const validationMessage = passwordInput.nextElementSibling;
+
+                if (value.length < 6) {
+                    passwordInput.classList.add('input-validation-error');
+                    passwordInput.classList.remove('validation-input-valid');
+                    validationMessage.classList.add('visible');
+                    validationMessage.textContent = "Password must be at least 6 characters long.";
+                    return false;
+                } else {
+                    passwordInput.classList.remove('input-validation-error');
+                    passwordInput.classList.add('validation-input-valid');
+                    validationMessage.classList.remove('visible');
+                    validationMessage.textContent = "";
+                    return true;
                 }
             }
 
             function validateConfirmPassword() {
                 const validationMessage = confirmPasswordInput.nextElementSibling;
-                if (confirmPasswordInput.value === passwordInput.value && confirmPasswordInput.validity.valid) {
-                    confirmPasswordInput.classList.remove('input-validation-error');
-                    confirmPasswordInput.classList.add('validation-input-valid');
-                    validationMessage.classList.remove('visible');
-                    validationMessage.textContent = "";
-                } else {
+
+                if (confirmPasswordInput.value !== passwordInput.value || confirmPasswordInput.value === "") {
                     confirmPasswordInput.classList.add('input-validation-error');
                     confirmPasswordInput.classList.remove('validation-input-valid');
                     validationMessage.classList.add('visible');
                     validationMessage.textContent = "Passwords do not match.";
+                    return false;
+                } else {
+                    confirmPasswordInput.classList.remove('input-validation-error');
+                    confirmPasswordInput.classList.add('validation-input-valid');
+                    validationMessage.classList.remove('visible');
+                    validationMessage.textContent = "";
+                    return true;
                 }
             }
 
@@ -154,16 +212,19 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.isAvailable) {
-                            input.classList.remove('input-validation-error');
-                            input.classList.add('validation-input-valid');
-                            validationMessage.classList.remove('visible');
-                            validationMessage.textContent = "";
+                            if (validateUsername()) {
+                                input.classList.remove('input-validation-error');
+                                input.classList.add('validation-input-valid');
+                                validationMessage.classList.remove('visible');
+                                validationMessage.textContent = "";
+                            }
                         } else {
                             input.classList.add('input-validation-error');
                             input.classList.remove('validation-input-valid');
                             validationMessage.classList.add('visible');
                             validationMessage.textContent = "Username is already taken.";
                         }
+                        checkFormValidity();
                     });
             }
 
@@ -184,11 +245,25 @@
                             validationMessage.classList.add('visible');
                             validationMessage.textContent = "There is an existing account with that email.";
                         }
+                        checkFormValidity();
                     });
+            }
+
+            function checkFormValidity() {
+                let isValid = true;
+
+                inputs.forEach(input => {
+                    if (!input.classList.contains('validation-input-valid')) {
+                        isValid = false;
+                    }
+                });
+
+                submitButton.disabled = !isValid;
             }
 
             form.addEventListener('submit', function (event) {
                 let isValid = true;
+
                 inputs.forEach(input => {
                     validateInput(input);
                     if (!input.validity.valid) {
@@ -196,17 +271,14 @@
                     }
                 });
 
-                validateConfirmPassword();
-                if (!confirmPasswordInput.validity.valid || confirmPasswordInput.value !== passwordInput.value) {
-                    isValid = false;
-                }
+                if (!validateUsername()) isValid = false;
+                if (!validatePassword()) isValid = false;
+                if (!validateConfirmPassword()) isValid = false;
 
                 if (!isValid) {
                     event.preventDefault();
                     event.stopPropagation();
                 }
-
-                // form.classList.add('was-validated');
             });
 
             const serverErrors = document.querySelectorAll(".validation-message");
@@ -217,6 +289,9 @@
             });
         });
     </script>
+
+
+
     <script>
         $(document).ready(function () {
             $("form").validate();
