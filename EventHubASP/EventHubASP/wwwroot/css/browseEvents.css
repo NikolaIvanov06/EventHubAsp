@@ -24,8 +24,8 @@
 
 /* Filter Toggle Button */
 .filter-toggle-button {
-    background-color: #4e73df;
-    color: white;
+    background-color: #212121;
+    color: wheat;
     border: none;
     border-radius: 25px;
     padding: 10px 20px;
@@ -40,8 +40,9 @@
     outline: none;
 }
 
-    .filter-toggle-button img {
+    .filter-toggle-button svg {
         vertical-align: middle;
+        stroke: white;
     }
 
     .filter-toggle-button.hover {
@@ -54,9 +55,9 @@
     position: absolute;
     left: 0;
     top: 100%;
-    background-color: #4e73df;
+    background-color: #212121;
     border-radius: 0 0 25px 25px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
     padding: 20px;
     width: 300px;
     z-index: 10;
@@ -85,8 +86,8 @@
     }
 
 .apply-filter-button {
-    background-color: #ffffff;
-    color: #4e73df;
+    background-color: wheat;
+    color: black;
     border: none;
     border-radius: 15px;
     padding: 10px 20px;
@@ -96,65 +97,147 @@
 }
 
     .apply-filter-button:hover {
-        background-color: #375a7f;
-        color: white;
+        background-color: white;
+        color: black;
         transform: translateY(-3px);
     }
 
 .search-bar input {
     width: 300px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1.5px solid #ecedec;
     border-radius: 25px;
     font-size: 1rem;
+    background-color: inherit;
+    color: wheat;
     transition: box-shadow 0.3s ease;
 }
 
     .search-bar input:focus {
-        box-shadow: 0 0 8px rgba(78, 115, 223, 0.5);
+        box-shadow: 0 0 8px wheat;
         outline: none;
     }
-
 .event-card {
-    background-color: #ffffff;
+    position: relative;
+    background-color: #212121;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px !important;
-    overflow: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow: visible;
+    transition: transform 0.3s ease;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    border: none;
+    /* Add this to ensure the card has dimension */
+    min-height: 400px;
+    /* Or use this instead for flexible height */
+    /* padding-bottom: 100%; /* Creates aspect ratio */
 }
 
-    .event-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+.event-card-inner {
+    position: relative; /* Change from absolute to relative */
+    margin: 5px;
+    background-color: #212121;
+    border-radius: 10px;
+    z-index: 2;
+    overflow: hidden;
+    outline: 2px solid rgba(245, 222, 179, 0.3); /* subtle wheat-colored outline */
+}
+
+/* Animated blob */
+.event-card::before {
+    content: '';
+    position: absolute;
+    z-index: 0; /* Put it behind content */
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, wheat, white);
+    opacity: 0.7;
+    filter: blur(15px);
+    animation: blob-bounce 5s infinite ease;
+}
+
+@keyframes blob-bounce {
+    0% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
     }
+
+    25% {
+        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+
+    50% {
+        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+
+    75% {
+        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+
+    100% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+}
 
 .event-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    transition: opacity 0.3s ease;
-}
-
-.event-card:hover .event-image {
-    opacity: 0.9;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 .event-details {
     padding: 20px;
     text-align: left;
+    position: relative;
+    z-index: 2;
 }
+
 
 .event-title {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #2c3e50;
+    color: wheat;
     margin-bottom: 10px;
 }
 
+h2 {
+    font-family: "Math", serif;
+    color: wheat;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 235, 167, 0.5);
+    margin: 20px 0;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+    h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background-color: wheat;
+        border-radius: 1px;
+    }
+
 .event-description {
     font-size: 0.95rem;
-    color: #6c757d;
+    color: white;
     margin-bottom: 15px;
     max-height: 60px;
     overflow: hidden;
@@ -174,23 +257,24 @@
     }
 
     .event-buttons .btn-primary {
-        background-color: #4e73df;
-        color: #fff;
+        background-color: wheat;
+        color: black;
         border: none;
     }
 
         .event-buttons .btn-primary:hover {
-            background-color: #375a7f;
+            background-color: white;
             transform: translateY(-3px);
         }
 
     .event-buttons .btn-danger {
-        background-color: #e74c3c;
-        color: #fff;
+        background-color: red;
+        color: white;
         border: none;
     }
 
         .event-buttons .btn-danger:hover {
-            background-color: #c0392b;
+            background-color: #ffe5e5;
+            color: black;
             transform: translateY(-3px);
         }

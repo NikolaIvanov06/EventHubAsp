@@ -12,7 +12,10 @@
         <div class="filter-search-container">
             <div class="filter-wrapper">
                 <button id="filterToggleButton" class="filter-toggle-button">
-                    <img src="~/filter.png" style="margin-right: 8px;" width="19px" height="19px">Filter
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                        <path d="M22 3H2l8 9.46V19l4 2V12.46L22 3z"></path>
+                    </svg>
+                    Filter
                 </button>
                 <div id="filterSection" class="filter-section">
                     <form method="get" action="/Event/BrowseEvents" class="filter-form">
@@ -44,30 +47,32 @@
                 {
                     <div class="col-md-4 event-item" data-title="@eventItem.Title.ToLower()">
                         <div class="event-card">
-                            <img src="@eventItem.ImageUrl" class="event-image" alt="Event Image">
-                            <div class="event-details">
-                                <h5 class="event-title">@eventItem.Title</h5>
-                                <p class="event-description">@eventItem.Description</p>
-                                <p><strong>Date:</strong> @eventItem.Date.ToString("MMM dd, yyyy")</p>
-                                <p><strong>Location:</strong> @eventItem.Location</p>
-                                <div class="event-buttons">
-                                    @if (User.IsInRole("Admin"))
-                                    {
-                                        <form method="post" action="/Event/DeleteEvent">
-                                            <input type="hidden" name="eventId" value="@eventItem.EventID" />
-                                            <button type="submit" class="btn btn-danger"
-                                                    onclick="return confirm('Are you sure you want to delete this event?');">
-                                                Delete Event
-                                            </button>
-                                        </form>
-                                    }
-                                    else if (User.IsInRole("User"))
-                                    {
-                                        <form method="post" asp-controller="Event" asp-action="Subscribe">
-                                            <input type="hidden" name="eventId" value="@eventItem.EventID" />
-                                            <button type="submit" class="btn btn-primary">Subscribe</button>
-                                        </form>
-                                    }
+                            <div class="event-card-inner">
+                                <img src="@eventItem.ImageUrl" class="event-image" alt="Event Image">
+                                <div class="event-details">
+                                    <h5 class="event-title">@eventItem.Title</h5>
+                                    <p class="event-description">@eventItem.Description</p>
+                                    <p><strong>Date:</strong> @eventItem.Date.ToString("MMM dd, yyyy")</p>
+                                    <p><strong>Location:</strong> @eventItem.Location</p>
+                                    <div class="event-buttons">
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <form method="post" action="/Event/DeleteEvent">
+                                                <input type="hidden" name="eventId" value="@eventItem.EventID" />
+                                                <button type="submit" class="btn btn-danger"
+                                                        onclick="return confirm('Are you sure you want to delete this event?');">
+                                                    Delete Event
+                                                </button>
+                                            </form>
+                                        }
+                                        else if (User.IsInRole("User"))
+                                        {
+                                            <form method="post" asp-controller="Event" asp-action="Subscribe">
+                                                <input type="hidden" name="eventId" value="@eventItem.EventID" />
+                                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                                            </form>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>

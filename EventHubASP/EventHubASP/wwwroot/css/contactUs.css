@@ -1,82 +1,162 @@
-﻿.contact_us_6 {
-    padding: 50px 0;
+﻿/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
+body {
+    background-color: #000; /* Black background */
+}
+
+.contact-us-page {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.form-box {
-    background-color: #f8f9fa;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+.page-header {
+    margin-bottom: 40px;
 }
 
-    .form-box:hover {
-        transform: translateY(-10px);
+    .page-header h1 {
+        font-size: 2.5rem;
+        color: white;
+        font-family: 'Cambria Math';
+        margin-bottom: 10px;
     }
 
-.input, .textinput {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    transition: border-color 0.3s ease-in-out;
+    .page-header p {
+        font-size: 1.2rem;
+        font-family: 'Cambria Math';
+        color: #ccc;
+    }
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
-    .input:focus, .textinput:focus {
-        border-color: #007bff;
+/* Form Section */
+.form-section {
+    flex: 1;
+    max-width: 500px;
+    background: #1e1e1e; /* Slightly lighter than the main background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Subtle glow for visibility */
+}
+
+    .form-section h2 {
+        font-size: 1.8rem;
+        font-family: 'Cambria Math';
+        margin-bottom: 20px;
+        color: #d4af37; /* Goldish color for headings */
+    }
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.contact-form label {
+    font-weight: bold;
+    font-family: 'Cambria Math';
+    display: block;
+    margin-bottom: 5px;
+    color: #d4af37; /* Goldish color for labels */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-family: 'Cambria Math';
+    font-size: 1rem;
+    background-color: #2b2b2b;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        border-color: #d4af37; /* Goldish border on focus */
         outline: none;
     }
 
 .submit-btn {
-    background-color: #007bff;
-    color: #ffffff;
+    display: inline-block;
     padding: 10px 20px;
+    background-color: #d4af37; /* Goldish button */
+    color: #000; /* Black text */
     border: none;
     border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
     .submit-btn:hover {
-        background-color: #0056b3;
+        background-color: #fff; /* White background on hover */
+        color: #000; /* Black text */
+        transform: scale(1.05);
     }
 
-.map-part {
-    margin-top: 30px;
-}
-
-.map-contactus-head {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.social-media-links {
-    margin-bottom: 20px;
-}
-
-.social-icon-link {
-    margin-right: 10px;
-}
-
-    .social-icon-link img {
-        width: 30px;
-        height: 30px;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .social-icon-link:hover img {
-        transform: scale(1.1);
-    }
-
-.map-box img {
-    width: 100%;
+/* Info Section */
+.info-section {
+    flex: 1;
+    max-width: 500px;
+    background: #1e1e1e;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+    .info-section h2 {
+        font-size: 1.8rem;
+        font-family: 'Cambria Math';
+        margin-bottom: 20px;
+        color: #d4af37; /* Goldish color for headings */
+    }
+
+.map-container iframe {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 500px; /* Increased map height */
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    font-family: 'Cambria Math';
+    font-size: 1rem;
+}
+
+.contact-info strong {
+    color: #d4af37; /* Goldish color for emphasis */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-section,
+    .info-section {
+        max-width: 100%;
+    }
 }

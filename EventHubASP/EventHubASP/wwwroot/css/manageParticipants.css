@@ -2,47 +2,61 @@
 .manage-participants-container {
     margin-top: 30px;
     padding: 25px;
-    background-color: #f9f9f9; /* Light background for modern feel */
+    background-color: transparent; /* Transparent for a sleek modern look */
     border-radius: 15px; /* Rounded edges */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Floating effect */
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.15); /* Floating effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     .manage-participants-container:hover {
         transform: translateY(-5px); /* Lift on hover */
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
 h2 {
-    color: #2c3e50;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-family: "Math", serif;
+    color: wheat;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 235, 167, 0.5);
+    margin: 20px 0;
+    padding-bottom: 10px;
+    position: relative;
 }
 
+    h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background-color: wheat;
+        border-radius: 1px;
+    }
+
 .table {
-    background-color: #ffffff; /* White background for the table */
-    border-radius: 10px; /* Rounded corners for the table */
+    background-color: #e5ffe5; /* Light green background */
+    border-radius: 10px; /* Rounded corners */
     overflow: hidden; /* Ensures proper rounded border look */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the table */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .thead-light th {
-    background-color: #f8f9fc; /* Light header background */
-    color: #4a4a4a; /* Muted text for modern look */
+    background-color: #212121; /* Dark table header */
+    color: #ffeba7; /* Warm yellow text */
     font-weight: 600;
 }
 
-.table-hover tbody tr:hover {
-    background-color: #f1f1f1; /* Light hover effect for rows */
-}
-
+/* Back Button */
 .btn-back {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #4e73df; /* Modern blue for buttons */
-    color: #ffffff;
+    background-color: #212121; /* Dark button */
+    color: #ffeba7; /* Yellow text */
     font-weight: bold;
     border-radius: 10px; /* Rounded button */
     border: none;
@@ -51,7 +65,8 @@ h2 {
 }
 
     .btn-back:hover {
-        background-color: #375a7f; /* Darker blue on hover */
+        background-color: #ffeba7; /* Yellow background on hover */
+        color: #212121; /* Dark text */
         transform: translateY(-3px); /* Subtle lift effect */
         text-decoration: none;
     }

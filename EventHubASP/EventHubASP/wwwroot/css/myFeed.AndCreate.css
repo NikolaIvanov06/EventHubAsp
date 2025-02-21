@@ -1,67 +1,91 @@
-﻿.create-news-container {
+﻿/* createNews.css */
+.create-news-container {
     margin-top: 30px;
     padding: 25px;
-    background-color: #f9f9f9; /* Softer background color for modern aesthetics */
-    border-radius: 15px; /* Rounded borders for a modern look */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for a floating effect */
+    background-color: transparent; /* Transparent for a sleek modern look */
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.15); /* Floating effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     .create-news-container:hover {
-        transform: translateY(-2px); /* Subtle hover effect for modern feel */
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px); /* Lift on hover */
+        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
     }
 
     .create-news-container h2 {
-        color: #2c3e50; /* Muted dark color for headers */
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 600;
-        margin-bottom: 20px;
+        font-family: "Math", serif;
+        color: wheat;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(255, 235, 167, 0.5);
+        margin: 20px 0;
+        padding-bottom: 10px;
+        position: relative;
     }
+
+        .create-news-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: wheat;
+            border-radius: 1px;
+        }
 
     .create-news-container .form-group {
         margin-bottom: 20px; /* Increased spacing for better readability */
     }
 
     .create-news-container .form-label {
-        font-weight: 600; /* Slightly bolder text for labels */
-        color: #4a4a4a; /* Muted gray for modern text look */
+        font-weight: 600;
+        color: #ffeba7; /* Warm yellow label text */
         margin-bottom: 8px;
-        display: inline-block; /* Ensures spacing from input */
+        display: inline-block;
     }
 
     .create-news-container .form-control {
+        background-color: white; /* Light green input background */
         border-radius: 10px; /* Smooth rounded inputs */
-        border: 1px solid #ddd; /* Soft border color */
-        padding: 10px 15px; /* Comfortable padding for inputs */
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Slight inset shadow for depth */
+        border: 1px solid #212121; /* Dark border for contrast */
+        padding: 10px 15px;
+        color: #212121; /* Dark text */
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
         .create-news-container .form-control:focus {
-            border-color: #4e73df; /* Blue border on focus */
-            box-shadow: 0 0 5px rgba(78, 115, 223, 0.5); /* Glow effect */
-            outline: none; /* Remove default outline */
+            border-color: #ffeba7; /* Warm yellow border on focus */
+            box-shadow: 0 0 5px rgba(255, 235, 167, 0.5);
+            outline: none;
         }
 
+    /* Create News Button */
     .create-news-container .btn-create-news {
         width: 100%;
-        background-color: #4e73df;
-        color: #ffffff;
+        background-color: #212121; /* Dark button */
+        color: #ffeba7; /* Yellow text */
         font-weight: bold;
         padding: 12px;
-        border-radius: 10px; /* Rounded button */
-        border: none; /* Remove default border */
+        border-radius: 10px;
+        border: none;
         transition: background-color 0.3s ease-in-out, transform 0.3s ease;
     }
 
         .create-news-container .btn-create-news:hover {
-            background-color: #375a7f; /* Darker blue on hover */
+            background-color: #ffeba7; /* Yellow background on hover */
+            color: #212121; /* Dark text */
             transform: translateY(-2px); /* Subtle lift effect */
         }
 
+    /* Form Validation Error Text */
     .create-news-container .text-danger {
-        font-size: 0.875rem; /* Slightly smaller for modern form validation */
+        font-size: 0.875rem;
         color: #e74c3c; /* Bright red for visibility */
     }
 
@@ -69,17 +93,35 @@
 .my-feed-container {
     margin-top: 30px;
     padding: 25px;
-    background-color: #f9f9f9; /* Softer background color for modern aesthetics */
-    border-radius: 15px; /* Rounded borders for a modern look */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for a floating effect */
+    background-color: transparent; /* Keeping a sleek modern look */
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Floating effect */
 }
 
     .my-feed-container h2 {
-        color: #2c3e50; /* Muted dark color for headers */
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 600;
-        margin-bottom: 20px;
+        font-family: "Math", serif;
+        color: wheat;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(255, 235, 167, 0.5);
+        margin: 20px 0;
+        padding-bottom: 10px;
+        position: relative;
     }
+
+        .my-feed-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: wheat;
+            border-radius: 1px;
+        }
 
     .my-feed-container ul {
         list-style-type: none;
@@ -88,7 +130,7 @@
 
     .my-feed-container li {
         padding: 1rem;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #ffeba7; /* Warm yellow divider */
     }
 
         .my-feed-container li:last-child {
@@ -98,15 +140,15 @@
     .my-feed-container h3 {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
-        color: #000;
+        color: #ffeba7; /* Warm yellow for headlines */
     }
 
     .my-feed-container p {
         font-size: 1rem;
-        color: #555;
+        color: #ffeba7; /* Soft warm yellow text */
     }
 
     .my-feed-container small {
         font-size: 0.875rem;
-        color: #999;
+        color: #6c757d; /* Muted color for timestamp */
     }

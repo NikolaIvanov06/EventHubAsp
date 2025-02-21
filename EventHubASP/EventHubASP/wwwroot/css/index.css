@@ -63,20 +63,20 @@
 }
 
 .button {
-    --glow-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for glow */
-    --glow-spread-color: rgba(255, 255, 255, 0.6); /* Slightly transparent black */
-    --enhanced-glow-color: rgba(255, 0, 255, 0.9); /* Darker black for hover effects */
-    --btn-color: rgba(255, 255, 255, 0.7); /* Very dark background color */
+    --glow-color: rgba(255, 255, 255, 0.8); /* Cyan glow for better visibility */
+    --glow-spread-color: rgba(255, 255, 255, 0.6); /* Slightly transparent cyan */
+    --enhanced-glow-color: rgba(255, 255, 255, 0.9); /* Brighter cyan for hover effects */
+    --btn-color: rgba(0, 0, 0, 0.7); /* Dark background color */
+
     border: 0.25em solid var(--glow-color);
     padding: 1em 3em;
-    color: black; /* White text for contrast */
+    color: white; /* White text for better contrast */
     font-size: 15px;
     font-weight: bold;
     background-color: var(--btn-color);
     text-decoration-line: none;
     border-radius: 1em;
     outline: none;
-
     text-shadow: 0 0 0.5em var(--glow-color);
     position: relative;
     transition: all 0.3s;
@@ -93,17 +93,18 @@
         width: 100%;
         filter: blur(2em);
         opacity: 0.7;
-        transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+
     }
 
     .button:hover {
-        color: black; /* Keep text white on hover */
-        background-color: var(--btn-color); /* kground becomes glowing */
+        color: white; /* Keep text white on hover */
+        background-color: rgba(0, 0, 0, 0.8); /* Slightly darker background on hover */
         box-shadow: 0 0 0.5em 0.15em var(--glow-color), 0 0 2em 1em var(--glow-spread-color), inset 0 0 0.55em 0.15em var(--glow-color);
     }
 
     .button:active {
         box-shadow: 0 0 0.6em 0.25em var(--glow-color), 0 0 2.5em 2em var(--glow-spread-color), inset 0 0 0.5em 0.25em var(--glow-color);
+        transform: scale(0.98); /* Slight shrink effect when pressed */
     }
 /* Features Section */
 .features {
