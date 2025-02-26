@@ -1,5 +1,4 @@
-﻿using EventHubASP.Models.CircDebugInterfaces;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EventHubASP.Models;

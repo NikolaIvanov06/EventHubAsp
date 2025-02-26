@@ -117,74 +117,36 @@
         box-shadow: 0 0 8px wheat;
         outline: none;
     }
+
+/* Event Card with JS-Driven Glowing Border */
 .event-card {
     position: relative;
-    background-color: #212121;
     border-radius: 15px;
     margin-bottom: 20px !important;
     overflow: visible;
     transition: transform 0.3s ease;
-    z-index: 1;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    z-index: 2;
     border: none;
-    /* Add this to ensure the card has dimension */
     min-height: 400px;
-    /* Or use this instead for flexible height */
-    /* padding-bottom: 100%; /* Creates aspect ratio */
+    background-color: transparent;
 }
 
 .event-card-inner {
-    position: relative; /* Change from absolute to relative */
+    position: relative;
     margin: 5px;
-    background-color: #212121;
     border-radius: 10px;
-    z-index: 2;
+    z-index: 1;
     overflow: hidden;
-    outline: 2px solid rgba(245, 222, 179, 0.3); /* subtle wheat-colored outline */
+    border: 2px solid rgba(245, 222, 179, 0.3);
+    transition: border 0.2s ease, border-image 0.2s ease; /* Smooth transitions */
 }
-
-/* Animated blob */
-.event-card::before {
-    content: '';
-    position: absolute;
-    z-index: 0; /* Put it behind content */
-    top: 50%;
-    left: 50%;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, wheat, white);
-    opacity: 0.7;
-    filter: blur(15px);
-    animation: blob-bounce 5s infinite ease;
-}
-
-@keyframes blob-bounce {
-    0% {
-        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    .event-card-inner:hover {
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 6px 14px rgba(255, 255, 255, 0.1);
     }
 
-    25% {
-        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
-    }
 
-    50% {
-        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
-    }
-
-    75% {
-        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
-    }
-
-    100% {
-        transform: translate(-100%, -100%) translate3d(0, 0, 0);
-    }
-}
-
-.event-card:hover {
-    transform: scale(1.05);
-}
-
+/* Rest of your original CSS */
 .event-image {
     width: 100%;
     height: 200px;
@@ -202,12 +164,16 @@
     z-index: 2;
 }
 
-
 .event-title {
     font-size: 1.4rem;
     font-weight: bold;
     color: wheat;
     margin-bottom: 10px;
+}
+
+.no-events 
+{
+    text-align: center;
 }
 
 h2 {

@@ -9,6 +9,7 @@ C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\De
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\CloudinaryDotNet.dll
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Humanizer.dll
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -155,4 +156,3 @@ C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\obj\De
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\obj\Debug\net8.0\EventHubASP.pdb
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\obj\Debug\net8.0\EventHubASP.genruntimeconfig.cache
 C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\obj\Debug\net8.0\ref\EventHubASP.dll
-C:\Users\Fenix\Desktop\GitHub\SoftUni\EventHubAsp\EventHubASP\EventHubASP\bin\Debug\net8.0\CloudinaryDotNet.dll

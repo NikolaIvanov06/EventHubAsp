@@ -38,13 +38,16 @@ namespace EventHubASP.Core
                 var user = await _userManager.FindByIdAsync(request.UserID.ToString());
                 if (user != null)
                 {
+
+                    var userRegistrations = _context.Registrations.Where(r => r.UserID == user.Id);
+                    _context.Registrations.RemoveRange(userRegistrations);
+
                     var currentRoles = await _userManager.GetRolesAsync(user);
                     await _userManager.RemoveFromRolesAsync(user, currentRoles);
                     await _userManager.AddToRoleAsync(user, request.RequestedRole);
 
                     request.IsApproved = true;
                     _context.RoleChangeRequests.Remove(request);
-
                     await _context.SaveChangesAsync();
                 }
             }

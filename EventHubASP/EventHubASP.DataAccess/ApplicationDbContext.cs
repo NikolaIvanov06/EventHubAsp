@@ -18,6 +18,7 @@ namespace EventHubASP.DataAccess
         public DbSet<RoleChangeRequest> RoleChangeRequests { get; set; }
         public DbSet<News> News { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

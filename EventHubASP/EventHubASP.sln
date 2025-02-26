@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHubASP", "EventHubASP\EventHubASP.csproj", "{59CA1886-4CA6-4332-AA3D-37D16E056B7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHubASP", "EventHubASP\EventHubASP.csproj", "{59CA1886-4CA6-4332-AA3D-37D16E056B7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHubASP.Models", "EventHubASP.Models\EventHubASP.Models.csproj", "{1263489F-FB4E-41D1-8D30-1098C843E21C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHubASP.Models", "EventHubASP.Models\EventHubASP.Models.csproj", "{1263489F-FB4E-41D1-8D30-1098C843E21C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHubASP.DataAccess", "EventHubASP.DataAccess\EventHubASP.DataAccess.csproj", "{2F44B015-AC0D-43BF-BED4-50BB6314CA70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHubASP.DataAccess", "EventHubASP.DataAccess\EventHubASP.DataAccess.csproj", "{2F44B015-AC0D-43BF-BED4-50BB6314CA70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHubASP.Core", "EventHubASP.Core\EventHubASP.Core.csproj", "{993AB70E-F514-40E5-AC49-A5BC66C66541}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHubASP.Core", "EventHubASP.Core\EventHubASP.Core.csproj", "{993AB70E-F514-40E5-AC49-A5BC66C66541}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHubASP.Utility", "EventHubASP.Utility\EventHubASP.Utility.csproj", "{F096F7C9-DF86-40A0-AA2C-247EB13CC2D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHubASP.Utility", "EventHubASP.Utility\EventHubASP.Utility.csproj", "{F096F7C9-DF86-40A0-AA2C-247EB13CC2D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHubASP.Tests", "EventHubASP.Tests\EventHubASP.Tests.csproj", "{C1154231-FFF6-46DF-BC11-3D2D63FD0BF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F096F7C9-DF86-40A0-AA2C-247EB13CC2D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F096F7C9-DF86-40A0-AA2C-247EB13CC2D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F096F7C9-DF86-40A0-AA2C-247EB13CC2D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1154231-FFF6-46DF-BC11-3D2D63FD0BF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1154231-FFF6-46DF-BC11-3D2D63FD0BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1154231-FFF6-46DF-BC11-3D2D63FD0BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1154231-FFF6-46DF-BC11-3D2D63FD0BF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,6 +19,15 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="NUnit" Version="4.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventHubASP.Core\EventHubASP.Core.csproj" />
+    <ProjectReference Include="..\EventHubASP.DataAccess\EventHubASP.DataAccess.csproj" />
+    <ProjectReference Include="..\EventHubASP.Models\EventHubASP.Models.csproj" />
+    <ProjectReference Include="..\EventHubASP\EventHubASP.csproj" />
   </ItemGroup>
 
 </Project>

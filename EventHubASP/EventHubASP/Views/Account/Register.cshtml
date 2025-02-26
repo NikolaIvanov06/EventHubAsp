@@ -61,47 +61,38 @@
         <partial name="_ValidationScriptsPartial"></partial>
     </div>
 </div>
+
 @section Scripts {
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('registerForm');
             const submitButton = form.querySelector('button[type="submit"]');
             const inputs = form.querySelectorAll('.form-control');
-
             const usernameInput = form.querySelector('input[name="Username"]');
             const emailInput = form.querySelector('input[name="Email"]');
             const passwordInput = form.querySelector('input[name="Password"]');
             const confirmPasswordInput = form.querySelector('input[name="ConfirmPassword"]');
             const eyeIcons = document.querySelectorAll('.eye-icon');
 
+            // Track input states with lowercase keys
+            const inputStates = {
+                username: { hasBeenTouched: false, isValid: false, isFilled: false },
+                email: { hasBeenTouched: false, isValid: false, isFilled: false },
+                password: { hasBeenTouched: false, isValid: false, isFilled: false },
+                confirmpassword: { hasBeenTouched: false, isValid: false, isFilled: false } // Note: lowercase 'confirmpassword'
+            };
+
+            // Password visibility toggle
             eyeIcons.forEach(icon => {
                 icon.addEventListener('click', function () {
                     const input = this.previousElementSibling;
-                    const svg = this.querySelector('.eye-svg');
                     const slash = this.querySelector('.eye-slash');
-
-                    if (input.type === 'password') {
-                        input.type = 'text';
-                        slash.style.display = 'none'; // Hide the slash
-                    } else {
-                        input.type = 'password';
-                        slash.style.display = 'block'; // Show the slash again
-                    }
+                    input.type = input.type === 'password' ? 'text' : 'password';
+                    slash.style.display = input.type === 'password' ? 'block' : 'none';
                 });
             });
-            // eyeSlashes.forEach(slash> {
-            //     slash.addEventListener('click', function () {
-            //         const input = this.previousElementSibling;
-            //         if (input.type === 'password') {
-            //             input.type = 'text';
-            //             this.classList.add('active');
-            //         } else {
-            //             input.type = 'password';
-            //             this.classList.remove('active');
-            //         }
-            //     });
-            // });
 
+            // Validation message helper
             function showValidationMessage(input, message) {
                 const validationMessage = input.closest('.mb-3').querySelector('.validation-message');
                 if (message) {
@@ -117,74 +108,199 @@
                 }
             }
 
-            function validateUsername() {
+            // Debounce function to limit AJAX calls
+            function debounce(func, wait) {
+                let timeout;
+                return function (...args) {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(this, args), wait);
+                };
+            }
+
+            // AJAX check for username availability
+            function checkUsernameAvailability(value) {
+                return fetch('/Account/CheckUsername?username=' + encodeURIComponent(value), {
+                    method: 'GET'
+                })
+                .then(response => response.json())
+                .then(data => data.isAvailable)
+                .catch(() => false);
+            }
+
+            // AJAX check for email availability
+            function checkEmailAvailability(value) {
+                return fetch('/Account/CheckEmail?email=' + encodeURIComponent(value), {
+                    method: 'GET'
+                })
+                .then(response => response.json())
+                .then(data => data.isAvailable)
+                .catch(() => false);
+            }
+
+            // Validation functions
+            async function validateUsername(sendMessage = false) {
                 const value = usernameInput.value.trim();
-                if (value.length < 3) {
-                    showValidationMessage(usernameInput, "Username must be at least 3 characters long.");
-                    return false;
+                let message = "";
+                inputStates.username.isFilled = value.length > 0;
+
+                if (!inputStates.username.isFilled) {
+                    message = "Username is required.";
+                } else if (value.length < 3) {
+                    message = "Username must be at least 3 characters long.";
+                } else {
+                    const isAvailable = await checkUsernameAvailability(value);
+                    if (!isAvailable) {
+                        message = "Username is already taken.";
+                    }
                 }
-                showValidationMessage(usernameInput, "");
-                return true;
+
+                inputStates.username.isValid = !message;
+                if (sendMessage && !inputStates.username.isValid) {
+                    showValidationMessage(usernameInput, message);
+                } else if (inputStates.username.isValid && inputStates.username.hasBeenTouched) {
+                    showValidationMessage(usernameInput, "");
+                }
+                return inputStates.username.isValid;
             }
 
-            function validateEmail() {
+            async function validateEmail(sendMessage = false) {
                 const value = emailInput.value.trim();
-                const emailPattern = /^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                if (!emailPattern.test(value)) {
-                    showValidationMessage(emailInput, "Please enter a valid email address.");
-                    return false;
+                let message = "";
+                inputStates.email.isFilled = value.length > 0;
+
+                if (!inputStates.email.isFilled) {
+                    message = "Email is required.";
+                } else {
+                    const emailPattern = /^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    if (!emailPattern.test(value)) {
+                        message = "Please enter a valid email address.";
+                    } else {
+                        const isAvailable = await checkEmailAvailability(value);
+                        if (!isAvailable) {
+                            message = "Email is already registered.";
+                        }
+                    }
                 }
-                showValidationMessage(emailInput, "");
-                return true;
+
+                inputStates.email.isValid = !message;
+                if (sendMessage && !inputStates.email.isValid) {
+                    showValidationMessage(emailInput, message);
+                } else if (inputStates.email.isValid && inputStates.email.hasBeenTouched) {
+                    showValidationMessage(emailInput, "");
+                }
+                return inputStates.email.isValid;
             }
 
-            function validatePassword() {
+            function validatePassword(sendMessage = false) {
                 const value = passwordInput.value.trim();
-                if (value.length < 6) {
-                    showValidationMessage(passwordInput, "Password must be at least 6 characters long.");
-                    return false;
+                let message = "";
+                inputStates.password.isFilled = value.length > 0;
+
+                if (!inputStates.password.isFilled) {
+                    message = "Password is required.";
+                } else if (value.length < 6) {
+                    message = "Password must be at least 6 characters long.";
                 }
-                showValidationMessage(passwordInput, "");
-                return true;
-            }
 
-            function validateConfirmPassword() {
-                if (confirmPasswordInput.value !== passwordInput.value) {
-                    showValidationMessage(confirmPasswordInput, "Passwords do not match.");
-                    return false;
+                inputStates.password.isValid = !message;
+                if (sendMessage && !inputStates.password.isValid) {
+                    showValidationMessage(passwordInput, message);
+                } else if (inputStates.password.isValid && inputStates.password.hasBeenTouched) {
+                    showValidationMessage(passwordInput, "");
                 }
-                showValidationMessage(confirmPasswordInput, "");
-                return true;
+                return inputStates.password.isValid;
             }
 
-            function checkFormValidity() {
-                const isValid = validateUsername() && validateEmail() && validatePassword() && validateConfirmPassword();
-                submitButton.disabled = !isValid;
+            function validateConfirmPassword(sendMessage = false) {
+                const value = confirmPasswordInput.value.trim();
+                let message = "";
+                inputStates.confirmpassword.isFilled = value.length > 0;
+
+                if (!inputStates.confirmpassword.isFilled) {
+                    message = "Confirm Password is required.";
+                } else if (value !== passwordInput.value) {
+                    message = "Passwords do not match.";
+                }
+
+                inputStates.confirmpassword.isValid = !message;
+                if (sendMessage && !inputStates.confirmpassword.isValid) {
+                    showValidationMessage(confirmPasswordInput, message);
+                } else if (inputStates.confirmpassword.isValid && inputStates.confirmpassword.hasBeenTouched) {
+                    showValidationMessage(confirmPasswordInput, "");
+                }
+                return inputStates.confirmpassword.isValid;
             }
 
+            // Check if all fields are filled and valid
+            function areAllFieldsFilledAndValid() {
+                return inputStates.username.isFilled && inputStates.username.isValid &&
+                       inputStates.email.isFilled && inputStates.email.isValid &&
+                       inputStates.password.isFilled && inputStates.password.isValid &&
+                       inputStates.confirmpassword.isFilled && inputStates.confirmpassword.isValid;
+            }
+
+            // Form validity check with debounce
+            const debouncedCheckFormValidity = debounce(async function (input) {
+                const validations = {
+                    Username: validateUsername,
+                    Email: validateEmail,
+                    Password: validatePassword,
+                    ConfirmPassword: validateConfirmPassword
+                };
+                const inputName = input.name;
+                const validateFunc = validations[inputName];
+
+                if (validateFunc) {
+                    await validateFunc(true); // Show message on blur or input if invalid
+                }
+
+                submitButton.disabled = !areAllFieldsFilledAndValid();
+            }, 300);
+
+            // Event listeners
             inputs.forEach(input => {
-                input.addEventListener('input', checkFormValidity);
+                input.addEventListener('input', async function () {
+                    const state = inputStates[input.name.toLowerCase()]; // Normalize to lowercase
+                    state.hasBeenTouched = true;
+                    await debouncedCheckFormValidity(input);
+                });
+
+                input.addEventListener('blur', async function () {
+                    const state = inputStates[input.name.toLowerCase()];
+                    if (state.hasBeenTouched) {
+                        await debouncedCheckFormValidity(input);
+                    }
+                });
             });
 
-            form.addEventListener('submit', function (event) {
-                checkFormValidity();
+            form.addEventListener('submit', async function (event) {
+                // Validate all fields on submit
+                await Promise.all([
+                    validateUsername(true),
+                    validateEmail(true),
+                    validatePassword(true),
+                    validateConfirmPassword(true)
+                ]);
+                submitButton.disabled = !areAllFieldsFilledAndValid();
                 if (submitButton.disabled) {
                     event.preventDefault();
                 }
             });
 
-            // Check server-side validation errors on page load
+            // Show server-side validation errors on load (from model state)
             document.querySelectorAll('.validation-message').forEach(error => {
                 if (error.textContent.trim() !== "") {
                     error.classList.add('visible');
+                    const input = error.closest('.mb-3').querySelector('.form-control');
+                    if (input) {
+                        input.classList.add('input-validation-error');
+                        const state = inputStates[input.name.toLowerCase()];
+                        state.hasBeenTouched = true;
+                        state.isValid = false;
+                        state.isFilled = input.value.trim().length > 0;
+                    }
                 }
             });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            $("form").validate();
         });
     </script>
 }

@@ -81,6 +81,7 @@ public class AccountController : Controller
         return Json(new { exists = user != null });
     }
 
+
     [HttpGet]
     public async Task<IActionResult> CheckUsername(string username)
     {

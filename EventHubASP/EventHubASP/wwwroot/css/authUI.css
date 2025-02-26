@@ -9,12 +9,14 @@
     }
 
 .input-validation-error {
-    border: 1px solid red;
+    border: 1px solid;
+    border-color: #dc3545;
     background-color: #ffe5e5;
 }
 
 .validation-input-valid {
-    border: 1px solid green;
+    border: 1px solid;
+    border-color: #28a745;
     background-color: #e5ffe5;
 }
 
@@ -189,6 +191,15 @@ main {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+    .submit:hover:not(:disabled) {
+        background-color: #e0c68f; /* Darker wheat on hover when not disabled */
+    }
+
+    .submit:disabled {
+        background-color: #f5deb3;
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
 
     .submit:hover {
         background-color: white;

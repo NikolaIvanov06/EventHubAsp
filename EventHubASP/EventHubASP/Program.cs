@@ -31,6 +31,7 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<INewsService, NewsService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<IFeedbackService, FeedbackService>();
 builder.Services.AddSignalR();
 
 builder.Services.AddScoped<IRoleChangeRequestService, RoleChangeRequestService>();

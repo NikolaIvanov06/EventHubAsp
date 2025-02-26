@@ -101,9 +101,6 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
-                        </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
                             var user = await UserManager.GetUserAsync(User);
@@ -117,6 +114,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="" asp-controller="Admin" asp-action="ManageRoleRequests">Manage Requests</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Feedback">User Feedbacks</a>
+                                </li>
                             }
                             else if (userRoles.Contains("Organizer"))
                             {
@@ -129,6 +129,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="" asp-controller="News" asp-action="Create">Create News</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                                </li>
                             }
                             else if (userRoles.Contains("User"))
                             {
@@ -138,7 +141,16 @@
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="" asp-controller="Event" asp-action="MySubscriptions">My Subscriptions</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                                </li>
                             }
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                            </li>
                         }
                     </ul>
 

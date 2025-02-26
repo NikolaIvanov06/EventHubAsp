@@ -1,3 +1,4 @@
+using EventHubASP.Core;
 using EventHubASP.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -8,16 +9,16 @@ namespace EventHubASP.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IFeedbackService _feedbackService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IFeedbackService feedbackService)
         {
             _logger = logger;
+            _feedbackService = feedbackService;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            
-            await Task.CompletedTask;
             return View();
         }
 
@@ -28,25 +29,44 @@ namespace EventHubASP.Controllers
             return Ok();
         }
 
-        public async Task<IActionResult> Privacy()
+        public IActionResult Privacy()
         {
-            
-            await Task.CompletedTask;
             return View();
         }
 
-        public async Task<IActionResult> ContactUs()
+        [HttpGet]
+        public IActionResult ContactUs()
         {
-           
-            await Task.CompletedTask;
-            return View();
+            return View(new Feedback());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ContactUs(Feedback feedback)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(feedback);
+            }
+
+            try
+            {
+                await _feedbackService.SubmitFeedbackAsync(feedback);
+                TempData["SuccessMessage"] = "Feedback submitted successfully!";
+                return RedirectToAction(nameof(ContactUs));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error submitting feedback");
+                ModelState.AddModelError("", "An error occurred while submitting your feedback. Please try again.");
+                return View(feedback);
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public async Task<IActionResult> Error()
+        public IActionResult Error()
         {
             
-            await Task.CompletedTask;
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }

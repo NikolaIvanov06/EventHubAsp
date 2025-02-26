@@ -14,11 +14,13 @@ namespace EventHubASP.Controllers
     {
         private readonly RoleManagementService _roleService;
         private readonly UserService _userService;
+        private readonly IFeedbackService _feedbackService;
 
-        public AdminController(RoleManagementService roleService, UserService userService)
+        public AdminController(RoleManagementService roleService, UserService userService, IFeedbackService feedbackService)
         {
             _roleService = roleService;
             _userService = userService;
+            _feedbackService = feedbackService;
         }
 
         [Authorize(Roles = "Admin")]
@@ -62,6 +64,14 @@ namespace EventHubASP.Controllers
             }
 
             return RedirectToAction("ManageUsers");
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Feedback()
+        {
+            var feedbackList = await _feedbackService.GetAllFeedbackAsync();
+            return View(feedbackList);
         }
     }
 }

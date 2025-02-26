@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Feedback>
+
+@{
+    ViewData["Title"] = "Users Feedback";
+}
+
+<link rel="stylesheet" href="~/css/Feedback.css" asp-append-version="true" />
+<script src="~/js/adminFeedback.js" defer></script>
+
+<h1 class="feedback-title">Feedback Management</h1>
+
+<div class="feedback-table-container">
+    <table class="feedback-table">
+        <thead class="feedback-table-header">
+            <tr>
+                <th class="feedback-table-header-cell">Name</th>
+                <th class="feedback-table-header-cell">Email</th>
+                <th class="feedback-table-header-cell">Message</th>
+                <th class="feedback-table-header-cell">Submitted Date</th>
+            </tr>
+        </thead>
+        <tbody class="feedback-table-body">
+            @foreach (var feedback in Model)
+            {
+                <tr class="feedback-table-row">
+                    <td class="feedback-table-cell" data-label="Name">@feedback.Name</td>
+                    <td class="feedback-table-cell" data-label="Email">@feedback.Email</td>
+                    <td class="feedback-table-cell" data-label="Message">@feedback.Message</td>
+                    <td class="feedback-table-cell" data-label="Submitted Date">@feedback.SubmittedDate.ToString("yyyy-MM-dd HH:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const messageCells = document.querySelectorAll('.feedback-table-cell:nth-child(3)');
+
+        messageCells.forEach(cell => {
+            const originalText = cell.textContent;
+            if (originalText.length > 100) {
+                cell.classList.add('truncated');
+                cell.textContent = originalText.substring(0, 97) + '...';
+
+                cell.addEventListener('click', () => {
+                    if (cell.classList.contains('truncated')) {
+                        cell.textContent = originalText;
+                        cell.classList.remove('truncated');
+                    } else {
+                        cell.textContent = originalText.substring(0, 97) + '...';
+                        cell.classList.add('truncated');
+                    }
+                });
+            }
+        });
+    });
+</script>

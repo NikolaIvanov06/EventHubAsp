@@ -7,7 +7,7 @@
 
 <div class="hero">
     <div class="container browse-events-container">
-        <h2>Browse Events</h2>
+        <h2 class="main-title">Browse Events</h2>
 
         <div class="filter-search-container">
             <div class="filter-wrapper">
@@ -15,7 +15,7 @@
                     <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
                         <path d="M22 3H2l8 9.46V19l4 2V12.46L22 3z"></path>
                     </svg>
-                    Filter
+                    Filter Events
                 </button>
                 <div id="filterSection" class="filter-section">
                     <form method="get" action="/Event/BrowseEvents" class="filter-form">
@@ -52,8 +52,8 @@
                                 <div class="event-details">
                                     <h5 class="event-title">@eventItem.Title</h5>
                                     <p class="event-description">@eventItem.Description</p>
-                                    <p><strong>Date:</strong> @eventItem.Date.ToString("MMM dd, yyyy")</p>
-                                    <p><strong>Location:</strong> @eventItem.Location</p>
+                                    <p class="event-meta"><strong>Date:</strong> @eventItem.Date.ToString("MMM dd, yyyy")</p>
+                                    <p class="event-meta"><strong>Location:</strong> @eventItem.Location</p>
                                     <div class="event-buttons">
                                         @if (User.IsInRole("Admin"))
                                         {
@@ -81,12 +81,11 @@
             }
             else
             {
-                <h5 style="text-align: center; align-content: center;">No Events Available</h5>
+                <h5 class="no-events">No Events Available</h5>
             }
         </div>
     </div>
 </div>
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const filterToggleButton = document.getElementById('filterToggleButton');
@@ -94,56 +93,57 @@
         const searchInput = document.getElementById('searchInput');
         const eventsContainer = document.getElementById('eventsContainer');
         const eventItems = document.querySelectorAll('.event-item');
+        const eventCards = document.querySelectorAll('.event-card');
 
-        filterToggleButton.addEventListener('mouseenter', function () {
+        // Filter toggle
+        filterToggleButton.addEventListener('mouseenter', () => {
             filterSection.style.display = 'block';
-            filterSection.style.opacity = '1';
+            setTimeout(() => { filterSection.style.opacity = '1'; }, 10);
             filterToggleButton.classList.add('hover');
         });
 
-        filterToggleButton.addEventListener('mouseleave', function () {
+        filterToggleButton.addEventListener('mouseleave', () => {
             if (!filterSection.matches(':hover')) {
-                filterSection.style.display = 'none';
                 filterSection.style.opacity = '0';
+                setTimeout(() => { filterSection.style.display = 'none'; }, 300);
                 filterToggleButton.classList.remove('hover');
             }
         });
 
-        filterSection.addEventListener('mouseenter', function () {
+        filterSection.addEventListener('mouseenter', () => {
             filterSection.style.display = 'block';
             filterSection.style.opacity = '1';
             filterToggleButton.classList.add('hover');
         });
 
-        filterSection.addEventListener('mouseleave', function () {
+        filterSection.addEventListener('mouseleave', () => {
             if (!filterToggleButton.matches(':hover')) {
-                filterSection.style.display = 'none';
                 filterSection.style.opacity = '0';
+                setTimeout(() => { filterSection.style.display = 'none'; }, 300);
                 filterToggleButton.classList.remove('hover');
             }
         });
 
+        // Search functionality with animation
         searchInput.addEventListener('input', function () {
-            const query = searchInput.value.toLowerCase();
-            eventItems.forEach(function (item) {
+            const query = this.value.toLowerCase();
+            eventItems.forEach(item => {
                 const title = item.getAttribute('data-title');
                 if (title.includes(query)) {
-                    item.style.opacity = '1';
-                    item.style.transform = 'scale(1)';
                     item.style.display = 'block';
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
                 } else {
                     item.style.opacity = '0';
-                    item.style.transform = 'scale(0.9)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
+                    item.style.transform = 'scale(0.95)';
+                    setTimeout(() => { item.style.display = 'none'; }, 300);
                 }
             });
-            const visibleItems = Array.from(eventItems).filter(item => item.style.display === 'block');
-            const hiddenItems = Array.from(eventItems).filter(item => item.style.display === 'none');
-            eventsContainer.innerHTML = '';
-            visibleItems.forEach(item => eventsContainer.appendChild(item));
-            hiddenItems.forEach(item => eventsContainer.appendChild(item));
         });
     });
 </script>

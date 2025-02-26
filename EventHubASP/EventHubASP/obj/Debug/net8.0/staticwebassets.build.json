@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SydeeCyQoNqWvylRbewUnHteuVg4ZZxvqRsMYTwcXuQ=",
+  "Hash": "Nh0gNprNBYlUc3U3YFpRaPA51LX3e41AOf6kGN13qlk=",
   "Source": "EventHubASP",
   "BasePath": "_content/EventHubASP",
   "Mode": "Default",
@@ -169,6 +169,25 @@
       "OriginalItemSpec": "wwwroot\\css\\createEvent.css"
     },
     {
+      "Identity": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\Feedback.css",
+      "SourceId": "EventHubASP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\",
+      "BasePath": "_content/EventHubASP",
+      "RelativePath": "css/Feedback.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Feedback.css"
+    },
+    {
       "Identity": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\index.css",
       "SourceId": "EventHubASP",
       "SourceType": "Discovered",
@@ -300,6 +319,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\mySubscriptions.css"
+    },
+    {
+      "Identity": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\roleChangeRequest.css",
+      "SourceId": "EventHubASP",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\",
+      "BasePath": "_content/EventHubASP",
+      "RelativePath": "css/roleChangeRequest.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\roleChangeRequest.css"
     },
     {
       "Identity": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\site.css",

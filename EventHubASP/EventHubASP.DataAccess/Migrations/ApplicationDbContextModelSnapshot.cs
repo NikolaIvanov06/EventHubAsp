@@ -62,6 +62,37 @@ namespace EventHubASP.DataAccess.Migrations
                     b.ToTable("Events");
                 });
 
+            modelBuilder.Entity("EventHubASP.Models.Feedback", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("SubmittedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Feedbacks");
+                });
+
             modelBuilder.Entity("EventHubASP.Models.Notification", b =>
                 {
                     b.Property<int>("NotificationID")
@@ -251,19 +282,19 @@ namespace EventHubASP.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a5d3d8f0-805f-4d3e-b8a8-9860bc32128d"),
+                            Id = new Guid("717ecbff-9d26-43bd-ba5f-5dcf85ecf373"),
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = new Guid("7c37a28a-99b4-4182-8c16-3caeb1e199a8"),
+                            Id = new Guid("32d1df56-573e-4839-a82d-ba5d8fb7c305"),
                             Name = "Organizer",
                             NormalizedName = "ORGANIZER"
                         },
                         new
                         {
-                            Id = new Guid("8524757c-3c51-4c72-bb9d-7266be080c59"),
+                            Id = new Guid("0f10ca24-c694-490c-abb8-169c351c74b9"),
                             Name = "User",
                             NormalizedName = "USER"
                         });
