@@ -33,6 +33,14 @@
       "PackagePath": "staticwebassets\\css\\createEvent.css"
     },
     {
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\editEventDetails.css",
+      "PackagePath": "staticwebassets\\css\\editEventDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\eventDetails.css",
+      "PackagePath": "staticwebassets\\css\\eventDetails.css"
+    },
+    {
       "Id": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP\\wwwroot\\css\\index.css",
       "PackagePath": "staticwebassets\\css\\index.css"
     },

@@ -221,6 +221,26 @@ namespace EventHubASP.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EventDetails",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EventID = table.Column<int>(type: "int", nullable: false),
+                    CustomContent = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EventDetails", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EventDetails_Events_EventID",
+                        column: x => x.EventID,
+                        principalTable: "Events",
+                        principalColumn: "EventID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "News",
                 columns: table => new
                 {
@@ -310,9 +330,9 @@ namespace EventHubASP.DataAccess.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("0f10ca24-c694-490c-abb8-169c351c74b9"), null, "User", "USER" },
-                    { new Guid("32d1df56-573e-4839-a82d-ba5d8fb7c305"), null, "Organizer", "ORGANIZER" },
-                    { new Guid("717ecbff-9d26-43bd-ba5f-5dcf85ecf373"), null, "Admin", "ADMIN" }
+                    { new Guid("3d51c940-0524-4092-b502-d8f89db02d3d"), null, "Admin", "ADMIN" },
+                    { new Guid("dacf5d96-77a7-4ec7-9152-57daf24b84d5"), null, "Organizer", "ORGANIZER" },
+                    { new Guid("ecc73f0e-012a-46e8-83fa-c66ae58f7c15"), null, "User", "USER" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -353,6 +373,12 @@ namespace EventHubASP.DataAccess.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EventDetails_EventID",
+                table: "EventDetails",
+                column: "EventID",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Events_OrganizerID",
@@ -412,6 +438,9 @@ namespace EventHubASP.DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "EventDetails");
 
             migrationBuilder.DropTable(
                 name: "Feedbacks");

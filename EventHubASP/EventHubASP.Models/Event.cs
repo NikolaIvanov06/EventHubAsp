@@ -29,6 +29,8 @@ public class Event
 
     public string ImageUrl { get; set; }
 
+    public virtual EventDetails CustomDetails { get; set; }
+
     public ICollection<Registration> Registrations { get; set; }
     public ICollection<News> News { get; set; } = new List<News>();
 }

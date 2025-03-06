@@ -5,6 +5,7 @@ using EventHubASP.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 using System;
 using System.Linq;
 using System.Security.Claims;
@@ -16,11 +17,142 @@ namespace EventHubASP.Controllers
     {
         private readonly IEventService _eventService;
         private readonly Cloudinary _cloudinary;
+        private readonly IWebHostEnvironment _environment;
 
-        public EventController(IEventService eventService, Cloudinary cloudinary)
+        public EventController(IEventService eventService, Cloudinary cloudinary, IWebHostEnvironment environment)
         {
             _eventService = eventService;
             _cloudinary = cloudinary;
+            _environment = environment;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var eventItem = await _eventService.GetEventByIdAsync(id);
+            if (eventItem == null)
+            {
+                return NotFound();
+            }
+            return View(eventItem);
+        }
+
+        [Authorize(Roles = "Organizer")]
+        [HttpGet]
+        public async Task<IActionResult> EditDetails(int id)
+        {
+            var eventItem = await _eventService.GetEventByIdAsync(id);
+            if (eventItem == null)
+            {
+                return NotFound();
+            }
+
+            var organizerId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            if (!await _eventService.IsOrganizerOfEventAsync(organizerId, id))
+            {
+                return Forbid();
+            }
+
+            return View(eventItem);
+        }
+
+        [Authorize(Roles = "Organizer")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditDetails(int id, string customContent)
+        {
+            var organizerId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            Console.WriteLine($"Attempting to save custom content for EventID {id}: {customContent?.Substring(0, Math.Min(50, customContent?.Length ?? 0)) ?? "null"}");
+
+            // Delegate the save operation to the service
+            var success = await _eventService.SaveCustomDetailsAsync(id, customContent, organizerId);
+
+            if (!success)
+            {
+                Console.WriteLine($"Save failed for EventID {id}. Returning to edit view.");
+                var eventModel = await _eventService.GetEventByIdAsync(id);
+                if (eventModel == null)
+                {
+                    Console.WriteLine($"Event with ID {id} not found after save failure.");
+                    return NotFound();
+                }
+                return View(eventModel);
+            }
+
+            Console.WriteLine($"Save successful for EventID {id}. Redirecting to Details.");
+            return RedirectToAction(nameof(Details), new { id });
+        }
+
+        [Authorize(Roles = "Organizer")]
+        [HttpPost]
+        public async Task<IActionResult> UploadImage(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return Json(new { success = false, message = "No file uploaded" });
+            }
+            if (!file.ContentType.StartsWith("image/"))
+            {
+                return Json(new { success = false, message = "Only image files are allowed" });
+            }
+
+            try
+            {
+                var uploadParams = new ImageUploadParams
+                {
+                    File = new FileDescription(file.FileName, file.OpenReadStream()),
+                };
+
+                var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+                var imageUrl = uploadResult.SecureUrl.ToString();
+
+                return Json(new { location = imageUrl }); // Use 'location' for TinyMCE compatibility
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error uploading image: {ex.Message}");
+                return Json(new { success = false, message = "Image upload failed: " + ex.Message });
+            }
+        }
+
+        [Authorize(Roles = "Organizer")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UploadVideo(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                Console.WriteLine("No file uploaded or file length is 0");
+                return Json(new { success = false, message = "No file uploaded" });
+            }
+
+            Console.WriteLine($"Received file: {file.FileName}, ContentType: {file.ContentType}, Length: {file.Length}");
+
+            if (!file.ContentType.StartsWith("video/"))
+            {
+                Console.WriteLine("Invalid file type: Only video files are allowed");
+                return Json(new { success = false, message = "Only video files are allowed" });
+            }
+
+            try
+            {
+                var uploadParams = new VideoUploadParams()
+                {
+                    File = new FileDescription(file.FileName, file.OpenReadStream())
+                };
+
+                Console.WriteLine("Uploading to Cloudinary...");
+                var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+                var videoUrl = uploadResult.SecureUrl.ToString();
+                Console.WriteLine($"Upload successful, URL: {videoUrl}");
+
+                return Json(new { success = true, url = videoUrl });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error uploading video: {ex.Message}");
+                return Json(new { success = false, message = "Video upload failed: " + ex.Message });
+            }
         }
 
         [AllowAnonymous]
@@ -205,6 +337,7 @@ namespace EventHubASP.Controllers
 
             var viewModel = new EventViewModel
             {
+                EventID = eventToEdit.EventID,
                 Title = eventToEdit.Title,
                 Description = eventToEdit.Description,
                 Date = eventToEdit.Date,
@@ -217,7 +350,7 @@ namespace EventHubASP.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Organizer")]
-        public async Task<IActionResult> EditEvent( EventViewModel viewModel)
+        public async Task<IActionResult> EditEvent(EventViewModel viewModel)
         {
             Console.WriteLine($"EditEvent POST called with eventId: {viewModel.EventID}");
             if (!ModelState.IsValid)
@@ -251,7 +384,6 @@ namespace EventHubASP.Controllers
 
                 var uploadResult = await _cloudinary.UploadAsync(uploadParams);
                 newImageUrl = uploadResult.SecureUrl.ToString();
-
 
                 if (!string.IsNullOrWhiteSpace(existingEvent.ImageUrl) && existingEvent.ImageUrl.Contains("cloudinary.com"))
                 {

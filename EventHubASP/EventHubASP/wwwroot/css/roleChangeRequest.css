@@ -1,161 +1,191 @@
-﻿/* Container */
+﻿/* Heading */
+.main-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: #f5deb3;
+    text-align: center;
+    padding: clamp(20px, 4vw, 40px) 0;
+    font-family: 'Cambria Math';
+    border-bottom: 2px solid #f5deb3; /* wheat */
+    margin-bottom: 2rem;
+}
+
+/* Table Container */
 .role-requests-container {
     max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 1;
-    font-family: 'Cambria Math';
+    margin: 0 auto;
+    padding: 0 2vw;
 }
 
-/* Main Title */
-.main-title {
-    font-size: 3rem;
-    font-weight: 700;
-    text-align: center;
-    color: #ffd700;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-    margin-bottom: 40px;
-    position: relative;
-    animation: fadeIn 1s ease forwards;
-}
-
-    .main-title::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 4px;
-        background: linear-gradient(to right, transparent, #ffd700, transparent);
-        border-radius: 2px;
-    }
-
-/* Table Styling */
+/* Table */
 .requests-table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     overflow: hidden;
 }
 
-    .requests-table thead {
-        background: linear-gradient(45deg, #2a2a3e, #3a3a5e);
-        color: #ffd700;
-        text-shadow: 0 2px 5px rgba(255, 215, 0, 0.3);
+    /* Table Header */
+    .requests-table .feedback-table-header {
+        background-color: #f5deb3; /* wheat */
     }
 
-    .requests-table th {
-        padding: 15px 20px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-align: left;
-        border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-    }
-
-    .requests-table tbody tr {
-        background: rgba(255, 255, 255, 0.03);
-        transition: all 0.3s ease;
-    }
-
-        .requests-table tbody tr:hover {
-            background: rgba(255, 215, 0, 0.1);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        .requests-table .feedback-table-header th {
+            padding: clamp(10px, 2vw, 15px);
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            color: #333;
+            text-align: left;
+            font-weight: 600;
         }
 
-    .requests-table td {
-        padding: 20px;
-        font-size: 1rem;
-        color: #fff;
-        border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    /* Table Body */
+    .requests-table .feedback-table-row {
+        border-bottom: 1px solid #eee;
     }
 
-        .requests-table td:last-child {
-            text-align: center;
+        .requests-table .feedback-table-row:hover {
+            background-color: #fafafa;
         }
 
-    /* Buttons */
-    .requests-table .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        border-radius: 12px;
-        transition: all 0.3s ease;
-        border: none;
-        margin: 0 5px;
+    .requests-table .feedback-table-cell {
+        padding: clamp(12px, 2.5vw, 16px);
+        font-size: clamp(0.875rem, 2vw, 1rem);
+        color: #666;
     }
 
-    .requests-table .btn-success {
-        background: linear-gradient(45deg, #ffd700, #ffeb3b);
-        color: #1a1a2e;
-    }
-
-        .requests-table .btn-success:hover {
-            background: linear-gradient(45deg, #ffeb3b, #ffffff);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+        .requests-table .feedback-table-cell:nth-child(1),
+        .requests-table .feedback-table-cell:nth-child(2) {
+            max-width: 200px;
+            overflow-wrap: break-word;
         }
 
-    .requests-table .btn-danger {
-        background: linear-gradient(45deg, #ff4040, #ff6666);
+        .requests-table .feedback-table-cell:nth-child(3) {
+            max-width: 400px;
+            overflow-wrap: break-word;
+        }
+
+        .requests-table .feedback-table-cell:nth-child(4) {
+            white-space: nowrap;
+        }
+
+/* Custom Button Styling */
+.request-btn {
+    padding: 0.5rem 1rem;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.request-approve {
+    background-color: #28a745; /* Green for Approve */
+    color: white;
+}
+
+    .request-approve:hover {
+        background-color: #218838; /* Darker green on hover */
         color: white;
     }
 
-        .requests-table .btn-danger:hover {
-            background: linear-gradient(45deg, #ff6666, #ffe5e5);
-            color: #1a1a2e;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 100, 100, 0.5);
-        }
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.request-decline {
+    background-color: #dc3545; /* Red for Decline */
+    color: white;
 }
+
+    .request-decline:hover {
+        background-color: #c82333; /* Darker red on hover */
+        color: white;
+    }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .main-title {
-        font-size: 2.5rem;
-    }
-
-    .requests-table th, .requests-table td {
-        font-size: 0.9rem;
-        padding: 15px;
-    }
-
-    .requests-table .btn {
-        padding: 8px 15px;
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 576px) {
+@media (max-width: 1024px) {
     .requests-table {
         display: block;
         overflow-x: auto;
-        white-space: nowrap;
     }
 
-        .requests-table thead, .requests-table tbody, .requests-table tr, .requests-table th, .requests-table td {
-            display: inline-block;
-            width: 100%;
+        .requests-table .feedback-table-header th,
+        .requests-table .feedback-table-cell {
+            min-width: 150px;
+        }
+}
+
+@media (max-width: 768px) {
+    .requests-table {
+        display: block;
+        box-shadow: none;
+    }
+
+        .requests-table .feedback-table-header {
+            display: none;
         }
 
-        .requests-table th, .requests-table td {
-            text-align: center;
+        .requests-table .feedback-table-body,
+        .requests-table .feedback-table-row {
+            display: block;
         }
+
+        .requests-table .feedback-table-row {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border-bottom: none;
+        }
+
+        .requests-table .feedback-table-cell {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+            .requests-table .feedback-table-cell:last-child {
+                border-bottom: none;
+            }
+
+            .requests-table .feedback-table-cell::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: #333;
+                flex: 0 0 40%;
+            }
+
+            .requests-table .feedback-table-cell:nth-child(1),
+            .requests-table .feedback-table-cell:nth-child(2),
+            .requests-table .feedback-table-cell:nth-child(3) {
+                max-width: none;
+            }
+
+    .request-btn {
+        margin-right: 0.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        padding: 1.5rem 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .requests-table .feedback-table-row {
+        padding: 0.75rem;
+    }
+
+    .requests-table .feedback-table-cell {
+        font-size: 0.875rem;
+    }
+
+    .request-btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
 }

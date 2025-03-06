@@ -19,6 +19,7 @@ namespace EventHubASP.DataAccess
         public DbSet<News> News { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<EventDetails> EventDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -2,35 +2,35 @@
 
 <link rel="stylesheet" href="~/css/roleChangeRequest.css" asp-append-version="true" />
 
-<div class="role-requests-container">
-    <h2 class="main-title">Role Change Requests</h2>
+<div class="role-requests-container feedback-table-container">
+    <h2 class="main-title feedback-title">Role Change Requests</h2>
 
-    <table class="requests-table">
-        <thead>
+    <table class="requests-table feedback-table">
+        <thead class="feedback-table-header">
             <tr>
-                <th>Username</th>
-                <th>Current Role</th>
-                <th>Requested Role</th>
-                <th>Request Date</th>
-                <th>Actions</th>
+                <th class="feedback-table-header-cell">Username</th>
+                <th class="feedback-table-header-cell">Current Role</th>
+                <th class="feedback-table-header-cell">Requested Role</th>
+                <th class="feedback-table-header-cell">Request Date</th>
+                <th class="feedback-table-header-cell">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="feedback-table-body">
             @foreach (var request in Model)
             {
-                <tr>
-                    <td>@request.User</td>
-                    <td>@request.CurrentRole</td>
-                    <td>@request.RequestedRole</td>
-                    <td>@request.RequestDate.ToString("g")</td>
-                    <td>
+                <tr class="feedback-table-row">
+                    <td class="feedback-table-cell" data-label="Username">@request.User</td>
+                    <td class="feedback-table-cell" data-label="Current Role">@request.CurrentRole</td>
+                    <td class="feedback-table-cell" data-label="Requested Role">@request.RequestedRole</td>
+                    <td class="feedback-table-cell" data-label="Request Date">@request.RequestDate.ToString("g")</td>
+                    <td class="feedback-table-cell" data-label="Actions">
                         <form asp-action="ApproveRequest" method="post" style="display:inline;">
                             <input type="hidden" name="requestId" value="@request.RequestID" />
-                            <button type="submit" class="btn btn-success">Approve</button>
+                            <button type="submit" class="request-btn request-approve">Approve</button>
                         </form>
                         <form asp-action="DeclineRequest" method="post" style="display:inline;">
                             <input type="hidden" name="requestId" value="@request.RequestID" />
-                            <button type="submit" class="btn btn-danger">Decline</button>
+                            <button type="submit" class="request-btn request-decline">Decline</button>
                         </form>
                     </td>
                 </tr>

@@ -33,7 +33,6 @@ builder.Services.AddScoped<INewsService, NewsService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<IFeedbackService, FeedbackService>();
 builder.Services.AddSignalR();
-
 builder.Services.AddScoped<IRoleChangeRequestService, RoleChangeRequestService>();
 builder.Services.AddScoped<RoleManagementService>();
 
@@ -47,6 +46,10 @@ builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
 })
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
+builder.Services.AddAntiforgery(options =>
+{
+    options.HeaderName = "X-CSRF-TOKEN";
+});
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
@@ -56,6 +59,10 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.Cookie.HttpOnly = true;
         options.Cookie.IsEssential = false;
     });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Organizer", policy => policy.RequireRole("Organizer"));
+});
 
 builder.Services.AddHttpContextAccessor();
 
@@ -75,12 +82,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.UseSession();
 
 app.MapControllerRoute(

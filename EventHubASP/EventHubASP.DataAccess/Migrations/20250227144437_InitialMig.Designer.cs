@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventHubASP.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250226093039_InitialMig")]
+    [Migration("20250227144437_InitialMig")]
     partial class InitialMig
     {
         /// <inheritdoc />
@@ -63,6 +63,29 @@ namespace EventHubASP.DataAccess.Migrations
                     b.HasIndex("OrganizerID");
 
                     b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("EventHubASP.Models.EventDetails", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CustomContent")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EventID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventID")
+                        .IsUnique();
+
+                    b.ToTable("EventDetails");
                 });
 
             modelBuilder.Entity("EventHubASP.Models.Feedback", b =>
@@ -285,19 +308,19 @@ namespace EventHubASP.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("717ecbff-9d26-43bd-ba5f-5dcf85ecf373"),
+                            Id = new Guid("3d51c940-0524-4092-b502-d8f89db02d3d"),
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = new Guid("32d1df56-573e-4839-a82d-ba5d8fb7c305"),
+                            Id = new Guid("dacf5d96-77a7-4ec7-9152-57daf24b84d5"),
                             Name = "Organizer",
                             NormalizedName = "ORGANIZER"
                         },
                         new
                         {
-                            Id = new Guid("0f10ca24-c694-490c-abb8-169c351c74b9"),
+                            Id = new Guid("ecc73f0e-012a-46e8-83fa-c66ae58f7c15"),
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -451,6 +474,17 @@ namespace EventHubASP.DataAccess.Migrations
                     b.Navigation("Organizer");
                 });
 
+            modelBuilder.Entity("EventHubASP.Models.EventDetails", b =>
+                {
+                    b.HasOne("EventHubASP.Models.Event", "Event")
+                        .WithOne("CustomDetails")
+                        .HasForeignKey("EventHubASP.Models.EventDetails", "EventID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
+                });
+
             modelBuilder.Entity("EventHubASP.Models.Notification", b =>
                 {
                     b.HasOne("News", "News")
@@ -572,6 +606,9 @@ namespace EventHubASP.DataAccess.Migrations
 
             modelBuilder.Entity("EventHubASP.Models.Event", b =>
                 {
+                    b.Navigation("CustomDetails")
+                        .IsRequired();
+
                     b.Navigation("News");
 
                     b.Navigation("Registrations");

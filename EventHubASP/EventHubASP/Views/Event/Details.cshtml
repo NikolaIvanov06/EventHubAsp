@@ -1,0 +1,29 @@
+﻿@model EventHubASP.Models.Event
+
+@{
+    ViewData["Title"] = Model.Title + " Details";
+}
+
+<div class="event-details-page">
+    <h1 class="event-details-header">@Model.Title</h1>
+    <div class="event-details-info-container">
+        <div class="event-details-info">
+            <p class="event-details-meta"><strong>Date:</strong> @Model.Date.ToString("MMMM dd, yyyy")</p>
+            <p class="event-details-meta"><strong>Location:</strong> @Model.Location</p>
+            <p class="event-details-meta"><strong>Description:</strong> @Model.Description</p>
+        </div>
+        <img src="@Model.ImageUrl" alt="@Model.Title" class="event-details-image" />
+    </div>
+    @if (Model.CustomDetails?.CustomContent != null)
+    {
+        <div class="event-details-custom-content">
+            @Html.Raw(Model.CustomDetails?.CustomContent)
+        </div>
+    }
+    else
+    {
+        <p class="event-details-custom-content">No custom content available.</p>
+    }
+</div>
+
+<link rel="stylesheet" href="~/css/eventDetails.css" asp-append-version="true" />

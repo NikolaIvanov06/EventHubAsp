@@ -18,5 +18,6 @@ namespace EventHubASP.Core
         Task<bool> DeleteEventAsync(int eventId);
         Task<bool> IsOrganizerOfEventAsync(Guid organizerId, int eventId);
         Task<IEnumerable<Event>> GetUserSubscriptionsAsync(Guid userId);
+        Task<bool> SaveCustomDetailsAsync(int eventId, string customContent, Guid organizerId);
     }
 }

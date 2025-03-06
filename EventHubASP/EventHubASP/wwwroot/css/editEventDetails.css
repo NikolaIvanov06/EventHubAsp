@@ -1,0 +1,499 @@
+﻿/* editEventDetails.css */
+
+:root {
+    --btn-width: 6.5em;
+    --btn-height: 2.3em;
+    --btn-bg: black;
+    --btn-color: white;
+    --btn-hover-color: black;
+    --btn-hover-bg: white;
+    --btn-font-size: 20px;
+    --btn-border-radius: 0.625em;
+    --btn-transition-speed: 0.5s;
+}
+
+/* Base styling using full screen */
+.edit-event-details-page {
+    min-height: 100vh;
+    padding: 2rem 4rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+    animation: edit-event-details-fadeIn 0.6s ease-in-out;
+}
+
+@keyframes edit-event-details-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header and metadata */
+.edit-event-details-header {
+    font-family: "Math", serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: wheat;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 15px rgba(255, 235, 167, 0.7);
+    position: relative;
+    animation: edit-event-details-slideInLeft 0.6s ease-out;
+}
+
+    .edit-event-details-header::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: wheat;
+        border-radius: 2px;
+        animation: edit-event-details-underlineGrow 0.6s ease-out forwards;
+    }
+
+@keyframes edit-event-details-slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes edit-event-details-underlineGrow {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 60px;
+    }
+}
+
+.edit-event-details-meta {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: #fff;
+    margin: 0.75rem 0;
+    line-height: 1.8;
+    animation: edit-event-details-fadeInUp 0.6s ease-out 0.2s backwards;
+}
+
+    .edit-event-details-meta strong {
+        color: wheat;
+        font-weight: 600;
+    }
+
+@keyframes edit-event-details-fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Event information layout with image on the right */
+.edit-event-details-info-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: 2rem 0;
+    animation: edit-event-details-slideIn 0.6s ease-out;
+}
+
+.edit-event-details-info {
+    flex: 2;
+    padding: 1rem;
+}
+
+.edit-event-details-image {
+    flex: 1;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    object-fit: cover;
+    border: 2px solid rgba(245, 222, 179, 0.3);
+    transition: transform 0.3s ease, border 0.2s ease;
+    animation: edit-event-details-zoomIn 0.6s ease-out 0.2s backwards;
+    margin-bottom: 20px;
+}
+
+    .edit-event-details-image:hover {
+        transform: scale(1.05);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+@keyframes edit-event-details-zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Form styling */
+.edit-event-details-form-group {
+    margin-bottom: 1.5rem;
+    animation: edit-event-details-fadeIn 0.6s ease-out 0.3s backwards;
+}
+
+.edit-event-details-custom-content-label {
+    font-family: "Math", serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: wheat;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-weight: 500;
+    text-decoration: overline;
+}
+
+.edit-event-details-form-control {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #f5deb3;
+    border-radius: 10px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    background-color: #2d2d2d;
+    color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    animation: edit-event-details-expandInput 0.6s ease-out;
+    box-sizing: border-box;
+}
+
+    .edit-event-details-form-control:focus {
+        outline: none;
+        border-color: wheat;
+        box-shadow: 0 0 10px rgba(245, 222, 179, 0.5);
+    }
+
+@keyframes edit-event-details-expandInput {
+    from {
+        transform: scaleX(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+/* Button styling */
+.submit-btn {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-weight: bold;
+    animation: edit-event-details-bounceIn 0.6s ease-out;
+    background-color: wheat;
+    color: black;
+    border: none;
+    border-radius: 10px;
+}
+
+    .submit-btn:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid;
+        border-color: white;
+    }
+
+.buttonCta {
+    margin-top: 15px;
+    border-radius: var(--btn-border-radius);
+    font-size: var(--btn-font-size);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-weight: bold;
+    animation: edit-event-details-bounceIn 0.6s ease-out;
+    width: 100%;
+    height: var(--btn-height);
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    border: 1px solid;
+    border-color: white;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+    .buttonCta:hover {
+        color: var(--btn-hover-color);
+        transform: translateY(-3px);
+    }
+
+    .buttonCta::after {
+        content: "";
+        background: var(--btn-hover-bg);
+        position: absolute;
+        z-index: -1;
+        left: -150%;
+        right: -150%;
+        top: 0;
+        bottom: 0;
+        transform: skewX(-45deg) scale(0, 1);
+        transition: all var(--btn-transition-speed);
+    }
+
+    .buttonCta:hover::after {
+        transform: skewX(-45deg) scale(1, 1);
+        transition: all var(--btn-transition-speed);
+    }
+
+@keyframes edit-event-details-bounceIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Custom content with no outline separation */
+.edit-event-details-custom-content {
+    margin-top: 2rem;
+    padding: 15px;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+    animation: edit-event-details-expand 0.6s ease-out;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+@keyframes edit-event-details-expand {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Enhanced image styles for TinyMCE compatibility */
+.edit-event-details-custom-content img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures block-level behavior */
+    clear: both; /* Prevents text from wrapping around on new lines */
+    margin: 1.5rem auto; /* Default centered with margin */
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(245, 222, 179, 0.3);
+    transition: transform 0.3s ease, border 0.2s ease;
+}
+
+    .edit-event-details-custom-content img.alignleft {
+        float: left;
+        margin-right: 1.5rem;
+        margin-left: 0;
+        max-width: 45%;
+        clear: left;
+    }
+
+    .edit-event-details-custom-content img.alignright {
+        float: right;
+        margin-left: 1.5rem;
+        margin-right: 0;
+        max-width: 45%;
+        clear: right;
+    }
+
+    .edit-event-details-custom-content img.aligncenter {
+        float: none;
+        margin: 1.5rem auto;
+        max-width: 100%;
+        clear: both;
+    }
+
+    .edit-event-details-custom-content img:hover {
+        transform: scale(1.02);
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+
+/* Default text color and spacing */
+.edit-event-details-custom-content,
+.edit-event-details-custom-content h1,
+.edit-event-details-custom-content h2,
+.edit-event-details-custom-content h3,
+.edit-event-details-custom-content h4,
+.edit-event-details-custom-content h5,
+.edit-event-details-custom-content h6,
+.edit-event-details-custom-content p,
+.edit-event-details-custom-content ul,
+.edit-event-details-custom-content ol,
+.edit-event-details-custom-content li {
+    color: #ffffff;
+    margin: 1.5rem 0; /* Consistent spacing with TinyMCE */
+}
+
+    .edit-event-details-custom-content a {
+        color: #f5deb3;
+        text-decoration: none;
+    }
+
+        .edit-event-details-custom-content a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+    /* Table styles */
+    .edit-event-details-custom-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background-color: #333;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .edit-event-details-custom-content table,
+    .edit-event-details-custom-content th,
+    .edit-event-details-custom-content td {
+        border: 1px solid #555;
+    }
+
+    .edit-event-details-custom-content th {
+        background-color: #f5deb3;
+        padding: 12px;
+        text-align: left;
+        color: #212121;
+        font-weight: 600;
+    }
+
+    .edit-event-details-custom-content td {
+        padding: 10px;
+        text-align: left;
+        color: #bbb;
+    }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .edit-event-details-page {
+        padding: 1.5rem 2rem;
+    }
+
+    .edit-event-details-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .edit-event-details-image {
+        max-width: 250px;
+    }
+
+    .edit-event-details-form-group,
+    .edit-event-details-custom-content {
+        padding: 1rem;
+    }
+
+    .submit-btn,
+    .buttonCta {
+        margin-right: 0.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .edit-event-details-page {
+        padding: 1rem 1.5rem;
+    }
+
+    .edit-event-details-header {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+    }
+
+    .edit-event-details-meta {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+    }
+
+    .edit-event-details-form-control {
+        font-size: clamp(0.875rem, 2vw, 0.9rem);
+    }
+
+    .edit-event-details-custom-content {
+        margin-top: 1.5rem;
+        padding: 0.75rem;
+    }
+
+        .edit-event-details-custom-content img {
+            margin: 1rem auto;
+        }
+
+            .edit-event-details-custom-content img.alignleft,
+            .edit-event-details-custom-content img.alignright {
+                float: none;
+                max-width: 100%;
+                margin: 1rem auto;
+            }
+
+    .submit-btn,
+    .buttonCta {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .edit-event-details-page {
+        padding: 0.75rem 1rem;
+    }
+
+    .edit-event-details-form-group,
+    .edit-event-details-custom-content {
+        padding: 0.5rem;
+    }
+
+    .edit-event-details-image {
+        max-width: 200px;
+    }
+
+    .edit-event-details-custom-content img {
+        margin: 0.75rem auto;
+    }
+
+    .edit-event-details-custom-content table,
+    .edit-event-details-custom-content th,
+    .edit-event-details-custom-content td {
+        padding: 0.5rem;
+    }
+}

@@ -59,8 +59,81 @@ public class EventService : IEventService
 
     public async Task<Event> GetEventByIdAsync(int eventId)
     {
-        return await _context.Events.FindAsync(eventId);
+        var eventModel = await _context.Events
+            .Include(e => e.CustomDetails)
+            .FirstOrDefaultAsync(e => e.EventID == eventId);
+
+        if (eventModel != null && eventModel.CustomDetails != null)
+        {
+            Console.WriteLine($"Retrieved EventID {eventId}, CustomContent: {eventModel.CustomDetails.CustomContent?.Substring(0, Math.Min(50, eventModel.CustomDetails.CustomContent?.Length ?? 0))}");
+        }
+        else
+        {
+            Console.WriteLine($"Retrieved EventID {eventId}, CustomDetails or CustomContent is null.");
+        }
+
+        return eventModel;
     }
+    public async Task<bool> SaveCustomDetailsAsync(int eventId, string customContent, Guid organizerId)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(customContent))
+            {
+                Console.WriteLine("Custom content is empty or null.");
+                throw new ArgumentException("Custom content cannot be empty.", nameof(customContent));
+            }
+
+            var existingEvent = await _context.Events
+                .Include(e => e.CustomDetails)
+                .FirstOrDefaultAsync(e => e.EventID == eventId);
+
+            if (existingEvent == null)
+            {
+                Console.WriteLine($"Event with ID {eventId} not found.");
+                throw new KeyNotFoundException($"Event with ID {eventId} not found.");
+            }
+
+            if (existingEvent.OrganizerID != organizerId)
+            {
+                Console.WriteLine($"Unauthorized access attempt for EventID {eventId} by OrganizerID {organizerId}.");
+                throw new UnauthorizedAccessException("You are not authorized to edit this event.");
+            }
+
+            if (existingEvent.CustomDetails == null)
+            {
+                Console.WriteLine($"Creating new CustomDetails for EventID {eventId}.");
+                existingEvent.CustomDetails = new EventDetails
+                {
+                    EventID = eventId,
+                    CustomContent = customContent
+                };
+                _context.EventDetails.Add(existingEvent.CustomDetails);
+            }
+            else
+            {
+                Console.WriteLine($"Updating CustomContent for EventID {eventId}: {customContent.Substring(0, Math.Min(50, customContent.Length))}");
+                existingEvent.CustomDetails.CustomContent = customContent;
+                _context.Entry(existingEvent.CustomDetails).State = EntityState.Modified;
+            }
+
+            var changes = await _context.SaveChangesAsync();
+            Console.WriteLine($"Saved {changes} changes for EventID {eventId} with content: {customContent.Substring(0, Math.Min(50, customContent.Length))}");
+            return true;
+        }
+        catch (DbUpdateConcurrencyException ex)
+        {
+            Console.WriteLine($"Concurrency conflict: {ex.Message}");
+            return false;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving custom details: {ex.Message}");
+            return false;
+        }
+    }
+
+
 
     public async Task<bool> UpdateEventAsync(Event updatedEvent, Guid organizerId)
     {

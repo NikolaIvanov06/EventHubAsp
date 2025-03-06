@@ -7,7 +7,14 @@
 
 <div class="hero">
     <div class="container browse-events-container">
-        <h2 class="main-title">Browse Events</h2>
+        @if (User.IsInRole("Admin"))
+        {
+            <h2 class="main-title">Delete Event</h2>
+        }
+        else {
+            <h2 class="main-title">Browse Events</h2>
+        }
+
 
         <div class="filter-search-container">
             <div class="filter-wrapper">
@@ -46,36 +53,38 @@
                 @foreach (var eventItem in Model)
                 {
                     <div class="col-md-4 event-item" data-title="@eventItem.Title.ToLower()">
-                        <div class="event-card">
-                            <div class="event-card-inner">
-                                <img src="@eventItem.ImageUrl" class="event-image" alt="Event Image">
-                                <div class="event-details">
-                                    <h5 class="event-title">@eventItem.Title</h5>
-                                    <p class="event-description">@eventItem.Description</p>
-                                    <p class="event-meta"><strong>Date:</strong> @eventItem.Date.ToString("MMM dd, yyyy")</p>
-                                    <p class="event-meta"><strong>Location:</strong> @eventItem.Location</p>
-                                    <div class="event-buttons">
-                                        @if (User.IsInRole("Admin"))
-                                        {
-                                            <form method="post" action="/Event/DeleteEvent">
-                                                <input type="hidden" name="eventId" value="@eventItem.EventID" />
-                                                <button type="submit" class="btn btn-danger"
-                                                        onclick="return confirm('Are you sure you want to delete this event?');">
-                                                    Delete Event
-                                                </button>
-                                            </form>
-                                        }
-                                        else if (User.IsInRole("User"))
-                                        {
-                                            <form method="post" asp-controller="Event" asp-action="Subscribe">
-                                                <input type="hidden" name="eventId" value="@eventItem.EventID" />
-                                                <button type="submit" class="btn btn-primary">Subscribe</button>
-                                            </form>
-                                        }
+                        <a asp-action="Details" asp-controller="Event" asp-route-id="@eventItem.EventID" class="event-link">
+                            <div class="event-card">
+                                <div class="event-card-inner">
+                                    <img src="@eventItem.ImageUrl" class="event-image" alt="Event Image">
+                                    <div class="event-details">
+                                        <h5 class="event-title">@eventItem.Title</h5>
+                                        <p class="event-description">@eventItem.Description</p>
+                                        <p class="event-meta"><strong>Date:</strong> @eventItem.Date.ToString("MMM dd, yyyy")</p>
+                                        <p class="event-meta"><strong>Location:</strong> @eventItem.Location</p>
+                                        <div class="event-buttons">
+                                            @if (User.IsInRole("Admin"))
+                                            {
+                                                <form method="post" action="/Event/DeleteEvent">
+                                                    <input type="hidden" name="eventId" value="@eventItem.EventID" />
+                                                    <button type="submit" class="btn btn-danger"
+                                                            onclick="return confirm('Are you sure you want to delete this event?');">
+                                                        Delete Event
+                                                    </button>
+                                                </form>
+                                            }
+                                            else if (User.IsInRole("User"))
+                                            {
+                                                <form method="post" asp-controller="Event" asp-action="Subscribe">
+                                                    <input type="hidden" name="eventId" value="@eventItem.EventID" />
+                                                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                                                </form>
+                                            }
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 }
             }
@@ -86,6 +95,7 @@
         </div>
     </div>
 </div>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const filterToggleButton = document.getElementById('filterToggleButton');
@@ -93,9 +103,7 @@
         const searchInput = document.getElementById('searchInput');
         const eventsContainer = document.getElementById('eventsContainer');
         const eventItems = document.querySelectorAll('.event-item');
-        const eventCards = document.querySelectorAll('.event-card');
 
-        // Filter toggle
         filterToggleButton.addEventListener('mouseenter', () => {
             filterSection.style.display = 'block';
             setTimeout(() => { filterSection.style.opacity = '1'; }, 10);
@@ -124,7 +132,6 @@
             }
         });
 
-        // Search functionality with animation
         searchInput.addEventListener('input', function () {
             const query = this.value.toLowerCase();
             eventItems.forEach(item => {

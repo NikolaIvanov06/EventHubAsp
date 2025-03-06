@@ -1,0 +1,216 @@
+﻿@model EventHubASP.Models.Event
+
+@{
+    ViewData["Title"] = "Edit " + Model.Title + " Details";
+}
+
+<div class="edit-event-details-page">
+    <h1 class="edit-event-details-header">Customize @Model.Title Details</h1>
+    <div class="edit-event-details-info-container">
+        <div class="edit-event-details-info">
+            <p class="edit-event-details-meta"><strong>Date:</strong> @Model.Date.ToString("MMMM dd, yyyy")</p>
+            <p class="edit-event-details-meta"><strong>Location:</strong> @Model.Location</p>
+            <p class="edit-event-details-meta"><strong>Description:</strong> @Model.Description</p>
+        </div>
+        <img src="@Model.ImageUrl" alt="@Model.Title" class="edit-event-details-image" />
+    </div>
+
+    <form id="editDetailsForm" asp-action="EditDetails" method="post" class="edit-event-details-form">
+        <input type="hidden" asp-for="EventID" />
+        <div class="edit-event-details-form-group">
+            <label for="customContent" class="edit-event-details-custom-content-label">Custom Content</label>
+            <textarea id="customContent" name="customContent" class="edit-event-details-form-control tinymce-editor" rows="10">@Html.Raw(Model.CustomDetails?.CustomContent ?? "")</textarea>
+        </div>
+        <button type="submit" class="submit-btn edit-event-details-submit">Save Changes</button>
+    </form>
+    <form asp-action="MyEvents" asp-route-id="@Model.EventID" method="get" class="edit-event-details-form">
+        <button class="buttonCta edit-event-details-cancel">Cancel</button>
+    </form>
+</div>
+
+<link rel="stylesheet" href="~/css/editEventDetails.css" asp-append-version="true" />
+<style>
+    .tinymce-editor {
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        background-color: #2d2d2d;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #fff;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+        .tinymce-editor:focus {
+            border-color: #f5deb3;
+            box-shadow: 0 0 10px rgba(245, 222, 179, 0.5);
+            outline: none;
+        }
+
+    .drag-guide {
+        position: absolute;
+        border: 2px dashed #f5deb3;
+        background: rgba(245, 222, 179, 0.1);
+        z-index: 1000;
+        display: none;
+        pointer-events: none;
+    }
+</style>
+
+@section Scripts {
+    <script src="https://cdn.tiny.cloud/1/8vt2morvyq21ab6ii5r1b2arjopyupzpajjeozdxtxkzmnxz/tinymce/6/tinymce.min.js" referrerpolicy="no-referrer"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            tinymce.init({
+                selector: '.tinymce-editor',
+                plugins: 'advlist autolink lists link image charmap print preview anchor fontselect fontsizeselect',
+                toolbar: 'undo redo | formatselect fontselect fontsizeselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+                font_formats: 'Segoe UI=Segoe UI, sans-serif;Arial=Arial, sans-serif;Times New Roman=Times New Roman, serif;Courier New=Courier New, monospace;Georgia=Georgia, serif',
+                fontsize_formats: '8pt 10pt 12pt 14pt 16pt 18pt 20pt 24pt 30pt 36pt',
+                height: 500,
+                menubar: true,
+                statusbar: true,
+                block_formats: 'Paragraph=p;Heading 1=h1;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6',
+                image_advtab: true, // Enable advanced tab for alignment and formatting
+                image_description: true,
+                image_dimensions: true,
+                image_title: true,
+                link_title: true,
+                valid_styles: {
+                    '*': 'color,font-size,font-weight,text-align,float,margin,margin-right,margin-left,padding,padding-right,padding-left,border,border-radius,box-shadow,transition,background-color,text-decoration,line-height,font-family,letter-spacing,word-spacing,text-transform,vertical-align,clear'
+                },
+                forced_root_block: 'p',
+                valid_elements: 'h1,h2,h3,h4,h5,h6,p,div,img[align|style|class],span[style],*[style],*[class],br,strong,em,ul,ol,li,a[href|target=_blank],table,thead,tbody,tr,th,td,iframe[src|width|height|frameborder|allow|allowfullscreen],video[src|controls],source[src|type]',
+                invalid_elements: 'script,applet,embed,object',
+                cleanup: false,
+                verify_html: true,
+                valid_elements: '*[*]',
+                entity_encoding: 'raw',
+                skin: 'oxide-dark',
+                setup: function (editor) {
+                    editor.on('init', function () {
+                        console.log('TinyMCE initialized for:', editor.id);
+                    });
+                    editor.on('change keyup', function () {
+                        const content = editor.getContent({ format: 'html' });
+                        console.log('Editor content changed:', content);
+                    });
+                    editor.on('ExecCommand', function (e) {
+                        console.log('Command executed:', e.command, e.value);
+                    });
+                    editor.on('SaveContent', function (e) {
+                        console.log('Content saved:', e.content);
+                    });
+                    $('#editDetailsForm').submit(function () {
+                        const content = editor.getContent({ format: 'html' });
+                        $('#customContent').val(content);
+                        console.log('Form submission content:', content);
+                    });
+                },
+                content_style: `
+                            body {
+                                font-family: 'Segoe UI', Arial, sans-serif;
+                                line-height: 1.8;
+                                color: #fff;
+                                background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+                                margin: 0;
+                                padding: 15px;
+                                box-sizing: border-box;
+                                overflow-y: auto;
+                                max-height: 500px;
+                            }
+                            .mce-content-body {
+                                width: 100%;
+                                padding: 15px;
+                                background: #2d2d2d;
+                                border-radius: 10px;
+                                box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+                                overflow: hidden;
+                                color: #fff;
+                            }
+                            h1, h2, h3, h4, h5, h6, p, div {
+                                margin: 1.5rem 0; /* Increased margin for better separation */
+                            }
+                            h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; }
+                            h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 700; }
+                            h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 700; }
+                            h4 { font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 700; }
+                            h5 { font-size: 0.9rem; font-weight: 700; }
+                            h6 { font-size: 0.8rem; font-weight: 700; }
+                            p { line-height: 1.6; }
+                            img {
+                                max-width: 100%;
+                                height: auto;
+                                display: block; /* Ensures block-level behavior */
+                                clear: both; /* Prevents text from wrapping around on new lines */
+                                margin: 1.5rem auto; /* Default centered with margin */
+                                border-radius: 6px;
+                                box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+                                border: 2px solid rgba(245, 222, 179, 0.3);
+                                transition: transform 0.3s ease, border 0.2s ease;
+                            }
+                            img.alignleft {
+                                float: left;
+                                margin-right: 1.5rem;
+                                margin-left: 0;
+                                max-width: 45%;
+                                clear: left;
+                            }
+                            img.alignright {
+                                float: right;
+                                margin-left: 1.5rem;
+                                margin-right: 0;
+                                max-width: 45%;
+                                clear: right;
+                            }
+                            img.aligncenter {
+                                float: none;
+                                margin: 1.5rem auto;
+                                max-width: 100%;
+                                clear: both;
+                            }
+                            img:hover {
+                                transform: scale(1.02);
+                                border-color: rgba(255, 255, 255, 0.5);
+                            }
+                            table {
+                                width: 100%;
+                                border-collapse: collapse;
+                                margin: 1.5rem 0;
+                                background-color: #333;
+                                border-radius: 6px;
+                                overflow: hidden;
+                            }
+                            table, th, td { border: 1px solid #555; }
+                            th {
+                                background-color: #f5deb3;
+                                padding: 12px;
+                                text-align: left;
+                                color: #212121;
+                                font-weight: 600;
+                            }
+                            td {
+                                padding: 10px;
+                                text-align: left;
+                                color: #bbb;
+                            }
+                            a {
+                                color: #f5deb3;
+                                text-decoration: none;
+                                transition: color 0.3s ease;
+                            }
+                            a:hover {
+                                color: #fff;
+                                text-decoration: underline;
+                            }
+                            span {
+                                display: inline-block;
+                            }
+                        `
+            });
+        })();
+    </script>
+}

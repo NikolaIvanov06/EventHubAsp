@@ -3,40 +3,43 @@
 <link rel="stylesheet" href="~/css/createEvent.css" asp-append-version="true" />
 
 <div class="hero">
-    <div class="container edit-event-container">
-        <h2>Edit Event</h2>
+    <div class="container create-event-container">
+        <h2 class="create-event-header">Edit Event</h2>
         <form asp-action="EditEvent" asp-controller="Event" method="post" enctype="multipart/form-data">
-            <input asp-for="EventID" type="hidden" class="form-control"/>
-            <div class="form-group">
-                <label asp-for="Title" class="form-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+            <input asp-for="EventID" type="hidden" class="create-event-input" />
+            <div class="create-event-form-group">
+                <label asp-for="Title" class="create-event-label"></label>
+                <input asp-for="Title" class="create-event-input create-event-input-title" />
+                <span asp-validation-for="Title" class="create-event-validation-error"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Description" class="form-label"></label>
-                <textarea asp-for="Description" class="form-control"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
+            <div class="create-event-form-group">
+                <label asp-for="Description" class="create-event-label"></label>
+                <textarea asp-for="Description" class="create-event-input"></textarea>
+                <span asp-validation-for="Description" class="create-event-validation-error"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Date" class="form-label"></label>
-                <input asp-for="Date" class="form-control" type="date" />
-                <span asp-validation-for="Date" class="text-danger"></span>
+            <div class="create-event-form-group">
+                <label asp-for="Date" class="create-event-label"></label>
+                <input asp-for="Date" class="create-event-input create-event-input-date" type="date" />
+                <span asp-validation-for="Date" class="create-event-validation-error"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Location" class="form-label"></label>
-                <input asp-for="Location" class="form-control" />
-                <span asp-validation-for="Location" class="text-danger"></span>
+            <div class="create-event-form-group">
+                <label asp-for="Location" class="create-event-label"></label>
+                <input asp-for="Location" class="create-event-input create-event-input-location" />
+                <span asp-validation-for="Location" class="create-event-validation-error"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ImageUrl" class="form-label"></label>
-                <input asp-for="ImageUrl" class="form-control" type="url" placeholder="Enter an image URL" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            <div class="create-event-form-group">
+                <label asp-for="ImageUrl" class="create-event-label"></label>
+                <input asp-for="ImageUrl" class="create-event-input create-event-input-url" type="url" placeholder="Enter an image URL" />
+                <span asp-validation-for="ImageUrl" class="create-event-validation-error"></span>
                 <p>or</p>
-                <input type="file" id="fileUpload" name="fileUpload" class="form-control" style="margin-top: -15px;"/>
-                <button type="button" id="removeFile" class="btn btn-danger" style="display: none; background-color: #4e73df; border-radius: 20px; margin-top: 10px;">Remove File</button>
+                <div class="drop-container">
+                    <span class="drop-title">Drag and drop or click to upload</span>
+                    <input type="file" id="fileUpload" name="fileUpload" class="create-event-file-input" style="margin-top: -15px;" />
+                </div>
+                <button type="button" id="removeFile" class="create-event-remove-btn" style="display: none;">Remove File</button>
             </div>
 
-            <button type="submit" class="btn btn-success" style="margin-bottom: 15px; border-radius: 10px;">Update Event</button>
+            <button type="submit" class="create-event-submit">Update Event</button>
         </form>
     </div>
 </div>
