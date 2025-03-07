@@ -45,7 +45,12 @@ namespace EventHubASP.DataAccess
                 {
                     await userManager.AddToRoleAsync(user, role);
                 }
+                else
+                {
+                    Console.WriteLine($"Failed to create user {username}: {string.Join(", ", result.Errors.Select(e => e.Description))}");
+                    throw new Exception($"User creation failed for {username}");
+                }
             }
         }
     }
-}
+}   

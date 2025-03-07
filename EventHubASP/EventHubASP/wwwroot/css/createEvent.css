@@ -11,7 +11,7 @@
     overflow-x: hidden;
 }
 
-/* Header styling */
+
 .create-event-header {
     font-family: "Math", serif;
     color: wheat;
@@ -40,20 +40,20 @@
 .create-event-validation-error {
     font-size: 0.875rem;
     color: #e74c3c;
-    display: none; /* Hidden by default */
+    display: none; 
     margin-top: 5px;
     text-align: left;
 }
 
 .field-validation-error {
-    display: block; /* Show validation messages */
+    display: block;
 }
 
 .input-validation-error {
-    border-color: #e74c3c; /* Highlight invalid inputs */
+    border-color: #e74c3c; 
     background-color: #ffe5e5;
 }
-/* Meta text styling */
+
 .create-event-meta {
     color: wheat;
     font-size: 1rem;

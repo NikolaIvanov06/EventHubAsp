@@ -10,7 +10,7 @@
             <div class="mb-3">
                 <label asp-for="Username" class="label">Username</label>
                 <div class="input-wrapper">
-                    <input asp-for="Username" class="form-control form-control-username" autocomplete="off" aria-describedby="usernameError" />
+                    <input asp-for="Username" class="form-control form-control-username" autocomplete="off" aria-describedby="usernameError" placeholder="Username"/>
                 </div>
                 <span asp-validation-for="Username" id="usernameError" class="text-danger validation-message" aria-live="polite"></span>
             </div>
@@ -18,7 +18,7 @@
             <div class="mb-3">
                 <label asp-for="Email" class="label">Email</label>
                 <div class="input-wrapper">
-                    <input asp-for="Email" class="form-control form-control-email" autocomplete="off" aria-describedby="emailError" />
+                    <input asp-for="Email" class="form-control form-control-email" autocomplete="off" aria-describedby="emailError" placeholder="Email" />
                 </div>
                 <span asp-validation-for="Email" id="emailError" class="text-danger validation-message" aria-live="polite"></span>
             </div>
@@ -26,7 +26,7 @@
             <div class="mb-3">
                 <label asp-for="Password" class="label">Password</label>
                 <div class="input-wrapper">
-                    <input asp-for="Password" type="password" class="form-control form-control-password password-field" autocomplete="off" aria-describedby="passwordError" />
+                    <input asp-for="Password" type="password" class="form-control form-control-password password-field" autocomplete="off" aria-describedby="passwordError" placeholder="Password" />
                     <span class="eye-icon" aria-label="Toggle password visibility">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                             <path class="eye-open" d="M12 4C7 4 2.73 7.11 1 12c1.73 4.89 6 8 11 8s9.27-3.11 11-8c-1.73-4.89-6-8-11-8Zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6Zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4Z" />
@@ -40,7 +40,7 @@
             <div class="mb-3">
                 <label asp-for="ConfirmPassword" class="label">Confirm Password</label>
                 <div class="input-wrapper">
-                    <input asp-for="ConfirmPassword" type="password" class="form-control form-control-confirm-password password-field" autocomplete="off" aria-describedby="confirmPasswordError" />
+                    <input asp-for="ConfirmPassword" type="password" class="form-control form-control-confirm-password password-field" autocomplete="off" aria-describedby="confirmPasswordError" placeholder="Confirm Password" />
                     <span class="eye-icon" aria-label="Toggle password visibility">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                             <path class="eye-open" d="M12 4C7 4 2.73 7.11 1 12c1.73 4.89 6 8 11 8s9.27-3.11 11-8c-1.73-4.89-6-8-11-8Zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6Zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4Z" />
@@ -74,15 +74,13 @@
             const confirmPasswordInput = form.querySelector('input[name="ConfirmPassword"]');
             const eyeIcons = document.querySelectorAll('.eye-icon');
 
-            // Track input states with lowercase keys
             const inputStates = {
                 username: { hasBeenTouched: false, isValid: false, isFilled: false },
                 email: { hasBeenTouched: false, isValid: false, isFilled: false },
                 password: { hasBeenTouched: false, isValid: false, isFilled: false },
-                confirmpassword: { hasBeenTouched: false, isValid: false, isFilled: false } // Note: lowercase 'confirmpassword'
+                confirmpassword: { hasBeenTouched: false, isValid: false, isFilled: false } 
             };
 
-            // Password visibility toggle
             eyeIcons.forEach(icon => {
                 icon.addEventListener('click', function () {
                     const input = this.previousElementSibling;
@@ -92,7 +90,6 @@
                 });
             });
 
-            // Validation message helper
             function showValidationMessage(input, message) {
                 const validationMessage = input.closest('.mb-3').querySelector('.validation-message');
                 if (message) {
@@ -108,7 +105,6 @@
                 }
             }
 
-            // Debounce function to limit AJAX calls
             function debounce(func, wait) {
                 let timeout;
                 return function (...args) {
@@ -117,7 +113,6 @@
                 };
             }
 
-            // AJAX check for username availability
             function checkUsernameAvailability(value) {
                 return fetch('/Account/CheckUsername?username=' + encodeURIComponent(value), {
                     method: 'GET'
@@ -127,7 +122,6 @@
                 .catch(() => false);
             }
 
-            // AJAX check for email availability
             function checkEmailAvailability(value) {
                 return fetch('/Account/CheckEmail?email=' + encodeURIComponent(value), {
                     method: 'GET'
@@ -137,7 +131,6 @@
                 .catch(() => false);
             }
 
-            // Validation functions
             async function validateUsername(sendMessage = false) {
                 const value = usernameInput.value.trim();
                 let message = "";
@@ -231,7 +224,6 @@
                 return inputStates.confirmpassword.isValid;
             }
 
-            // Check if all fields are filled and valid
             function areAllFieldsFilledAndValid() {
                 return inputStates.username.isFilled && inputStates.username.isValid &&
                        inputStates.email.isFilled && inputStates.email.isValid &&
@@ -239,7 +231,6 @@
                        inputStates.confirmpassword.isFilled && inputStates.confirmpassword.isValid;
             }
 
-            // Form validity check with debounce
             const debouncedCheckFormValidity = debounce(async function (input) {
                 const validations = {
                     Username: validateUsername,
@@ -251,16 +242,15 @@
                 const validateFunc = validations[inputName];
 
                 if (validateFunc) {
-                    await validateFunc(true); // Show message on blur or input if invalid
+                    await validateFunc(true);
                 }
 
                 submitButton.disabled = !areAllFieldsFilledAndValid();
             }, 300);
 
-            // Event listeners
             inputs.forEach(input => {
                 input.addEventListener('input', async function () {
-                    const state = inputStates[input.name.toLowerCase()]; // Normalize to lowercase
+                    const state = inputStates[input.name.toLowerCase()];
                     state.hasBeenTouched = true;
                     await debouncedCheckFormValidity(input);
                 });
@@ -274,7 +264,6 @@
             });
 
             form.addEventListener('submit', async function (event) {
-                // Validate all fields on submit
                 await Promise.all([
                     validateUsername(true),
                     validateEmail(true),
@@ -287,7 +276,6 @@
                 }
             });
 
-            // Show server-side validation errors on load (from model state)
             document.querySelectorAll('.validation-message').forEach(error => {
                 if (error.textContent.trim() !== "") {
                     error.classList.add('visible');

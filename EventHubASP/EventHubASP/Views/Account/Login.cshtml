@@ -13,7 +13,7 @@
             <div class="input-span">
                 <label asp-for="EmailOrUsername" class="label">Email Or Username</label>
                 <div class="input-wrapper">
-                    <input asp-for="EmailOrUsername" type="text" placeholder="Username" autocomplete="off" class="form-control form-control-username" />
+                    <input asp-for="EmailOrUsername" type="text" placeholder="Username or Email" autocomplete="off" class="form-control form-control-username" />
                 </div>
                 <span asp-validation-for="EmailOrUsername" class="text-danger validation-message"></span>
             </div>
@@ -31,8 +31,13 @@
                 <span asp-validation-for="Password" class="text-danger validation-message"></span>
             </div>
             <button type="submit" class="submit">Login</button>
+
             <div class="register-link">
-                Don't have an account? <a href="/Account/Register">Register here</a>.   
+                Don't have an account? <a asp-controller="Account" asp-action="Register">Register here</a>.
+            </div>
+
+            <div class="forgot-password-link">
+                <a asp-controller="Account" asp-action="ForgotPassword" >Forgot Password?</a>
             </div>
         </form>
         <partial name="_ValidationScriptsPartial"></partial>

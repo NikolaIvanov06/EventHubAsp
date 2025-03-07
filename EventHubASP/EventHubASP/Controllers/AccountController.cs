@@ -38,6 +38,68 @@ public class AccountController : Controller
         return RedirectToAction("ContactUs", "Home");
     }
 
+    [HttpGet]
+    public IActionResult ForgotPassword()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user != null && user.HashedRecoveryCode != null)
+            {
+                var result = _userManager.PasswordHasher.VerifyHashedPassword(user, user.HashedRecoveryCode, model.RecoveryCode);
+                if (result == PasswordVerificationResult.Success)
+                {
+                    var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                    return RedirectToAction("ResetPassword", new { token, email = model.Email });
+                }
+            }
+            ModelState.AddModelError("", "Invalid email or recovery code.");
+        }
+        return View(model);
+    }
+
+    [HttpGet]
+    public IActionResult ResetPassword(string token, string email)
+    {
+        if (string.IsNullOrEmpty(token) || string.IsNullOrEmpty(email))
+            return BadRequest();
+        return View(new ResetPasswordViewModel { Token = token, Email = email });
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user != null)
+            {
+                var result = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Login");
+                }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Invalid email.");
+            }
+        }
+        return View(model);
+    }
+
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Register(RegisterViewModel model)

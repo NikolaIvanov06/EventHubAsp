@@ -64,7 +64,6 @@ namespace EventHubASP.Controllers
             var organizerId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             Console.WriteLine($"Attempting to save custom content for EventID {id}: {customContent?.Substring(0, Math.Min(50, customContent?.Length ?? 0)) ?? "null"}");
 
-            // Delegate the save operation to the service
             var success = await _eventService.SaveCustomDetailsAsync(id, customContent, organizerId);
 
             if (!success)
@@ -106,7 +105,7 @@ namespace EventHubASP.Controllers
                 var uploadResult = await _cloudinary.UploadAsync(uploadParams);
                 var imageUrl = uploadResult.SecureUrl.ToString();
 
-                return Json(new { location = imageUrl }); // Use 'location' for TinyMCE compatibility
+                return Json(new { location = imageUrl }); 
             }
             catch (Exception ex)
             {

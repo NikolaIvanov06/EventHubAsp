@@ -15,6 +15,8 @@ namespace EventHubASP.Models
         public override string UserName { get; set; }
         public override string Email { get; set; }
 
+        public string? HashedRecoveryCode { get; set; }
+
         public ICollection<Registration> Registrations { get; set; }
         public ICollection<Notification> Notifications { get; set; }
     }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventHubASP.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250227144437_InitialMig")]
+    [Migration("20250307090311_InitialMig")]
     partial class InitialMig
     {
         /// <inheritdoc />
@@ -231,6 +231,9 @@ namespace EventHubASP.DataAccess.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("HashedRecoveryCode")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -308,19 +311,19 @@ namespace EventHubASP.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3d51c940-0524-4092-b502-d8f89db02d3d"),
+                            Id = new Guid("f49c3f83-85fe-43ed-91fe-42cbb8b7b499"),
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = new Guid("dacf5d96-77a7-4ec7-9152-57daf24b84d5"),
+                            Id = new Guid("d2adcc7f-db2d-4753-a5cd-541079369780"),
                             Name = "Organizer",
                             NormalizedName = "ORGANIZER"
                         },
                         new
                         {
-                            Id = new Guid("ecc73f0e-012a-46e8-83fa-c66ae58f7c15"),
+                            Id = new Guid("d39a59c4-d9b0-4461-83e9-56d3fd5eb85b"),
                             Name = "User",
                             NormalizedName = "USER"
                         });

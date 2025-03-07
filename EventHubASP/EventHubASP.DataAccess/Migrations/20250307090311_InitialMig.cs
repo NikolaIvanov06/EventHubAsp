@@ -34,6 +34,7 @@ namespace EventHubASP.DataAccess.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
+                    HashedRecoveryCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
@@ -330,9 +331,9 @@ namespace EventHubASP.DataAccess.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("3d51c940-0524-4092-b502-d8f89db02d3d"), null, "Admin", "ADMIN" },
-                    { new Guid("dacf5d96-77a7-4ec7-9152-57daf24b84d5"), null, "Organizer", "ORGANIZER" },
-                    { new Guid("ecc73f0e-012a-46e8-83fa-c66ae58f7c15"), null, "User", "USER" }
+                    { new Guid("d2adcc7f-db2d-4753-a5cd-541079369780"), null, "Organizer", "ORGANIZER" },
+                    { new Guid("d39a59c4-d9b0-4461-83e9-56d3fd5eb85b"), null, "User", "USER" },
+                    { new Guid("f49c3f83-85fe-43ed-91fe-42cbb8b7b499"), null, "Admin", "ADMIN" }
                 });
 
             migrationBuilder.CreateIndex(

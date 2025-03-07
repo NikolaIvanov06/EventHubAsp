@@ -10,7 +10,7 @@ public class News
     [ForeignKey("Event")]
     public int EventID { get; set; }
 
-    public Guid OrganizerID { get; set; } // ✅ No [ForeignKey] attribute needed
+    public Guid OrganizerID { get; set; }
 
     [Required]
     public string Title { get; set; }
@@ -21,5 +21,5 @@ public class News
     public DateTime PublishedDate { get; set; }
 
     public Event Event { get; set; }
-    public User Organizer { get; set; } // ✅ EF will infer the FK relation
+    public User Organizer { get; set; }
 }

@@ -92,6 +92,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.3, )"
             }
           },
           "imports": [
@@ -382,6 +386,10 @@
             "Moq": {
               "target": "Package",
               "version": "[4.20.72, )"
+            },
+            "Moq.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.1.7, )"
             },
             "NUnit": {
               "target": "Package",

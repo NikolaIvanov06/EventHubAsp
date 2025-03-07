@@ -20,7 +20,6 @@ public class Notification
 
     public DateTime Date { get; set; }
 
-    // Navigation Properties
     public User User { get; set; }
     public News News { get; set; }
 }

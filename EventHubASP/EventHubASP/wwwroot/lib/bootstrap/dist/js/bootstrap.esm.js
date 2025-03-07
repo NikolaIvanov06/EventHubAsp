@@ -42,9 +42,6 @@ const getSelector = element => {
 
   if (!selector || selector === '#') {
     let hrefAttr = element.getAttribute('href'); // The only valid content that could double as a selector are IDs or classes,
-    // so everything starting with `#` or `.`. If a "real" URL is used as the selector,
-    // `document.querySelector` will rightfully complain it is invalid.
-    // See https://github.com/twbs/bootstrap/issues/32273
 
     if (!hrefAttr || !hrefAttr.includes('#') && !hrefAttr.startsWith('.')) {
       return null;
@@ -117,7 +114,6 @@ const isElement = obj => {
 
 const getElement = obj => {
   if (isElement(obj)) {
-    // it's a jQuery object or a node element
     return obj.jquery ? obj[0] : obj;
   }
 
@@ -199,7 +195,6 @@ const noop = () => {};
 
 
 const reflow = element => {
-  // eslint-disable-next-line no-unused-expressions
   element.offsetHeight;
 };
 
@@ -219,7 +214,6 @@ const DOMContentLoadedCallbacks = [];
 
 const onDOMContentLoaded = callback => {
   if (document.readyState === 'loading') {
-    // add listener on the first call when the document is in loading state
     if (!DOMContentLoadedCallbacks.length) {
       document.addEventListener('DOMContentLoaded', () => {
         DOMContentLoadedCallbacks.forEach(callback => callback());
@@ -381,7 +375,6 @@ function bootstrapDelegationHandler(element, selector, fn) {
           event.delegateTarget = target;
 
           if (handler.oneOff) {
-            // eslint-disable-next-line unicorn/consistent-destructuring
             EventHandler.off(element, event.type, selector, fn);
           }
 
@@ -431,7 +424,6 @@ function addHandler(element, originalTypeEvent, handler, delegationFn, oneOff) {
     handler = delegationFn;
     delegationFn = null;
   } // in case of mouseenter or mouseleave wrap the handler within a function that checks for its DOM position
-  // this prevents the handler from being dispatched the same way as mouseover or mouseout does
 
 
   if (customEventsRegex.test(originalTypeEvent)) {
@@ -492,7 +484,6 @@ function removeNamespacedHandlers(element, events, typeEvent, namespace) {
 }
 
 function getTypeEvent(event) {
-  // allow to get the native events from namespaced events ('click.bs.button' --> 'click')
   event = event.replace(stripNameRegex, '');
   return customEvents[event] || event;
 }
@@ -517,7 +508,6 @@ const EventHandler = {
     const isNamespace = originalTypeEvent.startsWith('.');
 
     if (typeof originalHandler !== 'undefined') {
-      // Simplest case: handler is passed, remove that listener ONLY.
       if (!events || !events[typeEvent]) {
         return;
       }
@@ -625,10 +615,8 @@ var Data = {
     }
 
     const instanceMap = elementMap.get(element); // make it clear we only want one instance per element
-    // can be removed later when multiple key/instances are fine to be used
 
     if (!instanceMap.has(key) && instanceMap.size !== 0) {
-      // eslint-disable-next-line no-console
       console.error(`Bootstrap doesn't allow more than one instance per element. Bound instance: ${Array.from(instanceMap.keys())[0]}.`);
       return;
     }
@@ -777,7 +765,6 @@ const CLASS_NAME_SHOW$8 = 'show';
  */
 
 class Alert extends BaseComponent {
-  // Getters
   static get NAME() {
     return NAME$d;
   } // Public
@@ -866,14 +853,12 @@ const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$b}${DATA_API_KEY$7}`;
  */
 
 class Button extends BaseComponent {
-  // Getters
   static get NAME() {
     return NAME$c;
   } // Public
 
 
   toggle() {
-    // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
     this._element.setAttribute('aria-pressed', this._element.classList.toggle(CLASS_NAME_ACTIVE$3));
   } // Static
 
@@ -1172,8 +1157,6 @@ class Carousel extends BaseComponent {
   }
 
   nextWhenVisible() {
-    // Don't call next when the page isn't visible
-    // or the carousel or its parent isn't visible
     if (!document.hidden && isVisible(this._element)) {
       this.next();
     }
@@ -1291,7 +1274,6 @@ class Carousel extends BaseComponent {
     };
 
     const move = event => {
-      // ensure swiping with one touch and not pinching
       this.touchDeltaX = event.touches && event.touches.length > 1 ? 0 : event.touches[0].clientX - this.touchStartX;
     };
 
@@ -1303,13 +1285,6 @@ class Carousel extends BaseComponent {
       this._handleSwipe();
 
       if (this._config.pause === 'hover') {
-        // If it's a touch-enabled device, mouseenter/leave are fired as
-        // part of the mouse compatibility events on first tap - the carousel
-        // would stop cycling until user tapped out of it;
-        // here, we listen for touchend, explicitly pause the carousel
-        // (as if it's the second time we tap on it, mouseenter compat event
-        // is NOT fired) and after a timeout (to allow for mouse compatibility
-        // events to fire) we explicitly restart cycling
         this.pause();
 
         if (this.touchTimeout) {
@@ -1441,7 +1416,6 @@ class Carousel extends BaseComponent {
     }
 
     if (!activeElement || !nextElement) {
-      // Some weirdness is happening, so we bail
       return;
     }
 
@@ -1896,7 +1870,6 @@ class Collapse extends BaseComponent {
 
 
 EventHandler.on(document, EVENT_CLICK_DATA_API$4, SELECTOR_DATA_TOGGLE$4, function (event) {
-  // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
   if (event.target.tagName === 'A' || event.delegateTarget && event.delegateTarget.tagName === 'A') {
     event.preventDefault();
   }
@@ -2034,9 +2007,6 @@ class Dropdown extends BaseComponent {
     } else {
       this._createPopper(parent);
     } // If this is a touch-enabled device we add extra
-    // empty mouseover listeners to the body's immediate children;
-    // only needed because of broken event delegation on iOS
-    // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
 
 
     if ('ontouchstart' in document.documentElement && !parent.closest(SELECTOR_NAVBAR_NAV)) {
@@ -2089,7 +2059,6 @@ class Dropdown extends BaseComponent {
     if (hideEvent.defaultPrevented) {
       return;
     } // If this is a touch-enabled device we remove the extra
-    // empty mouseover listeners we added for iOS support
 
 
     if ('ontouchstart' in document.documentElement) {
@@ -2118,7 +2087,6 @@ class Dropdown extends BaseComponent {
     typeCheckConfig(NAME$9, config, this.constructor.DefaultType);
 
     if (typeof config.reference === 'object' && !isElement(config.reference) && typeof config.reference.getBoundingClientRect !== 'function') {
-      // Popper virtual elements require a getBoundingClientRect method
       throw new TypeError(`${NAME$9.toUpperCase()}: Option "reference" provided type "object" without a required "getBoundingClientRect" method.`);
     }
 
@@ -2236,7 +2204,6 @@ class Dropdown extends BaseComponent {
     if (!items.length) {
       return;
     } // if target isn't included in items (e.g. when expanding the dropdown)
-    // allow cycling to get the last item in case key equals ARROW_UP_KEY
 
 
     getNextActiveElement(items, target, key === ARROW_DOWN_KEY, !items.includes(target)).focus();
@@ -2308,13 +2275,6 @@ class Dropdown extends BaseComponent {
   }
 
   static dataApiKeydownHandler(event) {
-    // If not input/textarea:
-    //  - And not a key in REGEXP_KEYDOWN => not a dropdown command
-    // If input/textarea:
-    //  - If space key => not a dropdown command
-    //  - If key is other than escape
-    //    - If key is not up or down => not a dropdown command
-    //    - If trigger inside the menu => not a dropdown command
     if (/input|textarea/i.test(event.target.tagName) ? event.key === SPACE_KEY || event.key !== ESCAPE_KEY$2 && (event.key !== ARROW_DOWN_KEY && event.key !== ARROW_UP_KEY || event.target.closest(SELECTOR_MENU)) : !REGEXP_KEYDOWN.test(event.key)) {
       return;
     }
@@ -2395,7 +2355,6 @@ class ScrollBarHelper {
   }
 
   getWidth() {
-    // https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth#usage_notes
     const documentWidth = document.documentElement.clientWidth;
     return Math.abs(window.innerWidth - documentWidth);
   }
@@ -2493,10 +2452,8 @@ class ScrollBarHelper {
 const Default$7 = {
   className: 'modal-backdrop',
   isVisible: true,
-  // if false, we use the backdrop helper without adding any element to the dom
   isAnimated: false,
   rootElement: 'body',
-  // give the choice to place backdrop under different elements
   clickCallback: null
 };
 const DefaultType$7 = {
@@ -2616,7 +2573,6 @@ class Backdrop {
  */
 const Default$6 = {
   trapElement: null,
-  // The element to trap focus inside of
   autofocus: true
 };
 const DefaultType$6 = {
@@ -2880,7 +2836,6 @@ class Modal extends BaseComponent {
   _initializeBackDrop() {
     return new Backdrop({
       isVisible: Boolean(this._config.backdrop),
-      // 'static' option will be translated to true, and booleans will keep their value
       isAnimated: this._isAnimated()
     });
   }
@@ -2906,7 +2861,6 @@ class Modal extends BaseComponent {
     const modalBody = SelectorEngine.findOne(SELECTOR_MODAL_BODY, this._dialog);
 
     if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
-      // Don't move modal's DOM position
       document.body.append(this._element);
     }
 
@@ -3050,8 +3004,6 @@ class Modal extends BaseComponent {
 
     this._element.focus();
   } // ----------------------------------------------------------------------
-  // the following methods are used to handle overflowing modals
-  // ----------------------------------------------------------------------
 
 
   _adjustDialog() {
@@ -3109,7 +3061,6 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, functi
 
   EventHandler.one(target, EVENT_SHOW$3, showEvent => {
     if (showEvent.defaultPrevented) {
-      // only register focus restorer if modal will actually get shown
       return;
     }
 
@@ -3363,7 +3314,6 @@ EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, functi
   }
 
   EventHandler.one(target, EVENT_HIDDEN$2, () => {
-    // focus on trigger when it is closed
     if (isVisible(this)) {
       this.focus();
     }
@@ -3434,7 +3384,6 @@ const allowedAttribute = (attr, allowedAttributeList) => {
 };
 
 const DefaultAllowlist = {
-  // Global attributes allowed on any supplied element below.
   '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
   a: ['target', 'href', 'title', 'rel'],
   area: [],
@@ -3740,9 +3689,6 @@ class Tooltip extends BaseComponent {
     if (customClass) {
       tip.classList.add(...customClass.split(' '));
     } // If this is a touch-enabled device we add extra
-    // empty mouseover listeners to the body's immediate children;
-    // only needed because of broken event delegation on iOS
-    // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
 
 
     if ('ontouchstart' in document.documentElement) {
@@ -3802,7 +3748,6 @@ class Tooltip extends BaseComponent {
     }
 
     tip.classList.remove(CLASS_NAME_SHOW$2); // If this is a touch-enabled device we remove the extra
-    // empty mouseover listeners we added for iOS support
 
     if ('ontouchstart' in document.documentElement) {
       [].concat(...document.body.children).forEach(element => EventHandler.off(element, 'mouseover', noop));
@@ -4137,8 +4082,6 @@ class Tooltip extends BaseComponent {
         config[key] = this._config[key];
       }
     } // In the future can be replaced with:
-    // const keysWithDifferentValues = Object.entries(this._config).filter(entry => this.constructor.Default[entry[0]] !== this._config[entry[0]])
-    // `Object.fromEntries(keysWithDifferentValues)`
 
 
     return config;
@@ -4247,7 +4190,6 @@ const SELECTOR_CONTENT = '.popover-body';
  */
 
 class Popover extends Tooltip {
-  // Getters
   static get Default() {
     return Default$2;
   }
@@ -4489,8 +4431,6 @@ class ScrollSpy extends BaseComponent {
       SelectorEngine.findOne(SELECTOR_DROPDOWN_TOGGLE$1, link.closest(SELECTOR_DROPDOWN$1)).classList.add(CLASS_NAME_ACTIVE$1);
     } else {
       SelectorEngine.parents(link, SELECTOR_NAV_LIST_GROUP$1).forEach(listGroup => {
-        // Set triggered links parents as active
-        // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
         SelectorEngine.prev(listGroup, `${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`).forEach(item => item.classList.add(CLASS_NAME_ACTIVE$1)); // Handle special case when .nav-link is inside .nav-item
 
         SelectorEngine.prev(listGroup, SELECTOR_NAV_ITEMS).forEach(navItem => {
@@ -4584,7 +4524,6 @@ const SELECTOR_DROPDOWN_ACTIVE_CHILD = ':scope > .dropdown-menu .active';
  */
 
 class Tab extends BaseComponent {
-  // Getters
   static get NAME() {
     return NAME$1;
   } // Public
@@ -4974,4 +4913,3 @@ enableDismissTrigger(Toast);
 defineJQueryPlugin(Toast);
 
 export { Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Popover, ScrollSpy, Tab, Toast, Tooltip };
-//# sourceMappingURL=bootstrap.esm.js.map

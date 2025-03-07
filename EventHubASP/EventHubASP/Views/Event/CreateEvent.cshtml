@@ -10,41 +10,32 @@
     <div class="container create-event-container">
         <h2 class="create-event-header">Create Event</h2>
         <form asp-action="CreateEvent" asp-controller="Event" method="post" enctype="multipart/form-data">
-            <!-- Validation Summary -->
             <div asp-validation-summary="All" class="create-event-validation-error"></div>
 
-            <!-- Title -->
             <div class="create-event-form-group">
                 <label asp-for="Title" class="create-event-label"></label>
-                <input asp-for="Title" class="create-event-input create-event-input-title" placeholder="Enter a title" />
+                <input asp-for="Title" autocomplete="off"class="create-event-input create-event-input-title" placeholder="Enter a title" />
                 <span asp-validation-for="Title" class="create-event-validation-error"></span>
             </div>
-
-            <!-- Description -->
             <div class="create-event-form-group">
                 <label asp-for="Description" class="create-event-label"></label>
-                <textarea asp-for="Description" class="create-event-input" placeholder="Write something..."></textarea>
+                <textarea asp-for="Description"  class="create-event-input" placeholder="Write something..."></textarea>
                 <span asp-validation-for="Description" class="create-event-validation-error"></span>
             </div>
-
-            <!-- Date -->
             <div class="create-event-form-group">
                 <label asp-for="Date" class="create-event-label"></label>
-                <input asp-for="Date" class="create-event-input create-event-input-date" type="date" />
+                <input asp-for="Date" class="create-event-input create-event-input-date" type="date" autocomplete="off"/>
                 <span asp-validation-for="Date" class="create-event-validation-error"></span>
             </div>
 
-            <!-- Location -->
             <div class="create-event-form-group">
                 <label asp-for="Location" class="create-event-label"></label>
-                <input asp-for="Location" class="create-event-input create-event-input-location" placeholder="Enter a location" />
+                <input asp-for="Location" class="create-event-input create-event-input-location" placeholder="Enter a location" autocomplete="off"/>
                 <span asp-validation-for="Location" class="create-event-validation-error"></span>
             </div>
-
-            <!-- Image URL or File Upload -->
             <div class="create-event-form-group">
                 <label asp-for="ImageUrl" class="create-event-label">Image URL</label>
-                <input asp-for="ImageUrl" class="create-event-input create-event-input-url" type="url" placeholder="Enter an image URL" />
+                <input asp-for="ImageUrl" class="create-event-input create-event-input-url" type="url" placeholder="Enter an image URL" autocomplete="off"/>
                 <span asp-validation-for="ImageUrl" class="create-event-validation-error"></span>
                 <p class="create-event-meta">or</p>
                 <label for="fileUpload" class="drop-container" id="dropContainer">
@@ -54,8 +45,6 @@
                 </label>
                 <button type="button" id="removeFile" class="create-event-submit create-event-remove-btn" style="display: none;">Remove File</button>
             </div>
-
-            <!-- Submit Button -->
             <button type="submit" class="create-event-submit">Create Event</button>
         </form>
     </div>
@@ -65,7 +54,6 @@
     <partial name="_ValidationScriptsPartial" />
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script>
-        // File Upload Handling
         document.getElementById('fileUpload').addEventListener('change', function (event) {
             var file = event.target.files[0];
             if (file) {
@@ -99,7 +87,6 @@
             }
         });
 
-        // Remove File Button
         document.getElementById('removeFile').addEventListener('click', function () {
             document.getElementById('fileUpload').value = '';
             document.querySelector('label[for="ImageUrl"]').style.display = 'block';
@@ -108,12 +95,10 @@
             document.getElementById('removeFile').style.display = 'none';
         });
 
-        // Date Picker
         document.querySelector('.create-event-input-date').addEventListener('focus', function () {
             this.showPicker();
         });
 
-        // Drag and Drop Functionality
         var dropContainer = document.getElementById('dropContainer');
         dropContainer.addEventListener('dragover', function (e) {
             e.preventDefault();

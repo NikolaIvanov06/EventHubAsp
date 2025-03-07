@@ -9,6 +9,15 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddSingleton<IEmailService, EmailService>(provider =>
+    new EmailService(
+        builder.Configuration["EmailSettings:SmtpServer"],
+        int.Parse(builder.Configuration["EmailSettings:SmtpPort"]),
+        builder.Configuration["EmailSettings:SenderEmail"],
+        builder.Configuration["EmailSettings:SenderPassword"]
+    ));
+
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
@@ -36,7 +45,10 @@ builder.Services.AddSignalR();
 builder.Services.AddScoped<IRoleChangeRequestService, RoleChangeRequestService>();
 builder.Services.AddScoped<RoleManagementService>();
 
-builder.Services.AddDbContext<ApplicationDbContext>(b => b.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("EventHubASP.DataAccess")));
+builder.Services.AddDbContext<ApplicationDbContext>(b =>
+    b.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+        b => b.MigrationsAssembly("EventHubASP.DataAccess")));
+
 builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
 {
     options.User.RequireUniqueEmail = true;
@@ -46,6 +58,7 @@ builder.Services.AddIdentity<User, IdentityRole<Guid>>(options =>
 })
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
+
 builder.Services.AddAntiforgery(options =>
 {
     options.HeaderName = "X-CSRF-TOKEN";
@@ -59,6 +72,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.Cookie.HttpOnly = true;
         options.Cookie.IsEssential = false;
     });
+
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("Organizer", policy => policy.RequireRole("Organizer"));

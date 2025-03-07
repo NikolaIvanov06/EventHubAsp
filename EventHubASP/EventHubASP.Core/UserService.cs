@@ -12,11 +12,21 @@ namespace EventHubASP.Core
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<User> _userManager;
+        private readonly IEmailService _emailService;
 
-        public UserService(ApplicationDbContext context, UserManager<User> userManager)
+        public UserService(ApplicationDbContext context, UserManager<User> userManager, IEmailService emailService)
         {
             _context = context;
             _userManager = userManager;
+            _emailService = emailService;
+        }
+
+        private string GenerateRecoveryCode()
+        {
+            var random = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, 8)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         public async Task<bool> RegisterUserAsync(string username, string email, string password)
@@ -33,7 +43,16 @@ namespace EventHubASP.Core
             };
 
             var result = await _userManager.CreateAsync(user, password);
-            return result.Succeeded;
+            if (result.Succeeded)
+            {
+                var recoveryCode = GenerateRecoveryCode();
+                var hashedRecoveryCode = _userManager.PasswordHasher.HashPassword(user, recoveryCode);
+                user.HashedRecoveryCode = hashedRecoveryCode;
+                await _userManager.UpdateAsync(user);
+                await _emailService.SendRecoveryCodeAsync(user.Email, recoveryCode);
+                return true;
+            }
+            return false;
         }
 
         public async Task<User> ValidateUserAsync(string username, string password)
