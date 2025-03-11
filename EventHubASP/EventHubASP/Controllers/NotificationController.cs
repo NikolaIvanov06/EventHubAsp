@@ -24,6 +24,7 @@ namespace EventHubASP.Controllers
         public async Task<IActionResult> GetUnreadNotificationCount()
         {
             var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            Console.WriteLine("Hello World!");
             var notifications = await _notificationService.GetNotificationsForUserAsync(userId);
             return Ok(new { count = notifications.Count });
         }
