@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\eventdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|solutionrelative:eventhubasp.models\\eventdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1154231-FFF6-46DF-BC11-3D2D63FD0BF5}|EventHubASP.Tests\\EventHubASP.Tests.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.tests\\tests\\eventservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1154231-FFF6-46DF-BC11-3D2D63FD0BF5}|EventHubASP.Tests\\EventHubASP.Tests.csproj|solutionrelative:eventhubasp.tests\\tests\\eventservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|solutionrelative:eventhubasp.models\\news.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,14 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2F44B015-AC0D-43BF-BED4-50BB6314CA70}|EventHubASP.DataAccess\\EventHubASP.DataAccess.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.dataaccess\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F44B015-AC0D-43BF-BED4-50BB6314CA70}|EventHubASP.DataAccess\\EventHubASP.DataAccess.csproj|solutionrelative:eventhubasp.dataaccess\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1154231-FFF6-46DF-BC11-3D2D63FD0BF5}|EventHubASP.Tests\\EventHubASP.Tests.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.tests\\tests\\eventservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1154231-FFF6-46DF-BC11-3D2D63FD0BF5}|EventHubASP.Tests\\EventHubASP.Tests.csproj|solutionrelative:eventhubasp.tests\\tests\\eventservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\eventdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|solutionrelative:eventhubasp.models\\eventdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1263489F-FB4E-41D1-8D30-1098C843E21C}|EventHubASP.Models\\EventHubASP.Models.csproj|c:\\users\\fenix\\desktop\\github\\softuni\\eventhubasp\\eventhubasp\\eventhubasp.models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -381,7 +381,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -394,29 +394,36 @@
               "ViewState": "AgIAAFEBAAAAAAAAAAAQwHkBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-02-27T14:42:47.989Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "EventServiceTests.cs",
               "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Tests\\Tests\\EventServiceTests.cs",
               "RelativeDocumentMoniker": "EventHubASP.Tests\\Tests\\EventServiceTests.cs",
               "ToolTip": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Tests\\Tests\\EventServiceTests.cs",
               "RelativeToolTip": "EventHubASP.Tests\\Tests\\EventServiceTests.cs",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAAAMwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAAAKQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-21T15:51:46.68Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "EventDetails.cs",
               "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\EventDetails.cs",
               "RelativeDocumentMoniker": "EventHubASP.Models\\EventDetails.cs",
@@ -429,7 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.DataAccess\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "EventHubASP.DataAccess\\ApplicationDbContext.cs",
@@ -437,12 +444,11 @@
               "RelativeToolTip": "EventHubASP.DataAccess\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T08:29:20.022Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-06T08:29:20.022Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\User.cs",
               "RelativeDocumentMoniker": "EventHubASP.Models\\User.cs",
@@ -450,12 +456,11 @@
               "RelativeToolTip": "EventHubASP.Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T07:56:28.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T07:56:28.612Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Registration.cs",
               "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\Registration.cs",
               "RelativeDocumentMoniker": "EventHubASP.Models\\Registration.cs",
@@ -463,12 +468,11 @@
               "RelativeToolTip": "EventHubASP.Models\\Registration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T09:12:52.607Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-06T09:12:52.607Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "News.cs",
               "DocumentMoniker": "C:\\Users\\Fenix\\Desktop\\GitHub\\SoftUni\\EventHubAsp\\EventHubASP\\EventHubASP.Models\\News.cs",
               "RelativeDocumentMoniker": "EventHubASP.Models\\News.cs",
@@ -489,12 +493,7 @@
               "RelativeToolTip": "EventHubASP.Models\\Event.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T08:26:29.381Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "WhenOpened": "2025-02-06T08:26:29.381Z"
             },
             {
               "$type": "Document",
@@ -506,8 +505,7 @@
               "RelativeToolTip": "EventHubASP.Core\\EventHubASP.Core.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-31T06:35:43.702Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:35:43.702Z"
             },
             {
               "$type": "Document",
@@ -519,8 +517,7 @@
               "RelativeToolTip": "EventHubASP.Core\\EventService.cs",
               "ViewState": "AgIAAKMAAAAAAAAAAAAzwK4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T15:50:22.637Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T15:50:22.637Z"
             },
             {
               "$type": "Document",
@@ -532,8 +529,7 @@
               "RelativeToolTip": "EventHubASP.Tests\\EventHubASP.Tests.csproj",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-21T14:40:06.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T14:40:06.26Z"
             },
             {
               "$type": "Document",
@@ -545,8 +541,7 @@
               "RelativeToolTip": "EventHubASP.Tests\\Tests\\EmailServiceTests.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T10:15:49.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T10:15:49.692Z"
             },
             {
               "$type": "Document",
@@ -558,8 +553,7 @@
               "RelativeToolTip": "EventHubASP.Core\\EmailService.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAzwDAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T07:25:01.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T07:25:01.951Z"
             },
             {
               "$type": "Document",
@@ -571,8 +565,7 @@
               "RelativeToolTip": "EventHubASP.Tests\\Tests\\UserServiceTests.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T14:39:42.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T14:39:42.708Z"
             },
             {
               "$type": "Document",
@@ -584,8 +577,7 @@
               "RelativeToolTip": "EventHubASP.Core\\UserService.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAzwGUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T07:21:11.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T07:21:11.674Z"
             },
             {
               "$type": "Document",
@@ -597,8 +589,7 @@
               "RelativeToolTip": "EventHubASP.Core\\IEmailService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T07:27:11.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T07:27:11.873Z"
             },
             {
               "$type": "Document",
@@ -610,8 +601,7 @@
               "RelativeToolTip": "EventHubASP.Core\\IEventService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T14:35:37.062Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T14:35:37.062Z"
             },
             {
               "$type": "Document",
@@ -623,16 +613,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\authUI.css",
               "ViewState": "AgIAACcBAAAAAAAAAAAAAD8BAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-20T07:31:03.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+              "WhenOpened": "2025-02-20T07:31:03.845Z"
             },
             {
               "$type": "Document",
@@ -644,8 +625,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Account\\ForgotPassword.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-07T07:41:53.133Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T07:41:53.133Z"
             },
             {
               "$type": "Document",
@@ -657,8 +637,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Account\\ResetPassword.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-07T07:44:17.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T07:44:17.708Z"
             },
             {
               "$type": "Document",
@@ -670,8 +649,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Account\\Login.cshtml",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAEQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T08:44:02.106Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-06T08:44:02.106Z"
             },
             {
               "$type": "Document",
@@ -683,8 +661,7 @@
               "RelativeToolTip": "EventHubASP\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T14:04:25.391Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T14:04:25.391Z"
             },
             {
               "$type": "Document",
@@ -696,8 +673,7 @@
               "RelativeToolTip": "EventHubASP\\Models\\ResetPasswordViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:47:11.847Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:47:11.847Z"
             },
             {
               "$type": "Document",
@@ -709,8 +685,7 @@
               "RelativeToolTip": "EventHubASP.DataAccess\\Migrations\\20250307090311_InitialMig.cs",
               "ViewState": "AgIAAF0BAAAAAAAAAAAzwHUBAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T09:03:12.189Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T09:03:12.189Z"
             },
             {
               "$type": "Document",
@@ -722,8 +697,7 @@
               "RelativeToolTip": "EventHubASP.DataAccess\\IdentitySeeder.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAzwDcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:57:11.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:57:11.929Z"
             },
             {
               "$type": "Document",
@@ -735,8 +709,7 @@
               "RelativeToolTip": "EventHubASP\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAAAzwEkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T10:28:54.053Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-07T10:28:54.053Z"
             },
             {
               "$type": "Document",
@@ -748,8 +721,7 @@
               "RelativeToolTip": "EventHubASP\\Models\\ForgotPasswordViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T07:40:06.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T07:40:06.536Z"
             },
             {
               "$type": "Document",
@@ -761,8 +733,7 @@
               "RelativeToolTip": "EventHubASP\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-13T06:29:14.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T06:29:14.226Z"
             },
             {
               "$type": "Document",
@@ -774,8 +745,7 @@
               "RelativeToolTip": "EventHubASP.Tests\\Tests\\NotificationHubTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T15:54:46.254Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T15:54:46.254Z"
             },
             {
               "$type": "Document",
@@ -787,8 +757,7 @@
               "RelativeToolTip": "EventHubASP.Tests\\Tests\\RoleManagementServiceTests.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAAABoAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T15:09:48.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T15:09:48.493Z"
             },
             {
               "$type": "Document",
@@ -800,8 +769,7 @@
               "RelativeToolTip": "EventHubASP.Tests\\Tests\\RoleChangeRequestServiceTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T15:19:03.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T15:19:03.56Z"
             },
             {
               "$type": "Document",
@@ -813,8 +781,7 @@
               "RelativeToolTip": "EventHubASP.Tests\\Tests\\NotificationServiceTests.cs",
               "ViewState": "AgIAAGYAAAAAAAAAAAAAAHkAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T15:29:22.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T15:29:22.994Z"
             },
             {
               "$type": "Document",
@@ -826,8 +793,7 @@
               "RelativeToolTip": "EventHubASP.Tests\\Tests\\NewsServiceTests.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAAAFkAAACNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T15:38:41.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T15:38:41.495Z"
             },
             {
               "$type": "Document",
@@ -839,8 +805,7 @@
               "RelativeToolTip": "EventHubASP.Tests\\Tests\\IdentitySeederTests.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAAAD4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T15:01:24.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T15:01:24.542Z"
             },
             {
               "$type": "Document",
@@ -852,8 +817,7 @@
               "RelativeToolTip": "EventHubASP.Tests\\Tests\\FeedbackServiceTests.cs",
               "ViewState": "AgIAAJAAAAAAAAAAAAAAAH0AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T10:20:10.765Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T10:20:10.765Z"
             },
             {
               "$type": "Document",
@@ -865,8 +829,7 @@
               "RelativeToolTip": "EventHubASP.Models\\Feedback.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T09:23:10.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:23:10.543Z"
             },
             {
               "$type": "Document",
@@ -878,8 +841,7 @@
               "RelativeToolTip": "EventHubASP.Core\\RoleManagementService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T12:49:17.385Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T12:49:17.385Z"
             },
             {
               "$type": "Document",
@@ -891,8 +853,7 @@
               "RelativeToolTip": "EventHubASP.Core\\NotificationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:31:56.137Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:31:56.137Z"
             },
             {
               "$type": "Document",
@@ -904,8 +865,7 @@
               "RelativeToolTip": "EventHubASP.Core\\NewsService.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:30:58.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:30:58.704Z"
             },
             {
               "$type": "Document",
@@ -917,8 +877,7 @@
               "RelativeToolTip": "EventHubASP.Core\\INotificationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:31:32.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:31:32.857Z"
             },
             {
               "$type": "Document",
@@ -930,8 +889,7 @@
               "RelativeToolTip": "EventHubASP.Core\\INewsService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:30:34.077Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:30:34.077Z"
             },
             {
               "$type": "Document",
@@ -943,8 +901,7 @@
               "RelativeToolTip": "EventHubASP.Core\\IFeedbackService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T09:24:10.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:24:10.977Z"
             },
             {
               "$type": "Document",
@@ -956,8 +913,7 @@
               "RelativeToolTip": "EventHubASP.Core\\FeedbackService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T09:24:29.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:24:29.452Z"
             },
             {
               "$type": "Document",
@@ -969,8 +925,7 @@
               "RelativeToolTip": "EventHubASP.Core\\Hubs\\NotificationHub.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:36:24.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:36:24.124Z"
             },
             {
               "$type": "Document",
@@ -982,8 +937,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-07T06:37:34.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-07T06:37:34.203Z"
             },
             {
               "$type": "Document",
@@ -995,8 +949,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Shared\\_Notification.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-07T06:27:18.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T06:27:18.982Z"
             },
             {
               "$type": "Document",
@@ -1008,8 +961,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Shared\\_LoginPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-31T07:04:31.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T07:04:31.342Z"
             },
             {
               "$type": "Document",
@@ -1021,8 +973,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-30T17:24:00.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T17:24:00.128Z"
             },
             {
               "$type": "Document",
@@ -1034,8 +985,7 @@
               "RelativeToolTip": "EventHubASP\\Controllers\\EventController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T06:34:57.175Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T06:34:57.175Z"
             },
             {
               "$type": "Document",
@@ -1047,8 +997,7 @@
               "RelativeToolTip": "EventHubASP\\Controllers\\NotificationController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:48:46.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:48:46.59Z"
             },
             {
               "$type": "Document",
@@ -1060,8 +1009,7 @@
               "RelativeToolTip": "EventHubASP\\Controllers\\NewsController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAEsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T06:45:58.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:45:58.398Z"
             },
             {
               "$type": "Document",
@@ -1073,8 +1021,7 @@
               "RelativeToolTip": "EventHubASP\\Controllers\\AdminController.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAEQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T09:42:29.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:42:29.5Z"
             },
             {
               "$type": "Document",
@@ -1086,8 +1033,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\News\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-31T06:52:22.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:52:22.941Z"
             },
             {
               "$type": "Document",
@@ -1099,8 +1045,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-30T09:06:48.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T09:06:48.298Z"
             },
             {
               "$type": "Document",
@@ -1112,8 +1057,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Home\\ContactUs.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-20T07:13:00.355Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-20T07:13:00.355Z"
             },
             {
               "$type": "Document",
@@ -1125,8 +1069,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Event\\MySubscriptions.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-04T11:17:35.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-04T11:17:35.516Z"
             },
             {
               "$type": "Document",
@@ -1138,8 +1081,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Event\\MyEvents.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAxwCMAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T14:38:00.179Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T14:38:00.179Z"
             },
             {
               "$type": "Document",
@@ -1151,8 +1093,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Event\\EditEvent.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T07:56:54.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T07:56:54.558Z"
             },
             {
               "$type": "Document",
@@ -1164,8 +1105,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Event\\EditDetails.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T14:41:59.796Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T14:41:59.796Z"
             },
             {
               "$type": "Document",
@@ -1177,8 +1117,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Event\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-27T14:41:25.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T14:41:25.145Z"
             },
             {
               "$type": "Document",
@@ -1190,8 +1129,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Event\\CreateEvent.cshtml",
               "ViewState": "AgIAAGAAAAAAAAAAAAAAADQAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T06:07:46.807Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T06:07:46.807Z"
             },
             {
               "$type": "Document",
@@ -1203,8 +1141,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Event\\BrowseEvents.cshtml",
               "ViewState": "AgIAACEAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-03T09:04:33.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T09:04:33.183Z"
             },
             {
               "$type": "Document",
@@ -1216,8 +1153,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Admin\\ManageRoleRequests.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAowCcAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-25T17:53:47.664Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T17:53:47.664Z"
             },
             {
               "$type": "Document",
@@ -1229,8 +1165,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Admin\\Feedback.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:41:47.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:41:47.019Z"
             },
             {
               "$type": "Document",
@@ -1242,8 +1177,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\Account\\Register.cshtml",
               "ViewState": "AgIAACUBAAAAAAAAAAAAAPwAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-06T08:45:27.256Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-06T08:45:27.256Z"
             },
             {
               "$type": "Document",
@@ -1255,8 +1189,7 @@
               "RelativeToolTip": "EventHubASP\\Models\\NewsCreateViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T12:44:32.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T12:44:32.435Z"
             },
             {
               "$type": "Document",
@@ -1268,8 +1201,7 @@
               "RelativeToolTip": "EventHubASP\\Models\\NewsViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T07:09:06.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T07:09:06.902Z"
             },
             {
               "$type": "Document",
@@ -1281,8 +1213,7 @@
               "RelativeToolTip": "EventHubASP\\Models\\EventViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T07:14:02.869Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T07:14:02.869Z"
             },
             {
               "$type": "Document",
@@ -1294,8 +1225,7 @@
               "RelativeToolTip": "EventHubASP\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAxwCoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T10:33:30.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-07T10:33:30.873Z"
             },
             {
               "$type": "Document",
@@ -1307,8 +1237,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\createEvent.css",
               "ViewState": "AgIAACEAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-13T07:11:11.496Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T07:11:11.496Z"
             },
             {
               "$type": "Document",
@@ -1320,8 +1249,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\roleChangeRequest.css",
               "ViewState": "AgIAAJcAAAAAAAAAAAAQwL8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-25T17:55:34.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T17:55:34.018Z"
             },
             {
               "$type": "Document",
@@ -1333,8 +1261,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\Feedback.css",
               "ViewState": "AgIAAHIAAAAAAAAAAAAQwJoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-26T10:04:39.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T10:04:39.685Z"
             },
             {
               "$type": "Document",
@@ -1346,8 +1273,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\editEventDetails.css",
               "ViewState": "AgIAAMsBAAAAAAAAAAAQwPMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-28T12:48:23.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-28T12:48:23.966Z"
             },
             {
               "$type": "Document",
@@ -1359,8 +1285,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\site.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-20T07:52:59.532Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-20T07:52:59.532Z"
             },
             {
               "$type": "Document",
@@ -1372,8 +1297,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\browseEvents.css",
               "ViewState": "AgIAAKAAAAAAAAAAAABIwLQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-04T11:09:23.133Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-04T11:09:23.133Z"
             },
             {
               "$type": "Document",
@@ -1385,8 +1309,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\myFeed.css",
               "ViewState": "AgIAAAkAAAAAAAAAAAAQwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-07T09:07:18.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-07T09:07:18.972Z"
             },
             {
               "$type": "Document",
@@ -1398,8 +1321,7 @@
               "RelativeToolTip": "EventHubASP\\Views\\News\\MyFeed.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-31T06:53:25.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:53:25.666Z"
             },
             {
               "$type": "Document",
@@ -1411,8 +1333,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\editEventDetails.css",
               "ViewState": "AgIAANkAAAAAAAAAAAAkwOIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-27T15:01:57.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T15:01:57.995Z"
             },
             {
               "$type": "Document",
@@ -1424,8 +1345,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\contactUs.css",
               "ViewState": "AgIAAGEAAAAAAAAAAABIwHMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-26T09:50:22.845Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:50:22.845Z"
             },
             {
               "$type": "Document",
@@ -1437,8 +1357,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\index.css",
               "ViewState": "AgIAACsBAAAAAAAAAAAkwD4BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-30T09:09:39.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T09:09:39.691Z"
             },
             {
               "$type": "Document",
@@ -1450,8 +1369,7 @@
               "RelativeToolTip": "EventHubASP.Models\\EventHubASP.Models.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-06T08:24:37.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-06T08:24:37.913Z"
             },
             {
               "$type": "Document",
@@ -1474,8 +1392,7 @@
               "RelativeToolTip": "EventHubASP.Utility\\EventHubASP.Utility.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-21T14:28:01.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T14:28:01.482Z"
             },
             {
               "$type": "Document",
@@ -1487,8 +1404,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\manageParticipants.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-21T11:11:15.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T11:11:15.2Z"
             },
             {
               "$type": "Document",
@@ -1500,8 +1416,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\myFeed.AndCreate.css",
               "ViewState": "AgIAAB8AAAAAAAAAAABIwDQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-31T14:17:54.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T14:17:54.53Z"
             },
             {
               "$type": "Document",
@@ -1513,8 +1428,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\myEvents.css",
               "ViewState": "AgIAABMAAAAAAAAAAABIwDMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-21T11:06:41.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T11:06:41.234Z"
             },
             {
               "$type": "Document",
@@ -1526,8 +1440,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\css\\mySubscriptions.css",
               "ViewState": "AgIAACQAAAAAAAAAAAAQwE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-21T10:22:13.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T10:22:13.495Z"
             },
             {
               "$type": "Document",
@@ -1539,8 +1452,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\js\\notifications.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-01-31T06:58:44.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:58:44.667Z"
             },
             {
               "$type": "Document",
@@ -1552,8 +1464,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\js\\signalr.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-01-31T06:58:14.731Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T06:58:14.731Z"
             },
             {
               "$type": "Document",
@@ -1565,8 +1476,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\js\\site.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-02-07T06:08:51.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-07T06:08:51.223Z"
             },
             {
               "$type": "Document",
@@ -1578,8 +1488,7 @@
               "RelativeToolTip": "EventHubASP\\EventHubASP.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-31T07:59:27.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T07:59:27.343Z"
             },
             {
               "$type": "Document",
@@ -1602,8 +1511,7 @@
               "RelativeToolTip": "EventHubASP\\wwwroot\\js\\index.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-01-30T09:11:50.415Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T09:11:50.415Z"
             }
           ]
         },
