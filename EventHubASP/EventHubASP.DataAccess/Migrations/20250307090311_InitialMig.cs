@@ -7,10 +7,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EventHubASP.DataAccess.Migrations
 {
-    /// <inheritdoc />
     public partial class InitialMig : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -422,7 +420,6 @@ namespace EventHubASP.DataAccess.Migrations
                 column: "UserID");
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
