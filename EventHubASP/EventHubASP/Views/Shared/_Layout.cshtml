@@ -21,22 +21,26 @@
         .navbar {
             background-color: black;
             padding: 0.5rem 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
 
-        .nav-link 
-        {
+        .nav-link {
             color: whitesmoke;
         }
 
-        .nav-link:hover {
-            border: 1px solid;
-            border-radius: 15px;
-            border-color: white;
-            color: white;
-            text-decoration: none;
-            transition: 0.3s ease-in-out;
-        }
+            .nav-link:hover {
+                border: 1px solid;
+                border-radius: 15px;
+                border-color: white;
+                color: white;
+                text-decoration: none;
+                transition: 0.3s ease-in-out;
+            }
 
         .navbar-nav .nav-item .nav-link {
             padding: 10px 15px;
