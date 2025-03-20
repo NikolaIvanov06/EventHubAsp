@@ -17,7 +17,7 @@
     flex-direction: column;
     height: 100vh;
     background: url('../about_the_eif.jpg') no-repeat center;
-    background-size: cover; /* Ensure the image covers the entire section */
+    background-size: cover; 
     text-align: center;
     color: #333;
     overflow: hidden;
@@ -39,7 +39,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 100%); /* Gradient overlay */
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 100%); 
         z-index: 1;
     }
 
@@ -50,7 +50,7 @@
         margin-bottom: 20px;
         color: white;
         position: relative;
-        z-index: 3; /* Ensure text is above the overlay and borders */
+        z-index: 3; 
     }
 
 .hero p {
@@ -59,18 +59,18 @@
     margin-bottom: 40px;
     color: #ffffff;
     position: relative;
-    z-index: 3; /* Ensure text is above the overlay and borders */
+    z-index: 3; 
 }
 
 .button {
-    --glow-color: rgba(255, 255, 255, 0.8); /* Cyan glow for better visibility */
-    --glow-spread-color: rgba(255, 255, 255, 0.6); /* Slightly transparent cyan */
-    --enhanced-glow-color: rgba(255, 255, 255, 0.9); /* Brighter cyan for hover effects */
-    --btn-color: rgba(0, 0, 0, 0.7); /* Dark background color */
+    --glow-color: rgba(255, 255, 255, 0.8); 
+    --glow-spread-color: rgba(255, 255, 255, 0.6); 
+    --enhanced-glow-color: rgba(255, 255, 255, 0.9); 
+    --btn-color: rgba(0, 0, 0, 0.7); 
 
     border: 0.25em solid var(--glow-color);
     padding: 1em 3em;
-    color: white; /* White text for better contrast */
+    color: white; 
     font-size: 15px;
     font-weight: bold;
     background-color: var(--btn-color);
@@ -80,7 +80,7 @@
     text-shadow: 0 0 0.5em var(--glow-color);
     position: relative;
     transition: all 0.3s;
-    z-index: 4; /* Ensure button is above everything */
+    z-index: 4; 
 }
 
     .button::after {
@@ -97,33 +97,33 @@
     }
 
     .button:hover {
-        color: white; /* Keep text white on hover */
-        background-color: rgba(0, 0, 0, 0.8); /* Slightly darker background on hover */
+        color: white; 
+        background-color: rgba(0, 0, 0, 0.8); 
         box-shadow: 0 0 0.5em 0.15em var(--glow-color), 0 0 2em 1em var(--glow-spread-color), inset 0 0 0.55em 0.15em var(--glow-color);
     }
 
     .button:active {
         box-shadow: 0 0 0.6em 0.25em var(--glow-color), 0 0 2.5em 2em var(--glow-spread-color), inset 0 0 0.5em 0.25em var(--glow-color);
-        transform: scale(0.98); /* Slight shrink effect when pressed */
+        transform: scale(0.98); 
     }
-/* Features Section */
+
 .features {
     padding: 5rem 0;
     background-color: black;
     color: #fff;
     animation: fadeInUp 2s ease-in-out;
     position: relative;
-    overflow: hidden; /* Prevent overflow of skewed shapes */
+    overflow: hidden; 
 }
 
     .features::before {
         content: '';
         position: absolute;
-        top: -50px; /* Extend slightly above the section */
+        top: -50px; 
         left: 0;
         width: 100%;
-        height: 150px; /* Height of the transition area */
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), black); /* Blend with the hero section */
+        height: 150px; 
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), black); 
         z-index: 1;
     }
 
@@ -131,8 +131,8 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px 15px;
-    position: relative; /* Ensure content stays above pseudo-elements */
-    z-index: 2; /* Above pseudo-elements */
+    position: relative; 
+    z-index: 2; 
 }
 
 .features .row {
@@ -161,8 +161,8 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 0 10px;
     margin-bottom: 1rem;
-    position: relative; /* Ensure cards stay above pseudo-elements */
-    z-index: 2; /* Above pseudo-elements */
+    position: relative; 
+    z-index: 2; 
 }
 
     .feature-card:hover {
@@ -208,44 +208,44 @@
 }
 
 .cta {
-    padding: 6rem 0; /* Increased padding for more breathing space */
+    padding: 6rem 0; 
     color: #fff;
     background: black;
     animation: fadeIn 2s ease-in-out;
-    position: relative; /* Required for pseudo-elements */
-    overflow: hidden; /* Prevent overflow of pseudo-elements */
+    position: relative; 
+    overflow: hidden; 
 }
 
-    /* Left parallelogram */
+    
     .cta::before {
         content: '';
         position: absolute;
         top: 0;
-        left: 100%; /* Start off-screen */
+        left: 100%; 
         width: 50%;
         height: 100%;
-        background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-        transform: skewX(-20deg); /* Tilt inward */
+        background-color: rgba(255, 255, 255, 0.1); 
+        transform: skewX(-20deg); 
         transform-origin: top left;
         z-index: 1;
     }
 
-    /* Right parallelogram */
+    
     .cta::after {
         content: '';
         position: absolute;
         top: 0;
-        right: 100%; /* Start off-screen */
+        right: 100%; 
         width: 50%;
         height: 100%;
-        background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-        transform: skewX(20deg); /* Tilt inward */
+        background-color: rgba(255, 255, 255, 0.1); 
+        transform: skewX(20deg); 
         transform-origin: top right;
 
         z-index: 1;
     }
 
-/* Animation for moving diagonally */
+
 @keyframes moveDiagonally {
     0% {
         transform: skewX(-20deg) translateX(-100%);
@@ -257,24 +257,24 @@
 }
 
 .cta h2 {
-    font-size: 3rem; /* Larger font size for impact */
+    font-size: 3rem; 
     margin-bottom: 1.5rem;
     color: #fff;
     font-family: 'Cambria Math';
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add depth to the text */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
     position: relative;
-    z-index: 2; /* Ensure text is above the overlay */
+    z-index: 2; 
 }
 
 .cta p {
-    font-size: 1.5rem; /* Slightly larger font size */
+    font-size: 1.5rem; 
     color: #ccc;
     font-family: 'Cambria Math';
     margin-bottom: 3rem;
-    line-height: 1.6; /* Improved readability */
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for contrast */
+    line-height: 1.6; 
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3); 
     position: relative;
-    z-index: 2; /* Ensure text is above the overlay */
+    z-index: 2; 
 }
 
 .buttonCta {
@@ -332,7 +332,7 @@
     }
 }
 
-/* From Uiverse.io by adamgiebl */
+
 .buttonReq {
     --green: #1BFD9C;
     font-size: 15px;

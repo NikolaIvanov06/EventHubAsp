@@ -1,15 +1,15 @@
-﻿/* manageParticipants.css */
+﻿
 .manage-participants-container {
     margin-top: 30px;
     padding: 25px;
-    background-color: transparent; /* Transparent for a sleek modern look */
-    border-radius: 15px; /* Rounded edges */
-    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.15); /* Floating effect */
+    background-color: transparent; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.15); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     .manage-participants-container:hover {
-        transform: translateY(-5px); /* Lift on hover */
+        transform: translateY(-5px); 
     }
 
 h2 {
@@ -38,35 +38,35 @@ h2 {
     }
 
 .table {
-    background-color: #e5ffe5; /* Light green background */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Ensures proper rounded border look */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #e5ffe5; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .thead-light th {
-    background-color: #212121; /* Dark table header */
-    color: #ffeba7; /* Warm yellow text */
+    background-color: #212121; 
+    color: #ffeba7; 
     font-weight: 600;
 }
 
-/* Back Button */
+
 .btn-back {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #212121; /* Dark button */
-    color: #ffeba7; /* Yellow text */
+    background-color: #212121; 
+    color: #ffeba7; 
     font-weight: bold;
-    border-radius: 10px; /* Rounded button */
+    border-radius: 10px; 
     border: none;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
     .btn-back:hover {
-        background-color: #ffeba7; /* Yellow background on hover */
-        color: #212121; /* Dark text */
-        transform: translateY(-3px); /* Subtle lift effect */
+        background-color: #ffeba7; 
+        color: #212121; 
+        transform: translateY(-3px); 
         text-decoration: none;
     }

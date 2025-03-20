@@ -1,16 +1,16 @@
-﻿/* Filter Wrapper */
+﻿
 .filter-wrapper {
     margin-bottom: 20px;
     position: relative;
     z-index: 10;
 }
 
-/* Filter Toggle Button */
+
 .filter-toggle-button {
-    background-color: #4e73df; /* Primary color */
+    background-color: #4e73df; 
     color: white;
     border: none;
-    border-radius: 25px; /* Rounded top edges to match the section */
+    border-radius: 25px; 
     padding: 10px 20px;
     font-size: 1rem;
     font-weight: bold;
@@ -20,20 +20,20 @@
     position: relative;
     width: 200px;
     margin: 0 auto;
-    outline: none; /* Removes the focus outline */
+    outline: none; 
 }
 
-    /* On hover, set bottom border radiuses to 0 */
+    
     .filter-toggle-button:hover {
-        border-radius: 25px 25px 0 0; /* Top corners remain rounded */
+        border-radius: 25px 25px 0 0; 
     }
 
-/* Filter Section */
+
 .filter-section {
-    margin-top: -1px; /* Seamlessly join the button and section */
+    margin-top: -1px; 
     padding: 20px;
-    background-color: #4e73df; /* Match button color */
-    border-radius: 0 0 25px 25px; /* Rounded bottom edges */
+    background-color: #4e73df; 
+    border-radius: 0 0 25px 25px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
     overflow: hidden;
@@ -41,15 +41,15 @@
     opacity: 0;
     visibility: hidden;
     position: relative;
-    top: calc(100% - 1px); /* Align below the button seamlessly */
+    top: calc(100% - 1px); 
     left: 50%;
     transform: translateX(-50%);
-    min-width: 300px; /* Default width */
+    min-width: 300px; 
 }
 
-/* Hover Behavior for Button and Section */
+
 .filter-wrapper:hover .filter-section {
-    max-height: 200px; /* Adjust based on content height */
+    max-height: 200px; 
     opacity: 1;
     visibility: visible;
     z-index: 10;
@@ -59,14 +59,14 @@
     border-radius: 25px 25px 0 0;
 }
 
-/* Form Styling */
+
 .filter-form {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     align-items: center;
     justify-content: space-between;
-    color: white; /* Ensure text is readable */
+    color: white; 
 }
 
     .filter-form .form-group {
@@ -78,8 +78,8 @@
     }
 
 .apply-filter-button {
-    background-color: #ffffff; /* Contrasts with filter section */
-    color: #4e73df; /* Matches the section/button */
+    background-color: #ffffff; 
+    color: #4e73df; 
     border: none;
     border-radius: 15px;
     padding: 10px 20px;
@@ -89,7 +89,7 @@
 }
 
     .apply-filter-button:hover {
-        background-color: #375a7f; /* Darker blue */
-        color: white; /* Ensures readability */
+        background-color: #375a7f; 
+        color: white; 
         transform: translateY(-3px);
     }

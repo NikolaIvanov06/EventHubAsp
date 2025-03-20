@@ -1,15 +1,15 @@
-﻿/* mySubscriptions.css */
+﻿
 .my-subscriptions-container {
     margin-top: 30px;
     padding: 25px;
-    background-color: transparent; /* Light pink background */
-    border-radius: 15px; /* Rounded edges */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Floating effect */
+    background-color: transparent; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     .my-subscriptions-container:hover {
-        transform: translateY(-5px); /* Lift on hover */
+        transform: translateY(-5px); 
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
@@ -40,40 +40,40 @@ h2 {
 
 .no-subscriptions-message {
     font-size: 18px;
-    color: #6c757d; /* Muted text */
+    color: #6c757d; 
     text-align: center;
     margin-top: 20px;
 }
 
 .table {
-    background-color: #e5ffe5; /* Light green background */
-    border-radius: 10px; /* Rounded corners for the table */
-    overflow: hidden; /* Ensures proper rounded border look */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the table */
+    background-color: #e5ffe5; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .thead-dark th {
-    background-color: #212121; /* Dark header */
-    color: #ffeba7; /* Warm yellow text for contrast */
+    background-color: #212121; 
+    color: #ffeba7; 
     font-weight: 600;
 }
 
 .table-hover tbody tr:hover {
-    background-color: #ffeba7; /* Warm yellow hover effect */
+    background-color: #ffeba7; 
 }
 
 .action-button {
-    border-radius: 5px; /* Slightly rounded buttons */
-    padding: 5px 10px; /* Comfortable padding for buttons */
-    background-color: #212121; /* Dark button color */
-    color: #ffeba7; /* Yellow text */
+    border-radius: 5px; 
+    padding: 5px 10px; 
+    background-color: #212121; 
+    color: #ffeba7; 
     border: none;
     transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
     .action-button:hover {
-        transform: translateY(-2px); /* Subtle lift effect */
-        background-color: #ffeba7; /* Yellow background on hover */
-        color: #212121; /* Dark text on hover */
-        opacity: 0.9; /* Slight opacity change for interaction feedback */
+        transform: translateY(-2px); 
+        background-color: #ffeba7; 
+        color: #212121; 
+        opacity: 0.9; 
     }

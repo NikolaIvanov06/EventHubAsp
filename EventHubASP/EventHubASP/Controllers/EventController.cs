@@ -244,6 +244,11 @@ namespace EventHubASP.Controllers
         [Authorize(Roles = "Organizer")]
         public async Task<IActionResult> CreateEvent(EventViewModel viewModel)
         {
+            if (viewModel.Date < DateTime.Today)
+            {
+                ModelState.AddModelError("Date", "The event date cannot be in the past.");
+            }
+
             if (!ModelState.IsValid)
             {
                 foreach (var error in ModelState.Values.SelectMany(v => v.Errors))

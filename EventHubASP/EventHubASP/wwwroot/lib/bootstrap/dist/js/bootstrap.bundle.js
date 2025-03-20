@@ -235,7 +235,7 @@
   const defineJQueryPlugin = plugin => {
     onDOMContentLoaded(() => {
       const $ = getjQuery();
-      /* istanbul ignore if */
+      
 
       if ($) {
         const name = plugin.NAME;
@@ -688,7 +688,7 @@
     _queueCallback(callback, element, isAnimated = true) {
       executeAfterTransition(callback, element, isAnimated);
     }
-    /** Static */
+    
 
 
     static getInstance(element) {
@@ -1907,10 +1907,10 @@
   var viewport = 'viewport';
   var popper = 'popper';
   var reference = 'reference';
-  var variationPlacements = /*#__PURE__*/basePlacements.reduce(function (acc, placement) {
+  var variationPlacements = basePlacements.reduce(function (acc, placement) {
     return acc.concat([placement + "-" + start, placement + "-" + end]);
   }, []);
-  var placements = /*#__PURE__*/[].concat(basePlacements, [auto]).reduce(function (acc, placement) {
+  var placements = [].concat(basePlacements, [auto]).reduce(function (acc, placement) {
     return acc.concat([placement, placement + "-" + start, placement + "-" + end]);
   }, []); // modifiers that need to read the DOM
 
@@ -3540,19 +3540,19 @@
       return instance;
     };
   }
-  var createPopper$2 = /*#__PURE__*/popperGenerator(); // eslint-disable-next-line import/no-unused-modules
+  var createPopper$2 = popperGenerator(); // eslint-disable-next-line import/no-unused-modules
 
   var defaultModifiers$1 = [eventListeners, popperOffsets$1, computeStyles$1, applyStyles$1];
-  var createPopper$1 = /*#__PURE__*/popperGenerator({
+  var createPopper$1 = popperGenerator({
     defaultModifiers: defaultModifiers$1
   }); // eslint-disable-next-line import/no-unused-modules
 
   var defaultModifiers = [eventListeners, popperOffsets$1, computeStyles$1, applyStyles$1, offset$1, flip$1, preventOverflow$1, arrow$1, hide$1];
-  var createPopper = /*#__PURE__*/popperGenerator({
+  var createPopper = popperGenerator({
     defaultModifiers: defaultModifiers
   }); // eslint-disable-next-line import/no-unused-modules
 
-  var Popper = /*#__PURE__*/Object.freeze({
+  var Popper = Object.freeze({
     __proto__: null,
     popperGenerator: popperGenerator,
     detectOverflow: detectOverflow,

@@ -200,7 +200,7 @@ main {
     transition: background-color 0.3s;
 }
     .submit:hover:not(:disabled) {
-        background-color: #e0c68f; /* Darker wheat on hover when not disabled */
+        background-color: #e0c68f; 
     }
 
     .submit:disabled {
@@ -274,12 +274,12 @@ main {
 }
 
 .eye-icon.active .eye-slash {
-    display: none; /* Hides the slash when clicked */
+    display: none; 
 }
 
 
 .eye-svg.visible .eye-icon:active .eye-slash {
-    opacity: 0; /* Hides the slash when password is visible */
+    opacity: 0; 
 }
 
 

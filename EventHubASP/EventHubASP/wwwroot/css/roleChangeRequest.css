@@ -1,22 +1,22 @@
-﻿/* Heading */
+﻿
 .main-title {
     font-size: clamp(1.8rem, 5vw, 2.5rem);
     color: #f5deb3;
     text-align: center;
     padding: clamp(20px, 4vw, 40px) 0;
     font-family: 'Cambria Math';
-    border-bottom: 2px solid #f5deb3; /* wheat */
+    border-bottom: 2px solid #f5deb3; 
     margin-bottom: 2rem;
 }
 
-/* Table Container */
+
 .role-requests-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2vw;
 }
 
-/* Table */
+
 .requests-table {
     width: 100%;
     border-collapse: collapse;
@@ -26,9 +26,9 @@
     overflow: hidden;
 }
 
-    /* Table Header */
+    
     .requests-table .feedback-table-header {
-        background-color: #f5deb3; /* wheat */
+        background-color: #f5deb3; 
     }
 
         .requests-table .feedback-table-header th {
@@ -39,7 +39,7 @@
             font-weight: 600;
         }
 
-    /* Table Body */
+    
     .requests-table .feedback-table-row {
         border-bottom: 1px solid #eee;
     }
@@ -69,7 +69,7 @@
             white-space: nowrap;
         }
 
-/* Custom Button Styling */
+
 .request-btn {
     padding: 0.5rem 1rem;
     font-size: clamp(0.875rem, 2vw, 1rem);
@@ -84,26 +84,26 @@
 }
 
 .request-approve {
-    background-color: #28a745; /* Green for Approve */
+    background-color: #28a745; 
     color: white;
 }
 
     .request-approve:hover {
-        background-color: #218838; /* Darker green on hover */
+        background-color: #218838; 
         color: white;
     }
 
 .request-decline {
-    background-color: #dc3545; /* Red for Decline */
+    background-color: #dc3545; 
     color: white;
 }
 
     .request-decline:hover {
-        background-color: #c82333; /* Darker red on hover */
+        background-color: #c82333; 
         color: white;
     }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
     .requests-table {
         display: block;

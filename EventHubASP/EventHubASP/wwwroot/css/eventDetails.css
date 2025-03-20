@@ -1,4 +1,4 @@
-﻿/* Base styling using full screen */
+﻿
 .event-details-page {
     min-height: 100vh;
     padding: 2rem 4rem;
@@ -21,7 +21,7 @@
     }
 }
 
-/* Header and metadata */
+
 .event-details-header {
     font-family: "Math", serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
@@ -93,7 +93,7 @@
     }
 }
 
-/* Event information layout with image on the right */
+
 .event-details-info-container {
     display: flex;
     align-items: flex-start;
@@ -137,7 +137,7 @@
     }
 }
 
-/* Custom content with no outline separation */
+
 .event-details-custom-content {
     margin-top: 2rem;
     padding: 15px;
@@ -162,13 +162,13 @@
     }
 }
 
-/* Enhanced image styles for TinyMCE compatibility */
+
 .event-details-custom-content img {
     max-width: 100%;
     height: auto;
-    display: block; /* Ensures block-level behavior */
-    clear: both; /* Prevents text from wrapping around on new lines */
-    margin: 1.5rem auto; /* Default centered with margin */
+    display: block; 
+    clear: both; 
+    margin: 1.5rem auto; 
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(245, 222, 179, 0.3);
@@ -203,7 +203,7 @@
         border-color: rgba(255, 255, 255, 0.5);
     }
 
-/* Default text color and spacing */
+
 .event-details-custom-content,
 .event-details-custom-content h1,
 .event-details-custom-content h2,
@@ -216,7 +216,7 @@
 .event-details-custom-content ol,
 .event-details-custom-content li {
     color: #ffffff;
-    margin: 1.5rem 0; /* Consistent spacing with TinyMCE */
+    margin: 1.5rem 0; 
 }
 
     .event-details-custom-content a {
@@ -229,7 +229,7 @@
             text-decoration: underline;
         }
 
-    /* Table styles */
+    
     .event-details-custom-content table {
         width: 100%;
         border-collapse: collapse;
@@ -259,7 +259,7 @@
         color: #bbb;
     }
 
-/* Button styling */
+
 .event-details-btn-primary {
     background-color: #f5deb3;
     color: #212121;
@@ -297,7 +297,7 @@
     }
 }
 
-/* Responsive Design */
+
 @media (max-width: 1024px) {
     .event-details-page {
         padding: 1.5rem 2rem;

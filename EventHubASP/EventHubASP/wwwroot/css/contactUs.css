@@ -1,24 +1,24 @@
-﻿/* wwwroot/css/contactUs.css */
+﻿
 
-/* Base Styles */
+
 .contact-us-page {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2vw; /* Relative units for padding */
+    padding: 2vw; 
 }
 
-/* Header Styles */
+
 .page-header {
     text-align: center;
     border-radius: 15px;
-    padding: clamp(20px, 5vw, 40px) 0; /* Flexible padding between min and max */
+    padding: clamp(20px, 5vw, 40px) 0; 
     background-color: #ffffff;
     border-bottom: 2px solid #f5deb3;
     margin-bottom: 3rem;
 }
 
     .page-header h1 {
-        font-size: clamp(1.8rem, 5vw, 2.5rem); /* Scales between min and max */
+        font-size: clamp(1.8rem, 5vw, 2.5rem); 
         color: #333;
         margin-bottom: 0.625rem;
     }
@@ -28,18 +28,18 @@
         color: #666;
     }
 
-/* Content Container */
+
 .content-container {
     display: flex;
     border-radius: 15px;
     flex-wrap: wrap;
-    gap: clamp(20px, 4vw, 40px); /* Flexible gap */
+    gap: clamp(20px, 4vw, 40px); 
     justify-content: space-between;
 }
 
-/* Form Section */
+
 .form-section {
-    flex: 1 1 300px; /* Grow, shrink, with minimum width */
+    flex: 1 1 300px; 
     background-color: #ffffff;
     padding: clamp(15px, 3vw, 30px);
     border-radius: 15px;
@@ -54,7 +54,7 @@
         padding-bottom: 0.625rem;
     }
 
-/* Form Styles */
+
 .contact-form .form-group {
     margin-bottom: 1.25rem;
     border-radius: 15px
@@ -119,9 +119,9 @@
         background-color: #e0c68f;
     }
 
-/* Info Section */
+
 .info-section {
-    flex: 1 1 300px; /* Grow, shrink, with minimum width */
+    flex: 1 1 300px; 
     padding: clamp(15px, 3vw, 30px);
 }
 
@@ -139,7 +139,7 @@
 
     .map-container iframe {
         width: 100%;
-        height: clamp(300px, 50vw, 500px); /* Responsive height */
+        height: clamp(300px, 50vw, 500px); 
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
@@ -170,7 +170,7 @@
         color: #333;
     }
 
-/* Media Queries for Specific Breakpoints */
+
 @media (max-width: 1024px) {
     .content-container {
         flex-direction: column;
@@ -217,7 +217,7 @@
     }
 }
 
-/* High-resolution displays */
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .form-section,
     .contact-info {

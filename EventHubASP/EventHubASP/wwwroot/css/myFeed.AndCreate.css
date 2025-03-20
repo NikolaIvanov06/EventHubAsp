@@ -1,15 +1,15 @@
-﻿/* createNews.css */
+﻿
 .create-news-container {
     margin-top: 30px;
     padding: 25px;
-    background-color: transparent; /* Transparent for a sleek modern look */
-    border-radius: 15px; /* Rounded edges */
-    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.15); /* Floating effect */
+    background-color: transparent; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.15); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     .create-news-container:hover {
-        transform: translateY(-5px); /* Lift on hover */
+        transform: translateY(-5px); 
         box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
     }
 
@@ -39,37 +39,37 @@
         }
 
     .create-news-container .form-group {
-        margin-bottom: 20px; /* Increased spacing for better readability */
+        margin-bottom: 20px; 
     }
 
     .create-news-container .form-label {
         font-weight: 600;
-        color: #ffeba7; /* Warm yellow label text */
+        color: #ffeba7; 
         margin-bottom: 8px;
         display: inline-block;
     }
 
     .create-news-container .form-control {
-        background-color: white; /* Light green input background */
-        border-radius: 10px; /* Smooth rounded inputs */
-        border: 1px solid #212121; /* Dark border for contrast */
+        background-color: white; 
+        border-radius: 10px; 
+        border: 1px solid #212121; 
         padding: 10px 15px;
-        color: #212121; /* Dark text */
+        color: #212121; 
         box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
         .create-news-container .form-control:focus {
-            border-color: #ffeba7; /* Warm yellow border on focus */
+            border-color: #ffeba7; 
             box-shadow: 0 0 5px rgba(255, 235, 167, 0.5);
             outline: none;
         }
 
-    /* Create News Button */
+    
     .create-news-container .btn-create-news {
         width: 100%;
-        background-color: #212121; /* Dark button */
-        color: #ffeba7; /* Yellow text */
+        background-color: #212121; 
+        color: #ffeba7; 
         font-weight: bold;
         padding: 12px;
         border-radius: 10px;
@@ -78,24 +78,24 @@
     }
 
         .create-news-container .btn-create-news:hover {
-            background-color: #ffeba7; /* Yellow background on hover */
-            color: #212121; /* Dark text */
-            transform: translateY(-2px); /* Subtle lift effect */
+            background-color: #ffeba7; 
+            color: #212121; 
+            transform: translateY(-2px); 
         }
 
-    /* Form Validation Error Text */
+    
     .create-news-container .text-danger {
         font-size: 0.875rem;
-        color: #e74c3c; /* Bright red for visibility */
+        color: #e74c3c; 
     }
 
-/* MyFeed Styles */
+
 .my-feed-container {
     margin-top: 30px;
     padding: 25px;
-    background-color: transparent; /* Keeping a sleek modern look */
-    border-radius: 15px; /* Rounded edges */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Floating effect */
+    background-color: transparent; 
+    border-radius: 15px; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
 }
 
     .my-feed-container h2 {
@@ -130,7 +130,7 @@
 
     .my-feed-container li {
         padding: 1rem;
-        border-bottom: 1px solid #ffeba7; /* Warm yellow divider */
+        border-bottom: 1px solid #ffeba7; 
     }
 
         .my-feed-container li:last-child {
@@ -140,15 +140,15 @@
     .my-feed-container h3 {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
-        color: #ffeba7; /* Warm yellow for headlines */
+        color: #ffeba7; 
     }
 
     .my-feed-container p {
         font-size: 1rem;
-        color: #ffeba7; /* Soft warm yellow text */
+        color: #ffeba7; 
     }
 
     .my-feed-container small {
         font-size: 0.875rem;
-        color: #6c757d; /* Muted color for timestamp */
+        color: #6c757d; 
     }
