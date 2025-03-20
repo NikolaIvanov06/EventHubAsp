@@ -329,9 +329,9 @@ namespace EventHubASP.DataAccess.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("d2adcc7f-db2d-4753-a5cd-541079369780"), null, "Organizer", "ORGANIZER" },
-                    { new Guid("d39a59c4-d9b0-4461-83e9-56d3fd5eb85b"), null, "User", "USER" },
-                    { new Guid("f49c3f83-85fe-43ed-91fe-42cbb8b7b499"), null, "Admin", "ADMIN" }
+                    { new Guid("16300516-f77e-4b15-8def-e6d0a374c626"), null, "Organizer", "ORGANIZER" },
+                    { new Guid("42cabbae-296d-4518-8c61-c2ad0ec6dc7f"), null, "Admin", "ADMIN" },
+                    { new Guid("53e2b5eb-729a-4f7d-81e8-200f412b2230"), null, "User", "USER" }
                 });
 
             migrationBuilder.CreateIndex(

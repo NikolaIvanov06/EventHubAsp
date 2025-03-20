@@ -11,4 +11,4 @@ namespace EventHubASP.Models
         [Required]
         public string RecoveryCode { get; set; }
     }
-}
+}  

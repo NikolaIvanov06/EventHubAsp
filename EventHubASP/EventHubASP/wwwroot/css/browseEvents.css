@@ -17,28 +17,8 @@
 }
 
 
-.filter-wrapper {
-    position: relative;
-    display: inline-block;
-}
 
 
-.filter-toggle-button {
-    background-color: #212121;
-    color: wheat;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    outline: none;
-}
 
     .filter-toggle-button svg {
         vertical-align: middle;
@@ -104,7 +84,7 @@
 
 .search-bar input {
     width: 300px;
-    padding: 10px;
+    padding: 10px 40px 10px 15px; 
     border: 1.5px solid #ecedec;
     border-radius: 25px;
     font-size: 1rem;
@@ -112,6 +92,7 @@
     color: wheat;
     transition: box-shadow 0.3s ease;
 }
+
 
     .search-bar input:focus {
         box-shadow: 0 0 8px wheat;
@@ -206,6 +187,67 @@ h2 {
         border-radius: 1px;
     }
 
+/* Update the filter wrapper to include proper spacing */
+.filter-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Adjust the clear button position */
+.clear-btn {
+    --btn-default-bg: rgb(41, 41, 41);
+    --btn-padding: 10px 20px;
+    --btn-hover-bg: rgb(51, 51, 51);
+    --btn-transition: .3s;
+    --btn-letter-spacing: .1rem;
+    --btn-animation-duration: 1.2s;
+    --btn-shadow-color: rgba(0, 0, 0, 0.137);
+    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+    --hover-btn-color: #FAC921;
+    --default-btn-color: #fff;
+    --font-size: 16px;
+    --font-weight: 600;
+    --font-family: Menlo, Roboto Mono, monospace;
+    box-sizing: border-box;
+    padding: var(--btn-padding);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-btn-color);
+    font: var(--font-weight) var(--font-size) var(--font-family);
+    background: var(--btn-default-bg);
+    border:  1px solid wheat;
+    cursor: pointer;
+    transition: var(--btn-transition);
+    overflow: hidden;
+    box-shadow: var(--btn-shadow);
+    border-radius: 25px;
+    /* Remove margin-left that was pushing it to the side */
+    margin-left: 0;
+}
+
+/* Make the X icon more visible */
+.clear-search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: white; /* Changed from wheat to white for better visibility */
+    cursor: pointer;
+    display: none;
+    transition: color 0.3s ease;
+    font-weight: bold; /* Make the X appear more prominent */
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for better contrast */
+}
+
+    .clear-search-icon:hover {
+        color: #FAC921;
+    }
+
+
 .event-description {
     font-size: 0.95rem;
     color: white;
@@ -249,3 +291,232 @@ h2 {
             color: black;
             transform: translateY(-3px);
         }
+/* Filter section wrapper */
+.filter-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Increase space between filter button and clear button */
+}
+
+/* Filter toggle button - already styled correctly */
+.filter-toggle-button {
+    background-color: #212121;
+    color: wheat;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    outline: none;
+}
+
+/* Apply the UI button effect to the clear button */
+#clearFiltersButton {
+    /* Button settings */
+    --btn-default-bg: rgb(41, 41, 41);
+    --btn-padding: 10px 20px;
+    --btn-hover-bg: rgb(51, 51, 51);
+    --btn-transition: .3s;
+    --btn-letter-spacing: .1rem;
+    --btn-animation-duration: 1.2s;
+    --btn-shadow-color: rgba(0, 0, 0, 0.137);
+    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+    --hover-btn-color: #FAC921;
+    --default-btn-color: #fff;
+    --font-size: 16px;
+    --font-weight: 600;
+    --font-family: Menlo, Roboto Mono, monospace;
+    /* Button styling */
+    box-sizing: border-box;
+    padding: var(--btn-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-btn-color);
+    font: var(--font-weight) var(--font-size) var(--font-family);
+    background: var(--btn-default-bg);
+    border: 1px solid wheat;
+    cursor: pointer;
+    transition: var(--btn-transition);
+    overflow: hidden;
+    box-shadow: var(--btn-shadow);
+    border-radius: 25px;
+}
+
+    #clearFiltersButton span {
+        letter-spacing: var(--btn-letter-spacing);
+        transition: var(--btn-transition);
+        box-sizing: border-box;
+        position: relative;
+        background: inherit;
+    }
+
+        #clearFiltersButton span::before {
+            box-sizing: border-box;
+            position: absolute;
+            content: "";
+            background: inherit;
+        }
+
+    #clearFiltersButton:hover, #clearFiltersButton:focus {
+        background: var(--btn-hover-bg);
+    }
+
+        #clearFiltersButton:hover span, #clearFiltersButton:focus span {
+            color: var(--hover-btn-color);
+        }
+
+            #clearFiltersButton:hover span::before, #clearFiltersButton:focus span::before {
+                animation: chitchat linear both var(--btn-animation-duration);
+            }
+
+/* Search bar adjustments */
+.search-bar {
+    position: relative;
+    display: inline-block;
+}
+
+    .search-bar input {
+        width: 300px;
+        padding: 10px 40px 10px 15px; /* Increased right padding for the X icon */
+        border: 1.5px solid #ecedec;
+        border-radius: 25px;
+        font-size: 1rem;
+        background-color: transparent; /* Changed from inherit to transparent */
+        color: white; /* Changed to white for better visibility */
+        transition: box-shadow 0.3s ease;
+    }
+
+        .search-bar input:focus {
+            box-shadow: 0 0 8px wheat;
+            outline: none;
+        }
+
+/* Make X icon clearly visible */
+.clear-search-icon {
+    position: absolute;
+    right: 15px; /* Adjusted positioning */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px; /* Slightly smaller for better fit */
+    color: white; /* White for visibility */
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex !important; /* Force display */
+    align-items: center;
+    justify-content: center;
+    visibility: visible !important; /* Force visibility */
+    opacity: 1 !important; /* Force opacity */
+}
+
+    .clear-search-icon:hover {
+        color: #FAC921;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+/* Chitchat animation for clear button hover */
+@keyframes chitchat {
+    0% {
+        content: "#";
+    }
+
+    5% {
+        content: ".";
+    }
+
+    10% {
+        content: "^{";
+    }
+
+    15% {
+        content: "-!";
+    }
+
+    20% {
+        content: "#$_";
+    }
+
+    25% {
+        content: "№:0";
+    }
+
+    30% {
+        content: "#{+.";
+    }
+
+    35% {
+        content: "@}-?";
+    }
+
+    40% {
+        content: "?{4@%";
+    }
+
+    45% {
+        content: "=.,^!";
+    }
+
+    50% {
+        content: "?2@%";
+    }
+
+    55% {
+        content: "\\;1}]";
+    }
+
+    60% {
+        content: "?{%:%";
+        right: 0;
+    }
+
+    65% {
+        content: "|{f[4";
+        right: 0;
+    }
+
+    70% {
+        content: "{4%0%";
+        right: 0;
+    }
+
+    75% {
+        content: "'1_0<";
+        right: 0;
+    }
+
+    80% {
+        content: "{0%";
+        right: 0;
+    }
+
+    85% {
+        content: "]>'";
+        right: 0;
+    }
+
+    90% {
+        content: "4";
+        right: 0;
+    }
+
+    95% {
+        content: "2";
+        right: 0;
+    }
+
+    100% {
+        content: "";
+        right: 0;
+    }
+}

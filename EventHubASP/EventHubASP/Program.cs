@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddSingleton<IEmailService, EmailService>(provider =>
     new EmailService(
         builder.Configuration["EmailSettings:SmtpServer"],
@@ -82,10 +81,21 @@ builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+if (app.Environment.IsDevelopment())
 {
-    var services = scope.ServiceProvider;
-    await IdentitySeeder.SeedRolesAndUsers(services);
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        try
+        {
+            await IdentitySeeder.SeedRolesAndUsers(services);
+            await EventSeeder.SeedEvents(services);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error during seeding: {ex.Message}");
+        }
+    }
 }
 
 if (!app.Environment.IsDevelopment())

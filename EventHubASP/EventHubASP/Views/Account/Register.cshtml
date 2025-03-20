@@ -193,6 +193,8 @@
                     message = "Password is required.";
                 } else if (value.length < 6) {
                     message = "Password must be at least 6 characters long.";
+                } else if (!/\d/.test(value)) {
+                    message = "Password must contain at least one number.";
                 }
 
                 inputStates.password.isValid = !message;

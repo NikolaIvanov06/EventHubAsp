@@ -11,10 +11,10 @@
         {
             <h2 class="main-title">Delete Event</h2>
         }
-        else {
+        else
+        {
             <h2 class="main-title">Browse Events</h2>
         }
-
 
         <div class="filter-search-container">
             <div class="filter-wrapper">
@@ -23,6 +23,9 @@
                         <path d="M22 3H2l8 9.46V19l4 2V12.46L22 3z"></path>
                     </svg>
                     Filter Events
+                </button>
+                <button id="clearFiltersButton" class="clear-btn">
+                    <span>Clear</span>
                 </button>
                 <div id="filterSection" class="filter-section">
                     <form method="get" action="/Event/BrowseEvents" class="filter-form">
@@ -36,7 +39,7 @@
                         </div>
                         <div class="form-group">
                             <label for="filterByDate">Filter by Date</label>
-                            <input type="date" id="filterByDate" name="FilterByDate" value="@(filter.FilterByDate?.ToString("yyyy-MM-dd") ?? "")" />
+                            <input type="date" min="" id="filterByDate" name="FilterByDate" value="@(filter.FilterByDate?.ToString("yyyy-MM-dd") ?? "")" />
                         </div>
                         <button type="submit" class="btn apply-filter-button">Apply Filters</button>
                     </form>
@@ -45,6 +48,7 @@
 
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Search events..." value="@(filter.SearchQuery ?? "")" />
+                <span id="clearSearch" class="clear-search-icon">×</span>
             </div>
         </div>
         <div class="row events-container" id="eventsContainer">
@@ -99,10 +103,17 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const filterToggleButton = document.getElementById('filterToggleButton');
+        const clearFiltersButton = document.getElementById('clearFiltersButton');
         const filterSection = document.getElementById('filterSection');
         const searchInput = document.getElementById('searchInput');
+        const clearSearchIcon = document.getElementById('clearSearch');
         const eventsContainer = document.getElementById('eventsContainer');
         const eventItems = document.querySelectorAll('.event-item');
+        const today = new Date().toISOString().split('T')[0];
+        document.querySelector('#filterByDate').setAttribute('min', today);
+
+        let containerHeight = eventsContainer.offsetHeight;
+        eventsContainer.style.minHeight = `${containerHeight}px`;
 
         filterToggleButton.addEventListener('mouseenter', () => {
             filterSection.style.display = 'block';
@@ -132,25 +143,142 @@
             }
         });
 
-        searchInput.addEventListener('input', function () {
-            const query = this.value.toLowerCase();
+        eventItems.forEach(item => {
+            item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        });
+
+        function debounce(func, wait) {
+            let timeout;
+            return function (...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
+        const performSearch = debounce(function (query) {
+            let visibleCount = 0;
+            const matchingItems = [];
+            const nonMatchingItems = [];
+
             eventItems.forEach(item => {
                 const title = item.getAttribute('data-title');
                 if (title.includes(query)) {
-                    item.style.display = 'block';
-                    item.style.opacity = '0';
-                    item.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                        item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
-                    }, 10);
+                    matchingItems.push(item);
+                    visibleCount++;
                 } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'scale(0.95)';
-                    setTimeout(() => { item.style.display = 'none'; }, 300);
+                    nonMatchingItems.push(item);
                 }
             });
+
+            if (visibleCount === 0 && query !== '') {
+                if (!document.querySelector('.no-search-results')) {
+                    const noResults = document.createElement('div');
+                    noResults.className = 'no-search-results';
+                    noResults.textContent = 'No events match your search';
+                    noResults.style.width = '100%';
+                    noResults.style.textAlign = 'center';
+                    noResults.style.padding = '2rem';
+                    noResults.style.opacity = '0';
+                    eventsContainer.appendChild(noResults);
+
+                    void noResults.offsetWidth;
+                    noResults.style.transition = 'opacity 0.3s ease';
+                    noResults.style.opacity = '1';
+                }
+            } else {
+                const noResults = document.querySelector('.no-search-results');
+                if (noResults) {
+                    noResults.style.opacity = '0';
+                    setTimeout(() => noResults.remove(), 300);
+                }
+            }
+
+            nonMatchingItems.forEach(item => {
+                if (item.style.display !== 'none') {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.95)';
+                }
+            });
+
+            setTimeout(() => {
+                nonMatchingItems.forEach(item => {
+                    item.style.display = 'none';
+                });
+
+                matchingItems.forEach(item => {
+                    if (item.style.display === 'none') {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        item.style.display = 'block';
+                        void item.offsetWidth;
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    } else if (item.style.opacity !== '1') {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }
+                });
+            }, 300);
+        }, 250);
+
+        function clearAllFiltersAndSearch() {
+            const sortByDateCheckbox = document.getElementById('sortByDate');
+            const sortByTitleLengthCheckbox = document.getElementById('sortByTitleLength');
+            const filterByDateInput = document.getElementById('filterByDate');
+
+            if (sortByDateCheckbox) sortByDateCheckbox.checked = false;
+            if (sortByTitleLengthCheckbox) sortByTitleLengthCheckbox.checked = false;
+            if (filterByDateInput) filterByDateInput.value = '';
+            searchInput.value = '';
+            clearSearchIcon.style.display = 'none';
+
+            filterToggleButton.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                filterToggleButton.style.transform = 'scale(1)';
+            }, 200);
+
+            const successMessage = document.createElement('div');
+            successMessage.textContent = 'Filters and search cleared';
+            successMessage.className = 'filter-reset-message';
+            successMessage.style.position = 'fixed';
+            successMessage.style.top = '20px';
+            successMessage.style.right = '20px';
+            successMessage.style.padding = '10px 20px';
+            successMessage.style.backgroundColor = '#28a745';
+            successMessage.style.color = 'white';
+            successMessage.style.borderRadius = '4px';
+            successMessage.style.opacity = '0';
+            successMessage.style.transition = 'opacity 0.3s ease';
+            document.body.appendChild(successMessage);
+
+            setTimeout(() => { successMessage.style.opacity = '1'; }, 10);
+            setTimeout(() => {
+                successMessage.style.opacity = '0';
+                setTimeout(() => {
+                    successMessage.remove();
+                    window.location.href = '/Event/BrowseEvents';
+                }, 300);
+            }, 1000); // Reduced duration to make it snappier
+        }
+
+        clearSearchIcon.addEventListener('click', () => {
+            searchInput.value = '';
+            performSearch('');
+            clearSearchIcon.style.display = 'none';
         });
+
+        searchInput.addEventListener('input', function () {
+            const query = this.value.toLowerCase().trim();
+            performSearch(query);
+            clearSearchIcon.style.display = query ? 'block' : 'none';
+        });
+
+        clearSearchIcon.style.display = searchInput.value.trim() ? 'block' : 'none';
+
+        clearFiltersButton.addEventListener('click', clearAllFiltersAndSearch);
+
+        if (searchInput.value.trim() !== '') {
+            performSearch(searchInput.value.toLowerCase().trim());
+        }
     });
 </script>

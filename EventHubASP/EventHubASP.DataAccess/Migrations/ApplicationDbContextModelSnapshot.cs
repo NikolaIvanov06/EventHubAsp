@@ -307,19 +307,19 @@ namespace EventHubASP.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f49c3f83-85fe-43ed-91fe-42cbb8b7b499"),
+                            Id = new Guid("42cabbae-296d-4518-8c61-c2ad0ec6dc7f"),
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = new Guid("d2adcc7f-db2d-4753-a5cd-541079369780"),
+                            Id = new Guid("16300516-f77e-4b15-8def-e6d0a374c626"),
                             Name = "Organizer",
                             NormalizedName = "ORGANIZER"
                         },
                         new
                         {
-                            Id = new Guid("d39a59c4-d9b0-4461-83e9-56d3fd5eb85b"),
+                            Id = new Guid("53e2b5eb-729a-4f7d-81e8-200f412b2230"),
                             Name = "User",
                             NormalizedName = "USER"
                         });
