@@ -1,7 +1,8 @@
 ﻿.validation-message {
-    color: red;
+    color: #ff4444;
     font-size: 0.875rem;
     display: none;
+    text-shadow: 0 0 3px rgba(255, 68, 68, 0.5);
 }
 
     .validation-message.visible {
@@ -18,6 +19,7 @@
     border: 1px solid;
     border-color: #28a745;
     background-color: #e5ffe5;
+    text-shadow: 0 0 3px rgba(40, 167, 69, 0.3);
 }
 
 .login-link {
@@ -119,7 +121,7 @@ main {
     font-size: 16px;
     background-color: inherit;
     color: wheat;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
     margin-left: 10px;
     width: 100%;
     height: 100%;
@@ -131,7 +133,7 @@ main {
     font-size: 16px;
     background-color: inherit;
     color: wheat;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
     margin-left: 10px;
     width: 100%;
     height: 100%;
@@ -148,6 +150,7 @@ main {
     background-position: left center;
     background-size: 20px 20px;
     padding-left: 40px;
+    transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
 .form-control-password {
@@ -156,6 +159,7 @@ main {
     background-position: left center;
     background-size: 20px 20px;
     padding-left: 40px;
+    transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
 .form-control-confirm-password {
@@ -164,21 +168,24 @@ main {
     background-position: left center;
     background-size: 20px 20px;
     padding-left: 40px;
+    transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
 }
+
 .form-control-recovery {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffeba7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4'%3E%3C/path%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 20px 20px;
     padding-left: 40px;
+    transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
 .form-control:focus {
     outline: none;
-    box-shadow: 0 0 5px wheat;
+    box-shadow: 0 0 5px rgba(245, 222, 179, 0.7); /* Glow effect without blurring text */
     border: 1px solid wheat;
+    color: #fff8e1; /* Brighter color when typing (light cream) */
 }
-
 
 .form-control:focus-within {
     outline: none;
@@ -199,8 +206,9 @@ main {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
     .submit:hover:not(:disabled) {
-        background-color: #e0c68f; 
+        background-color: #e0c68f;
     }
 
     .submit:disabled {
@@ -220,7 +228,6 @@ main {
     .submit:active {
         transform: scale(0.98);
     }
-
 
 .input-wrapper {
     border: 1.5px solid #ecedec;
@@ -274,20 +281,18 @@ main {
 }
 
 .eye-icon.active .eye-slash {
-    display: none; 
+    display: none;
 }
-
 
 .eye-svg.visible .eye-icon:active .eye-slash {
-    opacity: 0; 
+    opacity: 0;
 }
-
-
 
 .text-danger {
     font-size: 14px;
     margin-top: 5px;
-    color: red;
+    color: #ff4444;
+    text-shadow: 0 0 3px rgba(255, 68, 68, 0.5);
 }
 
 .register-link {
@@ -321,6 +326,7 @@ main {
         .forgot-password-link a:hover {
             text-decoration: underline;
         }
+
 @media (max-width: 600px) {
     .form-container {
         width: 90%;

@@ -36,7 +36,7 @@ namespace EventHubASP.Tests.Tests
         }
 
 
-
+        
         [Test]
         public async Task SeedRolesAndUsers_ShouldCreateUsers_WhenUsersDoNotExist()
         {

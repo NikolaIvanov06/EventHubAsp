@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" integrity="sha512-6S2HWzVFxruDlZxI3sXOZZ4/eJ8AcxkQH1+JjSe/ONCEqR9L4Ysq5JdT5ipqtzU7WHalNwzwBv+iE51gNHJNqQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="~/logo.png" />
+    <link rel="icon" type="image/png" sizes="1024x1024" href="https://res.cloudinary.com/dyzmm3onv/image/upload/v1742983663/tmwregeul130rbv0f3ss.png" />
     <style>
         body {
             background-color: #f8f9fa;
@@ -28,8 +28,23 @@
             left: 0;
             width: 100%;
             z-index: 1000;
+            transition: background-color 0.3s ease; /* Smooth transition for background */
         }
 
+        .navbar-transparent {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black with 0.5 opacity */
+        }
+
+        .logo-image {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease; /* Smooth scaling if needed */
+}
+
+.navbar-brand {
+    position: relative;
+    padding: 0.5rem 1rem; /* Maintain padding for alignment */
+}
 
         .nav-link {
             color: whitesmoke;
@@ -96,8 +111,8 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/logo.png" alt="Logo" width="60" height="60" class="d-block align-text-top">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="position: relative;">
+                    <img src="https://res.cloudinary.com/dyzmm3onv/image/upload/v1742983663/tmwregeul130rbv0f3ss.png" alt="Logo" width="120" height="120" class="d-block align-text-top logo-image" style="position: absolute; top: -40px; left: -65px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -181,6 +196,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
     <script src="~/js/notifications.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar.offsetHeight;
+            let previousScrollPosition = window.scrollY;
 
+            window.addEventListener('scroll', function () {
+                const currentScrollPosition = window.scrollY;
+                const isScrollingUp = currentScrollPosition < previousScrollPosition;
+
+                if (currentScrollPosition > navbarHeight) {
+                    // When scrolling down past navbar height, make it transparent
+                    if (!isScrollingUp) {
+                        navbar.classList.add('navbar-transparent');
+                    } else {
+                        // When scrolling up from any position > navbarHeight
+                        navbar.classList.remove('navbar-transparent');
+                    }
+                } else {
+                    // When within the top part
+                    navbar.classList.remove('navbar-transparent');
+                }
+
+                previousScrollPosition = currentScrollPosition;
+            });
+        });
+    </script>
 </body>
 </html>
