@@ -120,30 +120,31 @@ namespace EventHubASP.Controllers
         public async Task<IActionResult> BrowseEvents(EventFilterViewModel filter)
         {
             var events = await _eventService.GetAllEventsAsync();
+            var upToDateEvents = events.Where(e => e.Date >= DateTime.Now);
 
             if (filter.FilterByDate.HasValue)
             {
-                events = events.Where(e => e.Date.Date == filter.FilterByDate.Value.Date);
+                upToDateEvents = upToDateEvents.Where(e => e.Date.Date == filter.FilterByDate.Value.Date);
             }
 
             if (!string.IsNullOrWhiteSpace(filter.SearchQuery))
             {
-                events = events.Where(e => e.Title.Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase));
+                upToDateEvents = upToDateEvents.Where(e => e.Title.Contains(filter.SearchQuery, StringComparison.OrdinalIgnoreCase));
             }
 
             if (filter.SortByDate)
             {
-                events = events.OrderByDescending(e => e.Date);
+                upToDateEvents = upToDateEvents.OrderByDescending(e => e.Date);
             }
 
             if (filter.SortByTitleLength)
             {
-                events = events.OrderBy(e => e.Title);
+                upToDateEvents = upToDateEvents.OrderBy(e => e.Title);
             }
 
             ViewBag.Filter = filter;
 
-            return View(events);
+            return View(upToDateEvents);
         }
 
         [Authorize(Roles = "User")]
@@ -173,8 +174,20 @@ namespace EventHubASP.Controllers
             }
 
             var organizerId = Guid.Parse(userIdClaim.Value);
-            var events = await _eventService.GetEventsByOrganizerAsync(organizerId);
-            return View(events);
+            var allEvents = await _eventService.GetEventsByOrganizerAsync(organizerId);
+
+            var currentDate = DateTime.Now;
+
+            var upcomingEvents = allEvents.Where(e => e.Date >= currentDate).OrderBy(e => e.Date).ToList();
+            var pastEvents = allEvents.Where(e => e.Date < currentDate).OrderByDescending(e => e.Date).ToList();
+
+            var viewModel = new MyEventsViewModel
+            {
+                UpcomingEvents = upcomingEvents,
+                PastEvents = pastEvents
+            };
+
+            return View(viewModel);
         }
 
         [Authorize(Roles = "User")]

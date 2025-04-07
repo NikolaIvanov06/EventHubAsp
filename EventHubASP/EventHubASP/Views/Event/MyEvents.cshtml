@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EventHubASP.Models.Event>
+﻿@model EventHubASP.Models.MyEventsViewModel
 
 @{
     ViewData["Title"] = "My Events";
@@ -9,42 +9,99 @@
 <div class="container my-events-container">
     <h2>My Events</h2>
 
-    <table class="table table-hover">
-        <thead class="thead-dark">
-            <tr>
-                <th>Event Name</th>
-                <th>Date</th>
-                <th>Location</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var eventItem in Model)
-            {
+    <!-- Upcoming Events Section -->
+    <h3>Upcoming Events</h3>
+    @if (Model.UpcomingEvents.Any())
+    {
+        <table class="table table-hover">
+            <thead class="thead-dark">
                 <tr>
-                    <td>
-                        <a asp-action="ManageParticipants" asp-route-eventId="@eventItem.EventID" class="event-title-link">
-                            @eventItem.Title
-                        </a>
-                    </td>
-                    <td>@eventItem.Date.ToString("MMMM dd, yyyy")</td>
-                    <td>@eventItem.Location</td>
-                    <td>
-                        <a asp-action="EditEvent" asp-route-eventId="@eventItem.EventID" class="btn btn-primary btn-sm action-button">
-                            Edit
-                        </a>
-                        <a asp-action="EditDetails" asp-controller="Event" asp-route-id="@eventItem.EventID" class="btn btn-primary btn-sm action-button">
-                            Edit Details Page
-                        </a>
-                        <form asp-action="DeleteEvent" asp-route-eventId="@eventItem.EventID" method="post" style="display:inline;">
-                            <button type="submit" class="btn btn-danger btn-sm action-button"
-                                    onclick="return confirm('Are you sure you want to delete this event?');">
-                                Delete
-                            </button>
-                        </form>
-                    </td>
+                    <th>Event Name</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Actions</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var eventItem in Model.UpcomingEvents)
+                {
+                    <tr>
+                        <td>
+                            <a asp-action="ManageParticipants" asp-route-eventId="@eventItem.EventID" class="event-title-link">
+                                @eventItem.Title
+                            </a>
+                        </td>
+                        <td>@eventItem.Date.ToString("MMMM dd, yyyy")</td>
+                        <td>@eventItem.Location</td>
+                        <td>
+                            <a asp-action="EditEvent" asp-route-eventId="@eventItem.EventID" class="btn btn-primary btn-sm action-button">
+                                Edit
+                            </a>
+                            <a asp-action="EditDetails" asp-controller="Event" asp-route-id="@eventItem.EventID" class="btn btn-primary btn-sm action-button">
+                                Edit Details Page
+                            </a>
+                            <form asp-action="DeleteEvent" asp-route-eventId="@eventItem.EventID" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-danger btn-sm action-button"
+                                        onclick="return confirm('Are you sure you want to delete this event?');">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No upcoming events.</p>
+    }
+
+    <!-- Past Events Section -->
+    <h3>Past Events</h3>
+    @if (Model.PastEvents.Any())
+    {
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Event Name</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var eventItem in Model.PastEvents)
+                {
+                    <tr>
+                        <td>
+                            <a asp-action="ManageParticipants" asp-route-eventId="@eventItem.EventID" class="event-title-link">
+                                @eventItem.Title
+                            </a>
+                        </td>
+                        <td>@eventItem.Date.ToString("MMMM dd, yyyy")</td>
+                        <td>@eventItem.Location</td>
+                        <td>
+                            <a asp-action="EditEvent" asp-route-eventId="@eventItem.EventID" class="btn btn-primary btn-sm action-button">
+                                Edit
+                            </a>
+                            <a asp-action="EditDetails" asp-controller="Event" asp-route-id="@eventItem.EventID" class="btn btn-primary btn-sm action-button">
+                                Edit Details Page
+                            </a>
+                            <form asp-action="DeleteEvent" asp-route-eventId="@eventItem.EventID" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-danger btn-sm action-button"
+                                        onclick="return confirm('Are you sure you want to delete this event?');">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No past events.</p>
+    }
 </div>

@@ -1,18 +1,19 @@
-﻿
+﻿/* Container for the entire My Events page */
 .my-events-container {
     margin-top: 30px;
     padding: 25px;
-    background-color: transparent; 
-    border-radius: 15px; 
-    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.15); 
+    background-color: transparent;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     .my-events-container:hover {
-        transform: translateY(-5px); 
+        transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
+/* Main heading */
 h2 {
     font-family: "Math", serif;
     color: wheat;
@@ -38,44 +39,84 @@ h2 {
         border-radius: 1px;
     }
 
-.table {
-    background-color: #e5ffe5; 
-    border-radius: 10px; 
-    overflow: hidden; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+/* Subheadings for Upcoming and Past Events */
+h3 {
+    font-family: "Math", serif;
+    color: wheat;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 30px 0 15px 0;
+    text-align: left;
+    text-shadow: 0 0 5px rgba(255, 235, 167, 0.3);
+    position: relative;
 }
 
+    h3::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: wheat;
+        border-radius: 1px;
+    }
+
+/* Table styling */
+.table {
+    background-color: #e5ffe5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Add spacing between tables */
+}
+
+    /* Differentiate Past Events table (optional) */
+    .table.past-events {
+        background-color: #f0f0f0; /* Light gray to distinguish from upcoming events */
+    }
+
+/* Table header */
 .thead-dark th {
-    background-color: #212121; 
-    color: #ffeba7; 
+    background-color: #212121;
+    color: #ffeba7;
     font-weight: 600;
 }
 
-
+/* Event title link */
 .event-title-link {
-    color: #212121; 
+    color: #212121;
     font-weight: 500;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
     .event-title-link:hover {
-        color: #24568f; 
+        color: #24568f;
         text-decoration: underline;
     }
 
+/* Action buttons */
 .action-button {
-    border-radius: 5px; 
-    padding: 5px 10px; 
-    background-color: #212121; 
-    color: #ffeba7; 
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #212121;
+    color: #ffeba7;
     border: none;
     transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
     .action-button:hover {
-        transform: translateY(-2px); 
-        background-color: #ffeba7; 
-        color: #212121; 
-        opacity: 0.9; 
+        transform: translateY(-2px);
+        background-color: #ffeba7;
+        color: #212121;
+        opacity: 0.9;
     }
+
+/* No events message */
+p.no-events {
+    color: #212121;
+    font-style: italic;
+    text-align: center;
+    margin: 20px 0;
+}

@@ -19,7 +19,7 @@
             </div>
             <div class="create-event-form-group">
                 <label asp-for="Date" class="create-event-label"></label>
-                <input asp-for="Date" class="create-event-input create-event-input-date" type="date" />
+                <input asp-for="Date" class="create-event-input create-event-input-date" type="date" min="" />
                 <span asp-validation-for="Date" class="create-event-validation-error"></span>
             </div>
             <div class="create-event-form-group">
@@ -48,6 +48,12 @@
     <partial name="_ValidationScriptsPartial" />
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const today = new Date().toISOString().split('T')[0];
+            document.querySelector('.create-event-input-date').setAttribute('min', today);
+        });
+
         document.getElementById('fileUpload').addEventListener('change', function (event) {
             var file = event.target.files[0];
             if (file) {
