@@ -36,15 +36,15 @@
         }
 
         .logo-image {
-    width: 100px;
-    height: 100px;
-    transition: transform 0.3s ease; /* Smooth scaling if needed */
-}
+            width: 100px;
+            height: 100px;
+            transition: transform 0.3s ease; /* Smooth scaling if needed */
+        }
 
-.navbar-brand {
-    position: relative;
-    padding: 0.5rem 1rem; /* Maintain padding for alignment */
-}
+        .navbar-brand {
+            position: relative;
+            padding: 0.5rem 1rem; /* Maintain padding for alignment */
+        }
 
         .nav-link {
             color: whitesmoke;
@@ -105,6 +105,30 @@
             border-bottom: 1px solid #ccc;
             background-color: #f9f9f9;
         }
+
+        .dropdown-menu {
+            background-color: black;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 0;
+            
+        }
+
+        .dropdown-item {
+            color: whitesmoke;
+            padding: 8px 15px;
+            border-radius:10px;
+        }
+
+
+        .dropdown-toggle::after {
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -137,6 +161,19 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Feedback">User Feedbacks</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="eventManagementDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Event Management
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="eventManagementDropdown">
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Event" asp-action="CreateEvent">Create An Event</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="Event" asp-action="MyEvents">My Events</a></li>
+                                        <li><a class="dropdown-item" asp-area="" asp-controller="News" asp-action="Create">Create News</a></li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-controller="Event" asp-action="BrowseEvents">Delete Events</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             }
                             else if (userRoles.Contains("Organizer"))
@@ -207,19 +244,38 @@
                 const isScrollingUp = currentScrollPosition < previousScrollPosition;
 
                 if (currentScrollPosition > navbarHeight) {
-                    // When scrolling down past navbar height, make it transparent
+
                     if (!isScrollingUp) {
                         navbar.classList.add('navbar-transparent');
                     } else {
-                        // When scrolling up from any position > navbarHeight
                         navbar.classList.remove('navbar-transparent');
                     }
                 } else {
-                    // When within the top part
                     navbar.classList.remove('navbar-transparent');
                 }
 
                 previousScrollPosition = currentScrollPosition;
+            });
+
+            const dropdownItems = document.querySelectorAll('.dropdown');
+            dropdownItems.forEach(function (item) {
+                item.addEventListener('mouseenter', function () {
+                    if (window.innerWidth >= 992) {
+                        const dropdownMenu = this.querySelector('.dropdown-menu');
+                        if (dropdownMenu) {
+                            dropdownMenu.classList.add('show');
+                        }
+                    }
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    if (window.innerWidth >= 992) {
+                        const dropdownMenu = this.querySelector('.dropdown-menu');
+                        if (dropdownMenu) {
+                            dropdownMenu.classList.remove('show');
+                        }
+                    }
+                });
             });
         });
     </script>

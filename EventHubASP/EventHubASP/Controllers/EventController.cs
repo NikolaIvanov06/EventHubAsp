@@ -37,7 +37,7 @@ namespace EventHubASP.Controllers
             return View(eventItem);
         }
 
-        [Authorize(Roles = "Organizer")]
+        [Authorize(Roles = "Organizer,Admin")]
         [HttpGet]
         public async Task<IActionResult> EditDetails(int id)
         {
@@ -56,7 +56,7 @@ namespace EventHubASP.Controllers
             return View(eventItem);
         }
 
-        [Authorize(Roles = "Organizer")]
+        [Authorize(Roles = "Organizer,Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditDetails(int id, string customContent)
@@ -82,7 +82,7 @@ namespace EventHubASP.Controllers
             return RedirectToAction(nameof(Details), new { id });
         }
 
-        [Authorize(Roles = "Organizer")]
+        [Authorize(Roles = "Organizer,Admin")]
         [HttpPost]
         public async Task<IActionResult> UploadImage(IFormFile file)
         {
@@ -114,45 +114,7 @@ namespace EventHubASP.Controllers
             }
         }
 
-        [Authorize(Roles = "Organizer")]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UploadVideo(IFormFile file)
-        {
-            if (file == null || file.Length == 0)
-            {
-                Console.WriteLine("No file uploaded or file length is 0");
-                return Json(new { success = false, message = "No file uploaded" });
-            }
-
-            Console.WriteLine($"Received file: {file.FileName}, ContentType: {file.ContentType}, Length: {file.Length}");
-
-            if (!file.ContentType.StartsWith("video/"))
-            {
-                Console.WriteLine("Invalid file type: Only video files are allowed");
-                return Json(new { success = false, message = "Only video files are allowed" });
-            }
-
-            try
-            {
-                var uploadParams = new VideoUploadParams()
-                {
-                    File = new FileDescription(file.FileName, file.OpenReadStream())
-                };
-
-                Console.WriteLine("Uploading to Cloudinary...");
-                var uploadResult = await _cloudinary.UploadAsync(uploadParams);
-                var videoUrl = uploadResult.SecureUrl.ToString();
-                Console.WriteLine($"Upload successful, URL: {videoUrl}");
-
-                return Json(new { success = true, url = videoUrl });
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error uploading video: {ex.Message}");
-                return Json(new { success = false, message = "Video upload failed: " + ex.Message });
-            }
-        }
+        
 
         [AllowAnonymous]
         public async Task<IActionResult> BrowseEvents(EventFilterViewModel filter)
@@ -201,7 +163,7 @@ namespace EventHubASP.Controllers
             return RedirectToAction("BrowseEvents");
         }
 
-        [Authorize(Roles = "Organizer")]
+        [Authorize(Roles = "Organizer,Admin")]
         public async Task<IActionResult> MyEvents()
         {
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
@@ -241,7 +203,7 @@ namespace EventHubASP.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Organizer")]
+        [Authorize(Roles = "Organizer,Admin")]
         public async Task<IActionResult> CreateEvent(EventViewModel viewModel)
         {
             if (viewModel.Date < DateTime.Today)
@@ -290,7 +252,14 @@ namespace EventHubASP.Controllers
             {
                 await _eventService.CreateEventAsync(newEvent);
                 TempData["SuccessMessage"] = "Event created successfully!";
-                return RedirectToAction("MyEvents");
+                if (User.IsInRole("Organizer"))
+                {
+                    return RedirectToAction("MyEvents");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
             catch (Exception ex)
             {
@@ -300,13 +269,13 @@ namespace EventHubASP.Controllers
             }
         }
 
-        [Authorize(Roles = "Organizer")]
+        [Authorize(Roles = "Organizer,Admin")]
         public IActionResult CreateEvent()
         {
             return View();
         }
 
-        [Authorize(Roles = "Organizer")]
+        [Authorize(Roles = "Organizer,Admin")]
         public async Task<IActionResult> ManageParticipants(int eventId)
         {
             var organizerId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
@@ -327,7 +296,7 @@ namespace EventHubASP.Controllers
             return View(events);
         }
 
-        [Authorize(Roles = "Organizer")]
+        [Authorize(Roles = "Organizer,Admin")]
         public async Task<IActionResult> EditEvent(int eventId)
         {
             var organizerId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
@@ -353,7 +322,7 @@ namespace EventHubASP.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Organizer")]
+        [Authorize(Roles = "Organizer,Admin")]
         public async Task<IActionResult> EditEvent(EventViewModel viewModel)
         {
             Console.WriteLine($"EditEvent POST called with eventId: {viewModel.EventID}");
