@@ -10,7 +10,7 @@
             <div class="mb-3">
                 <label asp-for="Username" class="label">Username</label>
                 <div class="input-wrapper">
-                    <input asp-for="Username" class="form-control form-control-username" autocomplete="off" aria-describedby="usernameError" placeholder="Username"/>
+                    <input asp-for="Username" class="form-control form-control-username" autocomplete="off" aria-describedby="usernameError" placeholder="Username" />
                 </div>
                 <span asp-validation-for="Username" id="usernameError" class="text-danger validation-message" aria-live="polite"></span>
             </div>
@@ -78,7 +78,7 @@
                 username: { hasBeenTouched: false, isValid: false, isFilled: false },
                 email: { hasBeenTouched: false, isValid: false, isFilled: false },
                 password: { hasBeenTouched: false, isValid: false, isFilled: false },
-                confirmpassword: { hasBeenTouched: false, isValid: false, isFilled: false } 
+                confirmpassword: { hasBeenTouched: false, isValid: false, isFilled: false }
             };
 
             eyeIcons.forEach(icon => {
@@ -117,18 +117,18 @@
                 return fetch('/Account/CheckUsername?username=' + encodeURIComponent(value), {
                     method: 'GET'
                 })
-                .then(response => response.json())
-                .then(data => data.isAvailable)
-                .catch(() => false);
+                    .then(response => response.json())
+                    .then(data => data.isAvailable)
+                    .catch(() => false);
             }
 
             function checkEmailAvailability(value) {
                 return fetch('/Account/CheckEmail?email=' + encodeURIComponent(value), {
                     method: 'GET'
                 })
-                .then(response => response.json())
-                .then(data => data.isAvailable)
-                .catch(() => false);
+                    .then(response => response.json())
+                    .then(data => data.isAvailable)
+                    .catch(() => false);
             }
 
             async function validateUsername(sendMessage = false) {
@@ -195,6 +195,10 @@
                     message = "Password must be at least 6 characters long.";
                 } else if (!/\d/.test(value)) {
                     message = "Password must contain at least one number.";
+                } else if (!/[A-Z]/.test(value)) {
+                    message = "Password must contain at least one uppercase letter.";
+                } else if (!/[a-z]/.test(value)) {
+                    message = "Password must contain at least one lowercase letter.";
                 }
 
                 inputStates.password.isValid = !message;
@@ -228,9 +232,9 @@
 
             function areAllFieldsFilledAndValid() {
                 return inputStates.username.isFilled && inputStates.username.isValid &&
-                       inputStates.email.isFilled && inputStates.email.isValid &&
-                       inputStates.password.isFilled && inputStates.password.isValid &&
-                       inputStates.confirmpassword.isFilled && inputStates.confirmpassword.isValid;
+                    inputStates.email.isFilled && inputStates.email.isValid &&
+                    inputStates.password.isFilled && inputStates.password.isValid &&
+                    inputStates.confirmpassword.isFilled && inputStates.confirmpassword.isValid;
             }
 
             const debouncedCheckFormValidity = debounce(async function (input) {

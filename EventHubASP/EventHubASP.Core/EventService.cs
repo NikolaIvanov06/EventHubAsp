@@ -167,6 +167,8 @@ public class EventService : IEventService
         var registration = await _context.Registrations
             .FirstOrDefaultAsync(r => r.UserID == userId && r.EventID == eventId);
 
+
+
         if (registration != null)
         {
             _context.Registrations.Remove(registration);

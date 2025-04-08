@@ -1,8 +1,14 @@
 ﻿@model EventHubASP.Models.Event
-
 @{
     ViewData["Title"] = Model.Title + " Details";
 }
+
+<a id="goBackBtn" class="go-back-btn" href="@Url.Action("BrowseEvents", "Event")">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+    </svg>
+    <span>Go Back</span>
+</a>
 
 <div class="event-details-page">
     <h1 class="event-details-header">@Model.Title</h1>
@@ -27,3 +33,73 @@
 </div>
 
 <link rel="stylesheet" href="~/css/eventDetails.css" asp-append-version="true" />
+
+<style>
+    .go-back-btn {
+        position: fixed;
+        top: 630px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: rgba(245, 222, 179, 0.9);
+        color: #212121;
+        border-radius: 30px;
+        padding: 12px 20px;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border: 2px solid transparent;
+        z-index: 100;
+        backdrop-filter: blur(5px);
+        animation: fadeInLeft 0.5s ease-out forwards;
+    }
+
+    .go-back-btn:hover {
+        background-color: rgba(255, 255, 255, 0.95);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+        border-color: rgba(245, 222, 179, 0.6);
+    }
+
+    .go-back-btn:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .go-back-btn svg {
+        transition: transform 0.3s ease;
+    }
+
+    .go-back-btn:hover svg {
+        transform: translateX(-4px);
+    }
+
+    @@keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .go-back-btn {
+            padding: 10px 16px;
+            font-size: 0.85rem;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .go-back-btn {
+            padding: 8px 14px;
+            font-size: 0.8rem;
+        }
+    }
+</style>

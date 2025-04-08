@@ -12,6 +12,16 @@
     --btn-transition-speed: 0.5s;
 }
 
+.gobackBtn 
+{
+    position: absolute;
+    background-color: #b6a5a5;
+    color: black;
+    border-radius: 18px;
+    border: 1px solid wheat;
+
+
+}
 
 .edit-event-details-page {
     min-height: 100vh;
