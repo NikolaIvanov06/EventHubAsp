@@ -21,9 +21,21 @@
             @foreach (var participant in Model)
             {
                 <tr>
-                    <td>@participant</td>
+                    <td>@participant.UserName</td>
                     <td>@participant.Email</td>
-                    <td>@participant.Registrations?.FirstOrDefault()?.RegistrationDate.ToString("g") ?? "N/A"</td>
+                        <td>
+                                @{
+                                    var registration = participant.Registrations?.FirstOrDefault(r => r.EventID == ViewBag.EventId);
+                                    @if (registration != null)
+                                    {
+                                        @registration.RegistrationDate.ToLocalTime().ToString("g")
+                                    }
+                                    else
+                                    {
+                                        @:N/A
+                                    }
+                                }
+                        </td>
                 </tr>
             }
         </tbody>

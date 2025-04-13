@@ -30,7 +30,7 @@ namespace EventHubASP.DataAccess
                         Location = "Convention Center, Downtown",
                         OrganizerID = organizer.Id,
                         Organizer = organizer,
-                        ImageUrl = "https://images.unsplash.com/photo-1540575467063-1f587b372844?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                        ImageUrl = "https://quixy.com/wp-content/uploads/2021/04/IDC-Directions.jpg"
                     },
                     new Event
                     {
@@ -70,7 +70,7 @@ namespace EventHubASP.DataAccess
                         Location = "City Art Gallery",
                         OrganizerID = organizer.Id,
                         Organizer = organizer,
-                        ImageUrl = "https://images.unsplash.com/photo-1533722305675-9e838a7812db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                        ImageUrl = "https://d1zdxptf8tk3f9.cloudfront.net/ckeditor_assets/pictures/1184/content_exhibition-1659478_1920.jpg"
                     },
                     new Event
                     {
@@ -80,7 +80,7 @@ namespace EventHubASP.DataAccess
                         Location = "Main Street Square",
                         OrganizerID = organizer.Id,
                         Organizer = organizer,
-                        ImageUrl = "https://images.pexels.com/photos/1352169/pexels-photo-1352169.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        ImageUrl = "https://www.myrtlebeach.com/wp-content/uploads/2022/04/foodtruckfest-1440x720.jpg"
                     }
                 };
                 context.Events.AddRange(events);

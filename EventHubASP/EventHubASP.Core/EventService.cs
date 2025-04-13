@@ -30,13 +30,17 @@ public class EventService : IEventService
     {
         if (!await _context.Registrations.AnyAsync(r => r.UserID == userId && r.EventID == eventId))
         {
-            _context.Registrations.Add(new Registration { UserID = userId, EventID = eventId });
+            _context.Registrations.Add(new Registration
+            {
+                UserID = userId,
+                EventID = eventId,
+                RegistrationDate = DateTime.UtcNow // Set the registration date
+            });
             await _context.SaveChangesAsync();
             return true;
         }
         return false;
     }
-
     public async Task CreateEventAsync(Event model)
     {
         if (string.IsNullOrWhiteSpace(model.ImageUrl))
@@ -198,10 +202,17 @@ public class EventService : IEventService
 
     public async Task<IEnumerable<User>> GetEventParticipantsAsync(int eventId)
     {
-        return await _context.Registrations
+        var participants = await _context.Registrations
             .Where(r => r.EventID == eventId)
-            .Include(r => r.User.Registrations)
+            .Include(r => r.User)
+            .ThenInclude(u => u.Registrations)
             .Select(r => r.User)
             .ToListAsync();
+
+        foreach (var user in participants)
+        {
+            Console.WriteLine($"User: {user.Email}, Registrations: {user.Registrations?.Count}");
+        }
+        return participants;
     }
 }

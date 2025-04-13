@@ -7,8 +7,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EventHubASP.DataAccess.Migrations
 {
+    /// <inheritdoc />
     public partial class InitialMig : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -329,9 +331,9 @@ namespace EventHubASP.DataAccess.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("16300516-f77e-4b15-8def-e6d0a374c626"), null, "Organizer", "ORGANIZER" },
-                    { new Guid("42cabbae-296d-4518-8c61-c2ad0ec6dc7f"), null, "Admin", "ADMIN" },
-                    { new Guid("53e2b5eb-729a-4f7d-81e8-200f412b2230"), null, "User", "USER" }
+                    { new Guid("5cb86cf8-9fcb-4323-b8c3-fcf848fb1368"), null, "Organizer", "ORGANIZER" },
+                    { new Guid("99cca070-22c4-47f2-b6e3-52b09cdf56e7"), null, "Admin", "ADMIN" },
+                    { new Guid("ec20d2fb-2f99-4162-acdd-68d2bd65dee7"), null, "User", "USER" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -420,6 +422,7 @@ namespace EventHubASP.DataAccess.Migrations
                 column: "UserID");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

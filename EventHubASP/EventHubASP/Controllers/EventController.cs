@@ -296,6 +296,7 @@ namespace EventHubASP.Controllers
             if (await _eventService.IsOrganizerOfEventAsync(organizerId, eventId))
             {
                 var participants = await _eventService.GetEventParticipantsAsync(eventId);
+                ViewBag.EventId = eventId; // Pass eventId to the view
                 return View(participants);
             }
 
